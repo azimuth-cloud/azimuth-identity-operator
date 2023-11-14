@@ -1,3 +1,4 @@
+---
 name: Publish artifacts
 
 on:
@@ -25,7 +26,7 @@ env:
   HELM_VERSION: v3.13.2
   DEX_CHART_NAME: dex
   DEX_CHART_REPO: https://charts.dexidp.io
-  DEX_CHART_VERSION: 0.13.0
+  DEX_CHART_VERSION: 0.15.3
 
 jobs:
   build_push_images:
