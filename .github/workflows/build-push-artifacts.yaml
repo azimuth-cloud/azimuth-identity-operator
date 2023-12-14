@@ -23,7 +23,7 @@ on:
 
 # Variables controlling the dependencies that are baked in to the image
 env:
-  HELM_VERSION: v3.13.2
+  HELM_VERSION: v3.13.3
   DEX_CHART_NAME: dex
   DEX_CHART_REPO: https://charts.dexidp.io
   DEX_CHART_VERSION: 0.15.3
