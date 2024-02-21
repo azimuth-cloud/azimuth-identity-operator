@@ -174,6 +174,20 @@ async def delete_realm(instance: api.Realm, **kwargs):
     await keycloak.remove_realm(realm_name)
 
 
+async def fetch_realm_for_platform(platform: api.Platform) -> api.Realm:
+    """
+    Fetches the realm for a platform.
+    """
+    ekrealms = await ekresource_for_model(api.Realm)
+    if "/" in platform.spec.realm_name:
+        realm_name, realm_namespace = platform.spec.realm_name.split("/", maxsplit = 1)
+    else:
+        realm_name = platform.spec.realm_name
+        realm_namespace = platform.metadata.namespace
+    realm = await ekrealms.fetch(realm_name, namespace = realm_namespace)
+    return api.Realm.model_validate(realm)
+
+
 @model_handler(api.Platform, kopf.on.create, param = "CREATE")
 @model_handler(api.Platform, kopf.on.update, field = "spec", param = "UPDATE")
 @model_handler(api.Platform, kopf.on.resume, param = "RESUME")
@@ -189,13 +203,9 @@ async def reconcile_platform(instance: api.Platform, param, **kwargs):
     if param == "UPDATE":
         instance.status.phase = api.PlatformPhase.UPDATING
         await save_instance_status(instance)
-    # First, get the realm for the platform and wait for it to become ready
-    ekrealms = await ekresource_for_model(api.Realm)
+    # Get the realm for the platform and wait for it to become ready
     try:
-        realm = await ekrealms.fetch(
-            instance.spec.realm_name,
-            namespace = instance.metadata.namespace
-        )
+        realm = await fetch_realm_for_platform(instance)
     except ApiError as exc:
         if exc.status_code == 404:
             raise kopf.TemporaryError(
@@ -204,7 +214,6 @@ async def reconcile_platform(instance: api.Platform, param, **kwargs):
             )
         else:
             raise
-    realm: api.Realm = api.Realm.model_validate(realm)
     if realm.status.phase != api.RealmPhase.READY:
         raise kopf.TemporaryError(
             f"Realm '{instance.spec.realm_name}' is not yet ready",
@@ -309,19 +318,14 @@ async def delete_platform(instance: api.Platform, **kwargs):
         namespace = settings.keycloak.zenith_discovery_namespace
     )
     # Get the realm for the platform
-    ekrealms = await ekresource_for_model(api.Realm)
     try:
-        realm = await ekrealms.fetch(
-            instance.spec.realm_name,
-            namespace = instance.metadata.namespace
-        )
+        realm = await fetch_realm_for_platform(instance)
     except ApiError as exc:
         if exc.status_code == 404:
             # If the realm does not exist, assume all the Keycloak resources are gone
             return
         else:
             raise
-    realm: api.Realm = api.Realm.model_validate(realm)
     realm_name = keycloak.realm_name(realm)
     # Remove the clients for all the services
     await keycloak.prune_platform_service_clients(realm_name, instance, all = True)

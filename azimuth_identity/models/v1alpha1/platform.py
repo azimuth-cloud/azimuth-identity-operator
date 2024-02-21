@@ -23,9 +23,14 @@ class PlatformSpec(schema.BaseModel):
     """
     The spec for an Azimuth identity platform.
     """
-    realm_name: schema.constr(pattern = r"[a-z0-9-]+") = Field(
+    realm_name: schema.constr(pattern = r"^([a-z0-9-]+/)?[a-z0-9-]+$") = Field(
         ...,
-        description = "The name of the realm that the platform belongs to."
+        description = (
+            "The name of the realm that the platform belongs to. "
+            "If the realm is in the same namespace, just the name is required. "
+            "If the realm is in a different namespace, then a fully qualified name "
+            "of the form '<namespace>/<name>' should be used."
+        )
     )
     zenith_services: schema.Dict[str, ZenithServiceSpec] = Field(
         default_factory = dict,
