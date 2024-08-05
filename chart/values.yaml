@@ -18,7 +18,7 @@ config: {}
 
 # The image to use for the operator
 image:
-  repository: ghcr.io/stackhpc/azimuth-identity-operator
+  repository: ghcr.io/azimuth-cloud/azimuth-identity-operator
   pullPolicy: IfNotPresent
   tag: ""  # Defaults to appVersion if not given
 
