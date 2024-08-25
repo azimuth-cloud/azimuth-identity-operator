@@ -27,7 +27,7 @@ class PlatformSpec(schema.BaseModel):
         ...,
         description = "The name of the realm that the platform belongs to."
     )
-    zenith_services: schema.Dict[str, ZenithServiceSpec] = Field(
+    zenith_services: t.Optional[schema.Dict[str, ZenithServiceSpec]] = Field(
         default_factory = dict,
         description = (
             "Map of name to subdomain and FQDN for Zenith services belonging to the platform."
