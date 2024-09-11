@@ -3,9 +3,9 @@ entries:
   azimuth-identity-operator:
   - apiVersion: v2
     appVersion: a844829
-    created: "2024-09-11T09:46:23.425358838Z"
+    created: "2024-09-11T09:46:44.719288976Z"
     description: Helm chart for deploying the Azimuth identity operator.
-    digest: d9c7dff8f62e98d0e6b53a5ff88d6ea1972ce22a240eddeab03bd8c1745d9817
+    digest: 9dd2a911c08faba122007e0f7f5436d694fbe03fbb4c647d62eaaeea96919fcf
     name: azimuth-identity-operator
     type: application
     urls:
@@ -13,7 +13,7 @@ entries:
     version: 0.7.2-dev.0.main.8
   - apiVersion: v2
     appVersion: 2e72dac
-    created: "2024-09-11T09:46:23.424939469Z"
+    created: "2024-09-11T09:46:44.71852371Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: d41cd5a1725bc8223d827df314ad748799efc9ee634c4731253332e628417a26
     name: azimuth-identity-operator
@@ -23,7 +23,7 @@ entries:
     version: 0.7.2-dev.0.main.5
   - apiVersion: v2
     appVersion: f2fde48
-    created: "2024-09-11T09:46:23.42449889Z"
+    created: "2024-09-11T09:46:44.717633317Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: c3a7f203d7b7a22924511e25095e0114443a99deb1c722bf0c3af452580b7efa
     name: azimuth-identity-operator
@@ -33,7 +33,7 @@ entries:
     version: 0.7.2-dev.0.main.3
   - apiVersion: v2
     appVersion: d9d07bc
-    created: "2024-09-11T09:46:23.423690679Z"
+    created: "2024-09-11T09:46:44.717229454Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: c603b24d113eddff4cc07c414567fa6976b947ed51c8a87ba6e9305e4324d874
     name: azimuth-identity-operator
@@ -43,7 +43,7 @@ entries:
     version: 0.7.2-dev.0.main.2
   - apiVersion: v2
     appVersion: cb1e288
-    created: "2024-09-11T09:46:23.422857501Z"
+    created: "2024-09-11T09:46:44.716828375Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 75adafd3baefa4f772ba79f012d71551e7b1fab96b3cf428cf4219c7424c220b
     name: azimuth-identity-operator
@@ -53,7 +53,7 @@ entries:
     version: 0.7.2-dev.0.dependabot-pip-yarl-1-9-8.4
   - apiVersion: v2
     appVersion: "3217129"
-    created: "2024-09-11T09:46:23.422451778Z"
+    created: "2024-09-11T09:46:44.716419211Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: ba3cbf15d8894cbae97317bc874d5f6ff4432133c78fb2c06187ff14d0dae4d0
     name: azimuth-identity-operator
@@ -63,7 +63,7 @@ entries:
     version: 0.7.2-dev.0.dependabot-pip-yarl-1-9-7.3
   - apiVersion: v2
     appVersion: adfebbc
-    created: "2024-09-11T09:46:23.422045293Z"
+    created: "2024-09-11T09:46:44.715986964Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 1f7cc166eaf11a3c58ca21c33aafcaba773548accea9e7da29134143fa076451
     name: azimuth-identity-operator
@@ -73,7 +73,7 @@ entries:
     version: 0.7.2-dev.0.dependabot-pip-yarl-1-9-11.4
   - apiVersion: v2
     appVersion: 4ddc2e5
-    created: "2024-09-11T09:46:23.421594896Z"
+    created: "2024-09-11T09:46:44.71557744Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 97307a8eed683d8f3ad72618c6f559a5142972b38d325d4828ccee1c517f814f
     name: azimuth-identity-operator
@@ -83,7 +83,7 @@ entries:
     version: 0.7.2-dev.0.dependabot-pip-yarl-1-11-0.6
   - apiVersion: v2
     appVersion: 61baa51
-    created: "2024-09-11T09:46:23.421188481Z"
+    created: "2024-09-11T09:46:44.715118092Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: e842111c181b9bcfeeb88357e178f4ec3aaec5d1e9015e40feef47c4c6b7ac7a
     name: azimuth-identity-operator
@@ -93,7 +93,7 @@ entries:
     version: 0.7.2-dev.0.dependabot-pip-pydantic-core-2-23-3.6
   - apiVersion: v2
     appVersion: 0dd6bdf
-    created: "2024-09-11T09:46:23.420779663Z"
+    created: "2024-09-11T09:46:44.714706714Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 3191f7f4e8733aaf6c97666a25528cae69648dd94ee1147fa91b300f05c05fe2
     name: azimuth-identity-operator
@@ -103,7 +103,7 @@ entries:
     version: 0.7.2-dev.0.dependabot-pip-pydantic-core-2-23-2.4
   - apiVersion: v2
     appVersion: d78063e
-    created: "2024-09-11T09:46:23.420371555Z"
+    created: "2024-09-11T09:46:44.714292531Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 12618fe83d2d2e21f07aaa81fc69416f7523ba8616d5747e62397f8b116e46e0
     name: azimuth-identity-operator
@@ -113,7 +113,7 @@ entries:
     version: 0.7.2-dev.0.dependabot-pip-pydantic-core-2-23-1.1
   - apiVersion: v2
     appVersion: 1ea893a
-    created: "2024-09-11T09:46:23.419959941Z"
+    created: "2024-09-11T09:46:44.713875252Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: b8d70e0ae90b2bf58be4774b4f02a7aa5d573da19be6329dc7cd7396253c1745
     name: azimuth-identity-operator
@@ -123,7 +123,7 @@ entries:
     version: 0.7.2-dev.0.dependabot-pip-pydantic-2-9-1.6
   - apiVersion: v2
     appVersion: 341bc12
-    created: "2024-09-11T09:46:23.419546472Z"
+    created: "2024-09-11T09:46:44.713441452Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 9cfb11c2e25a209b1ab4d687ee4060426e1167cdad7b09bda9aca759ab0d7d0d
     name: azimuth-identity-operator
@@ -133,7 +133,7 @@ entries:
     version: 0.7.2-dev.0.dependabot-pip-pydantic-2-9-0.4
   - apiVersion: v2
     appVersion: a86a11c
-    created: "2024-09-11T09:46:23.419120361Z"
+    created: "2024-09-11T09:46:44.712779622Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 07bf85a6caa9360dea1c5bf4b5d0ae2ee530fbee4e760c340636bedc44499944
     name: azimuth-identity-operator
@@ -143,7 +143,7 @@ entries:
     version: 0.7.2-dev.0.dependabot-pip-idna-3-8.6
   - apiVersion: v2
     appVersion: e490ac0
-    created: "2024-09-11T09:46:23.418672238Z"
+    created: "2024-09-11T09:46:44.711796216Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: dc0e10b918615b89b49c7649766507a699f60b5b6f7aa8b003c6c477d169832f
     name: azimuth-identity-operator
@@ -153,7 +153,7 @@ entries:
     version: 0.7.2-dev.0.dependabot-pip-idna-3-8.3
   - apiVersion: v2
     appVersion: 4fda771
-    created: "2024-09-11T09:46:23.417818995Z"
+    created: "2024-09-11T09:46:44.711387623Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: cad1a5cf7a5953e026315f97685511b245849ec7d5ef725fd306fa3df90c000d
     name: azimuth-identity-operator
@@ -163,7 +163,7 @@ entries:
     version: 0.7.2-dev.0.dependabot-pip-idna-3-8.1
   - apiVersion: v2
     appVersion: a4cc72c
-    created: "2024-09-11T09:46:23.416927127Z"
+    created: "2024-09-11T09:46:44.710943074Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 2c71db4c042f10af059efd4327b4314d608322e9ca7ae775c79be0c9d9e4296c
     name: azimuth-identity-operator
@@ -173,7 +173,7 @@ entries:
     version: 0.7.2-dev.0.dependabot-pip-httpx-0-27-2.1
   - apiVersion: v2
     appVersion: 2b908ac
-    created: "2024-09-11T09:46:23.41651922Z"
+    created: "2024-09-11T09:46:44.710536164Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 5b119790790e2259aa82d0cb68a4bfdf7658d1550337f036562a97d00c7d367b
     name: azimuth-identity-operator
@@ -183,7 +183,7 @@ entries:
     version: 0.7.2-dev.0.dependabot-pip-certifi-2024-8-30.1
   - apiVersion: v2
     appVersion: 20d8d5d
-    created: "2024-09-11T09:46:23.416116983Z"
+    created: "2024-09-11T09:46:44.710125808Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 81f45872207ada83567dcff13072749e3f245b3b3687fd20b0ea437b05a484cc
     name: azimuth-identity-operator
@@ -193,7 +193,7 @@ entries:
     version: 0.7.2-dev.0.dependabot-github-actions-github-actions-533f70582a.6
   - apiVersion: v2
     appVersion: b91792a
-    created: "2024-09-11T09:46:23.415709136Z"
+    created: "2024-09-11T09:46:44.709717225Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 096264453e26f1780f06f5c4769dd314c933049f38f8a53018250c34cb5c3d18
     name: azimuth-identity-operator
@@ -203,7 +203,7 @@ entries:
     version: 0.7.1
   - apiVersion: v2
     appVersion: 58a392f
-    created: "2024-09-11T09:46:23.415308131Z"
+    created: "2024-09-11T09:46:44.709316918Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 5cb9734057ce4c953b8815fce019e7801f686e3a3d0464578edfddb8294036e2
     name: azimuth-identity-operator
@@ -213,7 +213,7 @@ entries:
     version: 0.7.1-dev.0.update-dependency-helm.3
   - apiVersion: v2
     appVersion: 2a52e98
-    created: "2024-09-11T09:46:23.414900635Z"
+    created: "2024-09-11T09:46:44.708909297Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: e824da85c4e2323fe552df2da111153cbc291f4b4f5348080a036816a4a672a8
     name: azimuth-identity-operator
@@ -223,7 +223,7 @@ entries:
     version: 0.7.1-dev.0.update-dependency-dex.4
   - apiVersion: v2
     appVersion: ec8c189
-    created: "2024-09-11T09:46:23.41180448Z"
+    created: "2024-09-11T09:46:44.705057898Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: ac5999689c7ad8afb65fc5f9e6e2fceed11b84de3e2bfe0c8c2c21e84e554314
     name: azimuth-identity-operator
@@ -233,7 +233,7 @@ entries:
     version: 0.7.1-dev.0.main.10
   - apiVersion: v2
     appVersion: c426d00
-    created: "2024-09-11T09:46:23.414491896Z"
+    created: "2024-09-11T09:46:44.708493772Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 38f02d7b3fe6b4b019c0fae3768a5b8426b469971ba94b8fad7103796a46f42d
     name: azimuth-identity-operator
@@ -243,7 +243,7 @@ entries:
     version: 0.7.1-dev.0.main.8
   - apiVersion: v2
     appVersion: 08e6784
-    created: "2024-09-11T09:46:23.414082385Z"
+    created: "2024-09-11T09:46:44.708080831Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 4e2ee722ead687b81e302a6b8a196073e43cc66c95e2fd2671a5afa265af639e
     name: azimuth-identity-operator
@@ -253,7 +253,7 @@ entries:
     version: 0.7.1-dev.0.main.7
   - apiVersion: v2
     appVersion: e86537c
-    created: "2024-09-11T09:46:23.413636577Z"
+    created: "2024-09-11T09:46:44.707652582Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 4db7d0ba9841021f086d28dc47fb95b728926d5fabb739418a99ba8507e4336e
     name: azimuth-identity-operator
@@ -263,7 +263,7 @@ entries:
     version: 0.7.1-dev.0.main.6
   - apiVersion: v2
     appVersion: 58b669d
-    created: "2024-09-11T09:46:23.413224481Z"
+    created: "2024-09-11T09:46:44.707203713Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 1c6bfb3491f1e6705916e39d9369ef7ddd7d7c20f9e0b1584f721af6607534f2
     name: azimuth-identity-operator
@@ -273,7 +273,7 @@ entries:
     version: 0.7.1-dev.0.main.5
   - apiVersion: v2
     appVersion: 118ca74
-    created: "2024-09-11T09:46:23.412810643Z"
+    created: "2024-09-11T09:46:44.706321857Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: f97a963ecb32892e32234797b08f6ec3ff9606a5198129140e93512f56bb7180
     name: azimuth-identity-operator
@@ -283,7 +283,7 @@ entries:
     version: 0.7.1-dev.0.main.4
   - apiVersion: v2
     appVersion: 32f30a5
-    created: "2024-09-11T09:46:23.41238941Z"
+    created: "2024-09-11T09:46:44.705467412Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 48f9f1046eeb5e31b7c3c30e72f4779176e29317a18da042f065a0ffb0f3d843
     name: azimuth-identity-operator
@@ -293,7 +293,7 @@ entries:
     version: 0.7.1-dev.0.main.3
   - apiVersion: v2
     appVersion: a6e3031
-    created: "2024-09-11T09:46:23.410983485Z"
+    created: "2024-09-11T09:46:44.70464645Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 9c583823abd4afacdca8bedb0ee47ea6240c738895837dcec662005c730d5310
     name: azimuth-identity-operator
@@ -303,7 +303,7 @@ entries:
     version: 0.7.1-dev.0.dependabot-pip-pyyaml-6-0-2.9
   - apiVersion: v2
     appVersion: 336cc60
-    created: "2024-09-11T09:46:23.410371724Z"
+    created: "2024-09-11T09:46:44.704237146Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 244c300d6ce8dfc1bd6e80e229a34258b0fc3de3a25dd3d3b41499ab178f3227
     name: azimuth-identity-operator
@@ -313,7 +313,7 @@ entries:
     version: 0.7.1-dev.0.dependabot-pip-pyhelm3-0-4-0.5
   - apiVersion: v2
     appVersion: 6e64fac
-    created: "2024-09-11T09:46:23.409961643Z"
+    created: "2024-09-11T09:46:44.703822271Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 33d4ef9a163a34db6b42b26dfc4034a97990682b858b7e6c022dfc3b97c654d1
     name: azimuth-identity-operator
@@ -323,7 +323,7 @@ entries:
     version: 0.7.1-dev.0.dependabot-pip-pydantic-core-2-23-0.11
   - apiVersion: v2
     appVersion: 3c5bf3e
-    created: "2024-09-11T09:46:23.409517197Z"
+    created: "2024-09-11T09:46:44.703408419Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: bbc4036a0725d761760efd27b903ec4fb818d955e537880a7fc8f4f4dd0d1941
     name: azimuth-identity-operator
@@ -333,7 +333,7 @@ entries:
     version: 0.7.1-dev.0.dependabot-pip-kube-custom-resource-0-5-0.6
   - apiVersion: v2
     appVersion: d6ce2ea
-    created: "2024-09-11T09:46:23.409108588Z"
+    created: "2024-09-11T09:46:44.702957978Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 35e4f09b9822b5ff6bd712ed6d9d607ca1cfbf23605ff823c358c47196d34bbf
     name: azimuth-identity-operator
@@ -343,7 +343,7 @@ entries:
     version: 0.7.1-dev.0.dependabot-pip-easykube-0-4-0.8
   - apiVersion: v2
     appVersion: d7d5c25
-    created: "2024-09-11T09:46:23.408692896Z"
+    created: "2024-09-11T09:46:44.702538244Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 11fb9dd211d0ffb3e87aec12a0210c4a15d5bec2dbdf8f3f4e8e2d5033ccd941
     name: azimuth-identity-operator
@@ -353,7 +353,7 @@ entries:
     version: 0.7.1-dev.0.dependabot-pip-configomatic-0-4-0.9
   - apiVersion: v2
     appVersion: f59b634
-    created: "2024-09-11T09:46:23.408287864Z"
+    created: "2024-09-11T09:46:44.702124272Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: bb49654a9798e16ec4a3b40f4e86fa92dedcaeddd1a1c5d7bb40bb675b76777b
     name: azimuth-identity-operator
@@ -363,7 +363,7 @@ entries:
     version: 0.7.1-dev.0.dependabot-pip-configomatic-0-4-0.8
   - apiVersion: v2
     appVersion: c821b37
-    created: "2024-09-11T09:46:23.407879796Z"
+    created: "2024-09-11T09:46:44.701696363Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: dfcf75b559682b6e66e18f6ac4f695141460c850893e691e388f566e2b49d5db
     name: azimuth-identity-operator
@@ -373,7 +373,7 @@ entries:
     version: 0.7.1-dev.0.dependabot-pip-attrs-24-2-0.6
   - apiVersion: v2
     appVersion: eeaf92c
-    created: "2024-09-11T09:46:23.407457682Z"
+    created: "2024-09-11T09:46:44.701242686Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 3176fefa7c603344c6f291f14a1cfd35af3174bc61ffff1b6faa103e29ba1365
     name: azimuth-identity-operator
@@ -383,7 +383,7 @@ entries:
     version: 0.7.1-dev.0.dependabot-pip-aiohttp-3-10-5.12
   - apiVersion: v2
     appVersion: cf5badc
-    created: "2024-09-11T09:46:23.407021792Z"
+    created: "2024-09-11T09:46:44.700301513Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: a068a70723455223d4d6b233cf8e337ea9aad13d8077a4abc66e9a863d714b06
     name: azimuth-identity-operator
@@ -393,7 +393,7 @@ entries:
     version: 0.7.1-dev.0.dependabot-pip-aiohttp-3-10-5.11
   - apiVersion: v2
     appVersion: "7677309"
-    created: "2024-09-11T09:46:23.406605158Z"
+    created: "2024-09-11T09:46:44.699451837Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 94c50d99ada904e18e2166bed2778c0e7aaaa9689a1213a875470451452ed470
     name: azimuth-identity-operator
@@ -403,7 +403,7 @@ entries:
     version: 0.7.1-dev.0.dependabot-pip-aiohttp-3-10-4.9
   - apiVersion: v2
     appVersion: c5ea63c
-    created: "2024-09-11T09:46:23.40617043Z"
+    created: "2024-09-11T09:46:44.699000544Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 59f88ddd8ec19fa87f750f2109a24c564e17e9d98ca48280490948d2ea906292
     name: azimuth-identity-operator
@@ -413,7 +413,7 @@ entries:
     version: 0.6.2-dev.0.update-dependency-helm.5
   - apiVersion: v2
     appVersion: 1d087a3
-    created: "2024-09-11T09:46:23.405368184Z"
+    created: "2024-09-11T09:46:44.698591982Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 7523366946228ff5caca08775c95ac1515cb8df600cc1a0036b508531924e675
     name: azimuth-identity-operator
@@ -423,7 +423,7 @@ entries:
     version: 0.6.2-dev.0.main.7
   - apiVersion: v2
     appVersion: d01705d
-    created: "2024-09-11T09:46:23.404474653Z"
+    created: "2024-09-11T09:46:44.698183199Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: cc772f57288eeb7e04befcaac642206c4d773802a04262ea2666d8523f70f601
     name: azimuth-identity-operator
@@ -433,7 +433,7 @@ entries:
     version: 0.6.2-dev.0.main.5
   - apiVersion: v2
     appVersion: d3be073
-    created: "2024-09-11T09:46:23.404006553Z"
+    created: "2024-09-11T09:46:44.69777144Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 820a9757285c0ae1847d1e7825d6dd397dc2a24ba5942f6d3c4ea747cb92f872
     name: azimuth-identity-operator
@@ -443,7 +443,7 @@ entries:
     version: 0.6.2-dev.0.main.4
   - apiVersion: v2
     appVersion: 4f1d252
-    created: "2024-09-11T09:46:23.403591291Z"
+    created: "2024-09-11T09:46:44.697356776Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 4c4bbcf53c908c24f14d793116d7bfe8bd0de64da90ce9a483595a1d1dfe84fb
     name: azimuth-identity-operator
@@ -453,7 +453,7 @@ entries:
     version: 0.6.2-dev.0.main.3
   - apiVersion: v2
     appVersion: "2061118"
-    created: "2024-09-11T09:46:23.403182342Z"
+    created: "2024-09-11T09:46:44.696954175Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 9fd46693b4007077b1ad4c57c0105d5432be779c2505061372977c0fde4f58d8
     name: azimuth-identity-operator
@@ -463,7 +463,7 @@ entries:
     version: 0.6.2-dev.0.main.1
   - apiVersion: v2
     appVersion: 8dbb4ba
-    created: "2024-09-11T09:46:23.402742344Z"
+    created: "2024-09-11T09:46:44.696542596Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: b4fd461be2e5059f18e88e96c48e966f9388bdc3b3f10ad6744bdbf2da888a75
     name: azimuth-identity-operator
@@ -473,7 +473,7 @@ entries:
     version: 0.6.2-dev.0.dependabot-pip-pyhelm3-0-3-4.8
   - apiVersion: v2
     appVersion: 6588bdf
-    created: "2024-09-11T09:46:23.402322985Z"
+    created: "2024-09-11T09:46:44.696122692Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 1c42db1996c4fdaaea5008b48c9a938a4c8d8924b45e3db8c63e0e73370f6432
     name: azimuth-identity-operator
@@ -483,7 +483,7 @@ entries:
     version: 0.6.2-dev.0.dependabot-pip-pydantic-core-2-20-1.4
   - apiVersion: v2
     appVersion: 0f897d1
-    created: "2024-09-11T09:46:23.401901102Z"
+    created: "2024-09-11T09:46:44.695678053Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: da85eb26715aab0d0e67d9821a7e47f3663bbca8488efda48774b04d5fab85c7
     name: azimuth-identity-operator
@@ -493,7 +493,7 @@ entries:
     version: 0.6.2-dev.0.dependabot-pip-pydantic-core-2-20-1.2
   - apiVersion: v2
     appVersion: cf84a90
-    created: "2024-09-11T09:46:23.401452518Z"
+    created: "2024-09-11T09:46:44.695218515Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 3372135614efd6cf8c4f71af7860cfd4d1b96bff9d39ba478bf69dcecdfac7d5
     name: azimuth-identity-operator
@@ -503,7 +503,7 @@ entries:
     version: 0.6.2-dev.0.dependabot-pip-pydantic-2-8-2.2
   - apiVersion: v2
     appVersion: 47095dc
-    created: "2024-09-11T09:46:23.401044701Z"
+    created: "2024-09-11T09:46:44.69434276Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 0f743e969e903148f07a61691dd74020a44e725fee12012ec5807b62e9e3bf33
     name: azimuth-identity-operator
@@ -513,7 +513,7 @@ entries:
     version: 0.6.2-dev.0.dependabot-pip-pydantic-2-8-0.1
   - apiVersion: v2
     appVersion: 8a583b9
-    created: "2024-09-11T09:46:23.400633036Z"
+    created: "2024-09-11T09:46:44.693466555Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 313240a0341f09159bdcd13c953442d76b214338fbac462128738adb0a263e5b
     name: azimuth-identity-operator
@@ -523,7 +523,7 @@ entries:
     version: 0.6.2-dev.0.dependabot-pip-exceptiongroup-1-2-2.6
   - apiVersion: v2
     appVersion: cd326bb
-    created: "2024-09-11T09:46:23.400210801Z"
+    created: "2024-09-11T09:46:44.693047793Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 2cbebf6a9df4ae99f63d442697fe83c6374c4f148c11dd5cfacbe076c016ef91
     name: azimuth-identity-operator
@@ -533,7 +533,7 @@ entries:
     version: 0.6.2-dev.0.dependabot-pip-configomatic-0-3-1.6
   - apiVersion: v2
     appVersion: cbf9c6e
-    created: "2024-09-11T09:46:23.399774551Z"
+    created: "2024-09-11T09:46:44.692639741Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 6b3e5cd55d46ebfb85a63519a46d0cd19f52040da2458ad2047ba11dd2152737
     name: azimuth-identity-operator
@@ -543,7 +543,7 @@ entries:
     version: 0.6.2-dev.0.dependabot-pip-configomatic-0-3-0.6
   - apiVersion: v2
     appVersion: 09e817a
-    created: "2024-09-11T09:46:23.399049839Z"
+    created: "2024-09-11T09:46:44.692229886Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 5cf34c08e42f7cc4a87fc396e634ba7c3e31e4568e14d2dd3386671ff79b7616
     name: azimuth-identity-operator
@@ -553,7 +553,7 @@ entries:
     version: 0.6.2-dev.0.dependabot-pip-certifi-2024-7-4.2
   - apiVersion: v2
     appVersion: "84788e3"
-    created: "2024-09-11T09:46:23.398116293Z"
+    created: "2024-09-11T09:46:44.691816875Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 442e25e1c31825ebb76c62340497950d4ed09fea7b0446fbe77a96fcbec3bb28
     name: azimuth-identity-operator
@@ -563,7 +563,7 @@ entries:
     version: 0.6.1
   - apiVersion: v2
     appVersion: fc78716
-    created: "2024-09-11T09:46:23.397673019Z"
+    created: "2024-09-11T09:46:44.691405738Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 89211725411e0592b2c0d68f046e8be339e586b69eaff29db171f803acaa58ce
     name: azimuth-identity-operator
@@ -573,7 +573,7 @@ entries:
     version: 0.6.1-dev.0.update-dependency-helm.2
   - apiVersion: v2
     appVersion: ecb5ea6
-    created: "2024-09-11T09:46:23.397237029Z"
+    created: "2024-09-11T09:46:44.690926864Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: ac129abf831f69680bfe610f2d9b82d9838a09509a1831a8f3caa69db548972d
     name: azimuth-identity-operator
@@ -583,7 +583,7 @@ entries:
     version: 0.6.1-dev.0.main.5
   - apiVersion: v2
     appVersion: cb7276e
-    created: "2024-09-11T09:46:23.396800588Z"
+    created: "2024-09-11T09:46:44.690479028Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 835111cb15f18cdee776fc6ffdeb3ad07808148e27d61cf771aa5873f4dcbee2
     name: azimuth-identity-operator
@@ -593,7 +593,7 @@ entries:
     version: 0.6.1-dev.0.main.4
   - apiVersion: v2
     appVersion: 1c394d1
-    created: "2024-09-11T09:46:23.396365129Z"
+    created: "2024-09-11T09:46:44.690037113Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 8c8d700b4a1a25a11dffeb037cb097a638af82a0e2c30916e71826c77a5c354a
     name: azimuth-identity-operator
@@ -603,7 +603,7 @@ entries:
     version: 0.6.1-dev.0.main.3
   - apiVersion: v2
     appVersion: ae5b51d
-    created: "2024-09-11T09:46:23.395925762Z"
+    created: "2024-09-11T09:46:44.689589928Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 237b25c0d3e454a8914ecacbd167aacbb09dbe888d542885efb40f27ca9e4536
     name: azimuth-identity-operator
@@ -613,7 +613,7 @@ entries:
     version: 0.6.1-dev.0.main.1
   - apiVersion: v2
     appVersion: df9268b
-    created: "2024-09-11T09:46:23.395482769Z"
+    created: "2024-09-11T09:46:44.689131733Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 5fc4312441b8d1ca8249bd16558ce21e80183ccaeaa6ca0153bebb5b4a4a25fc
     name: azimuth-identity-operator
@@ -623,7 +623,7 @@ entries:
     version: 0.6.1-dev.0.fix-remove-liveness-probe.6
   - apiVersion: v2
     appVersion: 23dc5c7
-    created: "2024-09-11T09:46:23.395076965Z"
+    created: "2024-09-11T09:46:44.688455226Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 80626fae3671a06bf9f3d8a09817638948d2e0972631486846eb0f8d4892dbae
     name: azimuth-identity-operator
@@ -633,7 +633,7 @@ entries:
     version: 0.6.1-dev.0.fix-null-zenith-services.1
   - apiVersion: v2
     appVersion: 040ec08
-    created: "2024-09-11T09:46:23.394628872Z"
+    created: "2024-09-11T09:46:44.687463155Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: c530cd03e880a65f68556fd0a4471b0c40ea8e1a5f7b138227eafc634e642790
     name: azimuth-identity-operator
@@ -643,7 +643,7 @@ entries:
     version: 0.6.1-dev.0.dependabot-pip-pydantic-core-2-20-0.2
   - apiVersion: v2
     appVersion: b7ec66e
-    created: "2024-09-11T09:46:23.394177022Z"
+    created: "2024-09-11T09:46:44.686980213Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: ad9dad227923c2e8df4d9ef28dcc80376c6d5781b5eac57daf0ac5988bfa3124
     name: azimuth-identity-operator
@@ -653,7 +653,7 @@ entries:
     version: 0.6.1-dev.0.dependabot-pip-pydantic-core-2-19-0.2
   - apiVersion: v2
     appVersion: db9762c
-    created: "2024-09-11T09:46:23.393677633Z"
+    created: "2024-09-11T09:46:44.68653937Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 5736149ee1509876255e1ce7819e32ae668bd22919b73f8e8b1640014158fe8d
     name: azimuth-identity-operator
@@ -663,7 +663,7 @@ entries:
     version: 0.6.1-dev.0.dependabot-pip-pydantic-2-7-4.4
   - apiVersion: v2
     appVersion: 2afce33
-    created: "2024-09-11T09:46:23.392949974Z"
+    created: "2024-09-11T09:46:44.686094089Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 228c3efc07663ddbacd171a56b0fcbc6de3355015bc0f69550ee1b414d7c14be
     name: azimuth-identity-operator
@@ -673,7 +673,7 @@ entries:
     version: 0.6.1-dev.0.dependabot-pip-kube-custom-resource-0-4-0.6
   - apiVersion: v2
     appVersion: 3b9f2db
-    created: "2024-09-11T09:46:23.391880562Z"
+    created: "2024-09-11T09:46:44.685649018Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 0f4b262608dd767be782efed9e419afae0d8d0f3bc318aa14bcd24a12cc72751
     name: azimuth-identity-operator
@@ -683,7 +683,7 @@ entries:
     version: 0.6.1-dev.0.dependabot-pip-kube-custom-resource-0-4-0.4
   - apiVersion: v2
     appVersion: 2e5efb5
-    created: "2024-09-11T09:46:23.39143293Z"
+    created: "2024-09-11T09:46:44.68519457Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 958be69b5c69a56e411be3223b87d5b50871378b13182b523ac36b69a0eae827
     name: azimuth-identity-operator
@@ -693,7 +693,7 @@ entries:
     version: 0.6.1-dev.0.dependabot-pip-easykube-0-3-3.4
   - apiVersion: v2
     appVersion: 75cbae2
-    created: "2024-09-11T09:46:23.390985358Z"
+    created: "2024-09-11T09:46:44.684741975Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 8e1524a673cd597568992f95f8ad2faf67bac8ca1032dc6dda37240916f452af
     name: azimuth-identity-operator
@@ -703,7 +703,7 @@ entries:
     version: 0.6.0
   - apiVersion: v2
     appVersion: cd2ae78
-    created: "2024-09-11T09:46:23.390530292Z"
+    created: "2024-09-11T09:46:44.684283309Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -719,7 +719,7 @@ entries:
     version: 0.5.8-dev.0.update-dependency-kube-state-metrics.1
   - apiVersion: v2
     appVersion: 02115bc
-    created: "2024-09-11T09:46:23.388738561Z"
+    created: "2024-09-11T09:46:44.682379806Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -735,7 +735,7 @@ entries:
     version: 0.5.8-dev.0.main.2
   - apiVersion: v2
     appVersion: a04d911
-    created: "2024-09-11T09:46:23.386991464Z"
+    created: "2024-09-11T09:46:44.679642419Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 036737fceb9b09f9a489399b1acd2c0059f47ad0265070e23df6b2fcd17ba681
     name: azimuth-identity-operator
@@ -745,7 +745,7 @@ entries:
     version: 0.5.8-dev.0.feat-replace-ksm.1
   - apiVersion: v2
     appVersion: db004f8
-    created: "2024-09-11T09:46:23.386526139Z"
+    created: "2024-09-11T09:46:44.679183342Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -761,7 +761,7 @@ entries:
     version: 0.5.8-dev.0.feat-generate-crds.3
   - apiVersion: v2
     appVersion: d0bfef2
-    created: "2024-09-11T09:46:23.384433507Z"
+    created: "2024-09-11T09:46:44.677357183Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -777,7 +777,7 @@ entries:
     version: 0.5.8-dev.0.feat-generate-crds.2
   - apiVersion: v2
     appVersion: 9ccca09
-    created: "2024-09-11T09:46:23.381921531Z"
+    created: "2024-09-11T09:46:44.675522539Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -793,7 +793,7 @@ entries:
     version: 0.5.8-dev.0.feat-generate-crds.1
   - apiVersion: v2
     appVersion: d766806
-    created: "2024-09-11T09:46:23.380107469Z"
+    created: "2024-09-11T09:46:44.673652839Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -809,7 +809,7 @@ entries:
     version: 0.5.8-dev.0.dependabot-pip-typing-extensions-4-12-2.1
   - apiVersion: v2
     appVersion: 03f0826
-    created: "2024-09-11T09:46:23.378356956Z"
+    created: "2024-09-11T09:46:44.670996306Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -825,7 +825,7 @@ entries:
     version: 0.5.8-dev.0.dependabot-pip-pyhelm3-0-3-2.1
   - apiVersion: v2
     appVersion: 6a81733
-    created: "2024-09-11T09:46:23.376539496Z"
+    created: "2024-09-11T09:46:44.669295671Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -841,7 +841,7 @@ entries:
     version: 0.5.8-dev.0.dependabot-pip-pydantic-core-2-18-4.1
   - apiVersion: v2
     appVersion: ac2e20e
-    created: "2024-09-11T09:46:23.374309836Z"
+    created: "2024-09-11T09:46:44.667534003Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -857,7 +857,7 @@ entries:
     version: 0.5.8-dev.0.dependabot-pip-pydantic-2-7-3.1
   - apiVersion: v2
     appVersion: "4526824"
-    created: "2024-09-11T09:46:23.372016361Z"
+    created: "2024-09-11T09:46:44.665725176Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -873,7 +873,7 @@ entries:
     version: 0.5.8-dev.0.dependabot-pip-kube-custom-resource-0-4-0.1
   - apiVersion: v2
     appVersion: 553540d
-    created: "2024-09-11T09:46:23.370252594Z"
+    created: "2024-09-11T09:46:44.662993982Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -889,7 +889,7 @@ entries:
     version: 0.5.7
   - apiVersion: v2
     appVersion: "04555e5"
-    created: "2024-09-11T09:46:23.368465993Z"
+    created: "2024-09-11T09:46:44.661267509Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -905,7 +905,7 @@ entries:
     version: 0.5.7-dev.0.update-dependency-helm.4
   - apiVersion: v2
     appVersion: 38e200d
-    created: "2024-09-11T09:46:23.366515022Z"
+    created: "2024-09-11T09:46:44.659568036Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -921,7 +921,7 @@ entries:
     version: 0.5.7-dev.0.update-dependency-helm.1
   - apiVersion: v2
     appVersion: 33bbb86
-    created: "2024-09-11T09:46:23.363606704Z"
+    created: "2024-09-11T09:46:44.657821476Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -937,7 +937,7 @@ entries:
     version: 0.5.7-dev.0.update-dependency-dex.17
   - apiVersion: v2
     appVersion: 4fa04ec
-    created: "2024-09-11T09:46:23.350363679Z"
+    created: "2024-09-11T09:46:44.643527205Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -953,7 +953,7 @@ entries:
     version: 0.5.7-dev.0.main.18
   - apiVersion: v2
     appVersion: ec55e79
-    created: "2024-09-11T09:46:23.34854087Z"
+    created: "2024-09-11T09:46:44.641755929Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -969,7 +969,7 @@ entries:
     version: 0.5.7-dev.0.main.16
   - apiVersion: v2
     appVersion: f9508ad
-    created: "2024-09-11T09:46:23.346464847Z"
+    created: "2024-09-11T09:46:44.63999399Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -985,7 +985,7 @@ entries:
     version: 0.5.7-dev.0.main.15
   - apiVersion: v2
     appVersion: e9b31a6
-    created: "2024-09-11T09:46:23.344010129Z"
+    created: "2024-09-11T09:46:44.637226031Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1001,7 +1001,7 @@ entries:
     version: 0.5.7-dev.0.main.10
   - apiVersion: v2
     appVersion: 85ce18a
-    created: "2024-09-11T09:46:23.361841583Z"
+    created: "2024-09-11T09:46:44.656050871Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1017,7 +1017,7 @@ entries:
     version: 0.5.7-dev.0.main.9
   - apiVersion: v2
     appVersion: 4a9a749
-    created: "2024-09-11T09:46:23.360103132Z"
+    created: "2024-09-11T09:46:44.653138946Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1033,7 +1033,7 @@ entries:
     version: 0.5.7-dev.0.main.8
   - apiVersion: v2
     appVersion: 9c59f49
-    created: "2024-09-11T09:46:23.358397814Z"
+    created: "2024-09-11T09:46:44.651438061Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1049,7 +1049,7 @@ entries:
     version: 0.5.7-dev.0.main.7
   - apiVersion: v2
     appVersion: 945c8f6
-    created: "2024-09-11T09:46:23.356612596Z"
+    created: "2024-09-11T09:46:44.649694686Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1065,7 +1065,7 @@ entries:
     version: 0.5.7-dev.0.main.4
   - apiVersion: v2
     appVersion: 1e51446
-    created: "2024-09-11T09:46:23.354007455Z"
+    created: "2024-09-11T09:46:44.647920054Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1081,7 +1081,7 @@ entries:
     version: 0.5.7-dev.0.main.3
   - apiVersion: v2
     appVersion: a5890ce
-    created: "2024-09-11T09:46:23.352259436Z"
+    created: "2024-09-11T09:46:44.645232929Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1097,7 +1097,7 @@ entries:
     version: 0.5.7-dev.0.main.2
   - apiVersion: v2
     appVersion: 52322c3
-    created: "2024-09-11T09:46:23.342298048Z"
+    created: "2024-09-11T09:46:44.635384724Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1113,7 +1113,7 @@ entries:
     version: 0.5.7-dev.0.feat-fix-profile.15
   - apiVersion: v2
     appVersion: 98c9007
-    created: "2024-09-11T09:46:23.340520844Z"
+    created: "2024-09-11T09:46:44.63360396Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1129,7 +1129,7 @@ entries:
     version: 0.5.7-dev.0.feat-fix-profile.14
   - apiVersion: v2
     appVersion: "0011792"
-    created: "2024-09-11T09:46:23.338715518Z"
+    created: "2024-09-11T09:46:44.631837612Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1145,7 +1145,7 @@ entries:
     version: 0.5.7-dev.0.feat-fix-profile.13
   - apiVersion: v2
     appVersion: 38f9824
-    created: "2024-09-11T09:46:23.335871756Z"
+    created: "2024-09-11T09:46:44.63002042Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1161,7 +1161,7 @@ entries:
     version: 0.5.7-dev.0.dependabot-pip-typing-extensions-4-12-1.13
   - apiVersion: v2
     appVersion: "9443166"
-    created: "2024-09-11T09:46:23.33410926Z"
+    created: "2024-09-11T09:46:44.627325091Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1177,7 +1177,7 @@ entries:
     version: 0.5.7-dev.0.dependabot-pip-typing-extensions-4-12-0.5
   - apiVersion: v2
     appVersion: 5035e8b
-    created: "2024-09-11T09:46:23.332370039Z"
+    created: "2024-09-11T09:46:44.625567019Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1193,7 +1193,7 @@ entries:
     version: 0.5.7-dev.0.dependabot-pip-pyhelm3-0-3-3.13
   - apiVersion: v2
     appVersion: 672697d
-    created: "2024-09-11T09:46:23.330617221Z"
+    created: "2024-09-11T09:46:44.623776607Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1209,7 +1209,7 @@ entries:
     version: 0.5.7-dev.0.dependabot-pip-pyhelm3-0-3-1.5
   - apiVersion: v2
     appVersion: c7978a7
-    created: "2024-09-11T09:46:23.32880922Z"
+    created: "2024-09-11T09:46:44.622006092Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1225,7 +1225,7 @@ entries:
     version: 0.5.7-dev.0.dependabot-pip-pyhelm3-0-3-0.1
   - apiVersion: v2
     appVersion: e546794
-    created: "2024-09-11T09:46:23.326113139Z"
+    created: "2024-09-11T09:46:44.619418129Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1241,7 +1241,7 @@ entries:
     version: 0.5.7-dev.0.dependabot-pip-pydantic-core-2-18-3.9
   - apiVersion: v2
     appVersion: 9c25203
-    created: "2024-09-11T09:46:23.324352818Z"
+    created: "2024-09-11T09:46:44.617680405Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1257,7 +1257,7 @@ entries:
     version: 0.5.7-dev.0.dependabot-pip-pydantic-core-2-18-3.8
   - apiVersion: v2
     appVersion: c9385be
-    created: "2024-09-11T09:46:23.322648031Z"
+    created: "2024-09-11T09:46:44.615962449Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1273,7 +1273,7 @@ entries:
     version: 0.5.7-dev.0.dependabot-pip-pydantic-2-7-3.19
   - apiVersion: v2
     appVersion: "1823693"
-    created: "2024-09-11T09:46:23.320831844Z"
+    created: "2024-09-11T09:46:44.614063223Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1289,7 +1289,7 @@ entries:
     version: 0.5.7-dev.0.dependabot-pip-pydantic-2-7-2.8
   - apiVersion: v2
     appVersion: 0ff21c0
-    created: "2024-09-11T09:46:23.318105503Z"
+    created: "2024-09-11T09:46:44.611458538Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1305,7 +1305,7 @@ entries:
     version: 0.5.7-dev.0.dependabot-pip-easykube-0-3-2.5
   - apiVersion: v2
     appVersion: 5f8eb1b
-    created: "2024-09-11T09:46:23.316337446Z"
+    created: "2024-09-11T09:46:44.609720844Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1321,7 +1321,7 @@ entries:
     version: 0.5.7-dev.0.dependabot-pip-certifi-2024-6-2.13
   - apiVersion: v2
     appVersion: c474c54
-    created: "2024-09-11T09:46:23.312736662Z"
+    created: "2024-09-11T09:46:44.606215741Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1337,7 +1337,7 @@ entries:
     version: 0.5.7-dev.0.dependabot-pip-anyio-4-4-0.10
   - apiVersion: v2
     appVersion: 9b3d43e
-    created: "2024-09-11T09:46:23.314543331Z"
+    created: "2024-09-11T09:46:44.607969786Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1353,7 +1353,7 @@ entries:
     version: 0.5.7-dev.0.dependabot-pip-anyio-4-4-0.5
   - apiVersion: v2
     appVersion: f418820
-    created: "2024-09-11T09:46:23.311003582Z"
+    created: "2024-09-11T09:46:44.604444846Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1369,7 +1369,7 @@ entries:
     version: 0.5.7-dev.0.dependabot-pip-annotated-types-0-7-0.3
   - apiVersion: v2
     appVersion: "8747707"
-    created: "2024-09-11T09:46:23.308112786Z"
+    created: "2024-09-11T09:46:44.601747716Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1385,7 +1385,7 @@ entries:
     version: 0.5.6
   - apiVersion: v2
     appVersion: "8747707"
-    created: "2024-09-11T09:46:23.306384915Z"
+    created: "2024-09-11T09:46:44.600054576Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1401,7 +1401,7 @@ entries:
     version: 0.5.6-dev.0.main.1
   - apiVersion: v2
     appVersion: 773ac75
-    created: "2024-09-11T09:46:23.304636265Z"
+    created: "2024-09-11T09:46:44.598304449Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1417,7 +1417,7 @@ entries:
     version: 0.5.6-dev.0.dependabot-pip-easykube-0-3-1.1
   - apiVersion: v2
     appVersion: 3e0f89e
-    created: "2024-09-11T09:46:23.302891843Z"
+    created: "2024-09-11T09:46:44.596585119Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1433,7 +1433,7 @@ entries:
     version: 0.5.5
   - apiVersion: v2
     appVersion: a46ddf6
-    created: "2024-09-11T09:46:23.300130426Z"
+    created: "2024-09-11T09:46:44.593953335Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1449,7 +1449,7 @@ entries:
     version: 0.5.5-dev.0.update-dependency-kube-state-metrics.8
   - apiVersion: v2
     appVersion: e397439
-    created: "2024-09-11T09:46:23.29842073Z"
+    created: "2024-09-11T09:46:44.592240357Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1465,7 +1465,7 @@ entries:
     version: 0.5.5-dev.0.update-dependency-helm.3
   - apiVersion: v2
     appVersion: "5277699"
-    created: "2024-09-11T09:46:23.296618048Z"
+    created: "2024-09-11T09:46:44.590488357Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1481,7 +1481,7 @@ entries:
     version: 0.5.5-dev.0.update-dependency-dex.2
   - apiVersion: v2
     appVersion: 3e0f89e
-    created: "2024-09-11T09:46:23.280950834Z"
+    created: "2024-09-11T09:46:44.575054456Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1497,7 +1497,7 @@ entries:
     version: 0.5.5-dev.0.main.11
   - apiVersion: v2
     appVersion: 3ae39c5
-    created: "2024-09-11T09:46:23.279249453Z"
+    created: "2024-09-11T09:46:44.573341919Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1513,7 +1513,7 @@ entries:
     version: 0.5.5-dev.0.main.10
   - apiVersion: v2
     appVersion: 3e9885e
-    created: "2024-09-11T09:46:23.294915385Z"
+    created: "2024-09-11T09:46:44.588772644Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1529,7 +1529,7 @@ entries:
     version: 0.5.5-dev.0.main.9
   - apiVersion: v2
     appVersion: 88a8869
-    created: "2024-09-11T09:46:23.293077508Z"
+    created: "2024-09-11T09:46:44.586143827Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1545,7 +1545,7 @@ entries:
     version: 0.5.5-dev.0.main.7
   - apiVersion: v2
     appVersion: ab0d09e
-    created: "2024-09-11T09:46:23.290362732Z"
+    created: "2024-09-11T09:46:44.584417114Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1561,7 +1561,7 @@ entries:
     version: 0.5.5-dev.0.main.6
   - apiVersion: v2
     appVersion: f49d16e
-    created: "2024-09-11T09:46:23.288652415Z"
+    created: "2024-09-11T09:46:44.582692665Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1577,7 +1577,7 @@ entries:
     version: 0.5.5-dev.0.main.5
   - apiVersion: v2
     appVersion: 6f91191
-    created: "2024-09-11T09:46:23.286940655Z"
+    created: "2024-09-11T09:46:44.58100278Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1593,7 +1593,7 @@ entries:
     version: 0.5.5-dev.0.main.4
   - apiVersion: v2
     appVersion: 55fb62c
-    created: "2024-09-11T09:46:23.285173951Z"
+    created: "2024-09-11T09:46:44.579280004Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1609,7 +1609,7 @@ entries:
     version: 0.5.5-dev.0.main.3
   - apiVersion: v2
     appVersion: 4507eac
-    created: "2024-09-11T09:46:23.282667163Z"
+    created: "2024-09-11T09:46:44.577000449Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1625,7 +1625,7 @@ entries:
     version: 0.5.5-dev.0.main.2
   - apiVersion: v2
     appVersion: ca0ed30
-    created: "2024-09-11T09:46:23.277498479Z"
+    created: "2024-09-11T09:46:44.571601601Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1641,7 +1641,7 @@ entries:
     version: 0.5.5-dev.0.main.1
   - apiVersion: v2
     appVersion: da2fe3f
-    created: "2024-09-11T09:46:23.275734841Z"
+    created: "2024-09-11T09:46:44.569503545Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1657,7 +1657,7 @@ entries:
     version: 0.5.5-dev.0.dependabot-pip-pydantic-core-2-18-2.10
   - apiVersion: v2
     appVersion: 0b227a3
-    created: "2024-09-11T09:46:23.273104678Z"
+    created: "2024-09-11T09:46:44.566756778Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1673,7 +1673,7 @@ entries:
     version: 0.5.5-dev.0.dependabot-pip-pydantic-core-2-18-1.5
   - apiVersion: v2
     appVersion: c7a91d5
-    created: "2024-09-11T09:46:23.271426821Z"
+    created: "2024-09-11T09:46:44.564919718Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1689,7 +1689,7 @@ entries:
     version: 0.5.5-dev.0.dependabot-pip-pydantic-2-7-1.11
   - apiVersion: v2
     appVersion: b9a552e
-    created: "2024-09-11T09:46:23.269696566Z"
+    created: "2024-09-11T09:46:44.563206731Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1705,7 +1705,7 @@ entries:
     version: 0.5.5-dev.0.dependabot-pip-pydantic-2-7-0.7
   - apiVersion: v2
     appVersion: 67b297d
-    created: "2024-09-11T09:46:23.26799193Z"
+    created: "2024-09-11T09:46:44.561482633Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1721,7 +1721,7 @@ entries:
     version: 0.5.5-dev.0.dependabot-pip-pydantic-2-7-0.5
   - apiVersion: v2
     appVersion: dfc4166
-    created: "2024-09-11T09:46:23.265582787Z"
+    created: "2024-09-11T09:46:44.559768122Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1737,7 +1737,7 @@ entries:
     version: 0.5.5-dev.0.dependabot-pip-kopf-1-37-2.1
   - apiVersion: v2
     appVersion: 8479ff1
-    created: "2024-09-11T09:46:23.263540545Z"
+    created: "2024-09-11T09:46:44.557086186Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1753,7 +1753,7 @@ entries:
     version: 0.5.5-dev.0.dependabot-pip-idna-3-7.4
   - apiVersion: v2
     appVersion: e55b207
-    created: "2024-09-11T09:46:23.261851117Z"
+    created: "2024-09-11T09:46:44.555383949Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1769,7 +1769,7 @@ entries:
     version: 0.5.5-dev.0.dependabot-pip-exceptiongroup-1-2-1.8
   - apiVersion: v2
     appVersion: c8e5bc2
-    created: "2024-09-11T09:46:23.260144246Z"
+    created: "2024-09-11T09:46:44.553657386Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1785,7 +1785,7 @@ entries:
     version: 0.5.5-dev.0.dependabot-pip-aiohttp-3-9-5.7
   - apiVersion: v2
     appVersion: 779ebf7
-    created: "2024-09-11T09:46:23.258453094Z"
+    created: "2024-09-11T09:46:44.551899434Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1801,7 +1801,7 @@ entries:
     version: 0.5.5-dev.0.dependabot-pip-aiohttp-3-9-4.5
   - apiVersion: v2
     appVersion: 3c74b94
-    created: "2024-09-11T09:46:23.256695448Z"
+    created: "2024-09-11T09:46:44.549168302Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1817,7 +1817,7 @@ entries:
     version: 0.5.4
   - apiVersion: v2
     appVersion: 604f0f3
-    created: "2024-09-11T09:46:23.25400425Z"
+    created: "2024-09-11T09:46:44.547481614Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1833,7 +1833,7 @@ entries:
     version: 0.5.4-dev.0.use-upstream-dex.2
   - apiVersion: v2
     appVersion: 87d91c6
-    created: "2024-09-11T09:46:23.252286278Z"
+    created: "2024-09-11T09:46:44.545740774Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1849,7 +1849,7 @@ entries:
     version: 0.5.4-dev.0.update-dependency-kube-state-metrics.1
   - apiVersion: v2
     appVersion: 3c74b94
-    created: "2024-09-11T09:46:23.2505652Z"
+    created: "2024-09-11T09:46:44.544004553Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1865,7 +1865,7 @@ entries:
     version: 0.5.4-dev.0.main.4
   - apiVersion: v2
     appVersion: 562df60
-    created: "2024-09-11T09:46:23.248716171Z"
+    created: "2024-09-11T09:46:44.542241281Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1881,7 +1881,7 @@ entries:
     version: 0.5.4-dev.0.main.3
   - apiVersion: v2
     appVersion: 97818ad
-    created: "2024-09-11T09:46:23.24599663Z"
+    created: "2024-09-11T09:46:44.539670736Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1897,7 +1897,7 @@ entries:
     version: 0.5.4-dev.0.main.1
   - apiVersion: v2
     appVersion: 36f654a
-    created: "2024-09-11T09:46:23.244278297Z"
+    created: "2024-09-11T09:46:44.537957078Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1913,7 +1913,7 @@ entries:
     version: 0.5.4-dev.0.dependabot-pip-typing-extensions-4-11-0.2
   - apiVersion: v2
     appVersion: c9d3fc4
-    created: "2024-09-11T09:46:23.242586204Z"
+    created: "2024-09-11T09:46:44.536254038Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1929,7 +1929,7 @@ entries:
     version: 0.5.4-dev.0.dependabot-pip-easykube-0-3-0.2
   - apiVersion: v2
     appVersion: b895b12
-    created: "2024-09-11T09:46:23.240845339Z"
+    created: "2024-09-11T09:46:44.534462624Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1945,7 +1945,7 @@ entries:
     version: 0.5.3
   - apiVersion: v2
     appVersion: b895b12
-    created: "2024-09-11T09:46:23.239109844Z"
+    created: "2024-09-11T09:46:44.532014264Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1961,7 +1961,7 @@ entries:
     version: 0.5.3-dev.0.main.2
   - apiVersion: v2
     appVersion: "16442e8"
-    created: "2024-09-11T09:46:23.236400031Z"
+    created: "2024-09-11T09:46:44.530264598Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1977,7 +1977,7 @@ entries:
     version: 0.5.3-dev.0.main.1
   - apiVersion: v2
     appVersion: 66b8e5b
-    created: "2024-09-11T09:46:23.234678412Z"
+    created: "2024-09-11T09:46:44.528555398Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -1993,7 +1993,7 @@ entries:
     version: 0.5.3-dev.0.dependabot-pip-httpcore-1-0-5.2
   - apiVersion: v2
     appVersion: ab81be2
-    created: "2024-09-11T09:46:23.232924723Z"
+    created: "2024-09-11T09:46:44.526783661Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2009,7 +2009,7 @@ entries:
     version: 0.5.3-dev.0.dependabot-pip-easykube-0-2-0.1
   - apiVersion: v2
     appVersion: edf7c28
-    created: "2024-09-11T09:46:23.231102505Z"
+    created: "2024-09-11T09:46:44.524974553Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2025,7 +2025,7 @@ entries:
     version: 0.5.2
   - apiVersion: v2
     appVersion: "5935426"
-    created: "2024-09-11T09:46:23.228433696Z"
+    created: "2024-09-11T09:46:44.521748321Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2041,7 +2041,7 @@ entries:
     version: 0.5.2-dev.0.update-dependency-kube-state-metrics.9
   - apiVersion: v2
     appVersion: eb1ee62
-    created: "2024-09-11T09:46:23.226740871Z"
+    created: "2024-09-11T09:46:44.520052675Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2057,7 +2057,7 @@ entries:
     version: 0.5.2-dev.0.update-dependency-kube-state-metrics.7
   - apiVersion: v2
     appVersion: dd1a9f2
-    created: "2024-09-11T09:46:23.22494357Z"
+    created: "2024-09-11T09:46:44.518325Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2073,7 +2073,7 @@ entries:
     version: 0.5.2-dev.0.update-dependency-kube-state-metrics.6
   - apiVersion: v2
     appVersion: 5a01fa2
-    created: "2024-09-11T09:46:23.223235807Z"
+    created: "2024-09-11T09:46:44.516615109Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2089,7 +2089,7 @@ entries:
     version: 0.5.2-dev.0.update-dependency-kube-state-metrics.2
   - apiVersion: v2
     appVersion: dbcdcd4
-    created: "2024-09-11T09:46:23.221347565Z"
+    created: "2024-09-11T09:46:44.514849874Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2105,7 +2105,7 @@ entries:
     version: 0.5.2-dev.0.update-dependency-kube-state-metrics.1
   - apiVersion: v2
     appVersion: c767f9e
-    created: "2024-09-11T09:46:23.218617738Z"
+    created: "2024-09-11T09:46:44.512000886Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2121,7 +2121,7 @@ entries:
     version: 0.5.2-dev.0.update-dependency-helm.5
   - apiVersion: v2
     appVersion: f99903f
-    created: "2024-09-11T09:46:23.216866463Z"
+    created: "2024-09-11T09:46:44.510259115Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2137,7 +2137,7 @@ entries:
     version: 0.5.2-dev.0.update-dependency-dex.8
   - apiVersion: v2
     appVersion: b6c8843
-    created: "2024-09-11T09:46:23.215129284Z"
+    created: "2024-09-11T09:46:44.50855271Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2153,7 +2153,7 @@ entries:
     version: 0.5.2-dev.0.update-dependency-dex.7
   - apiVersion: v2
     appVersion: edf7c28
-    created: "2024-09-11T09:46:23.213254127Z"
+    created: "2024-09-11T09:46:44.506741629Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2169,7 +2169,7 @@ entries:
     version: 0.5.2-dev.0.main.9
   - apiVersion: v2
     appVersion: b600a61
-    created: "2024-09-11T09:46:23.210333895Z"
+    created: "2024-09-11T09:46:44.504510464Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2185,7 +2185,7 @@ entries:
     version: 0.5.2-dev.0.main.8
   - apiVersion: v2
     appVersion: e6d1819
-    created: "2024-09-11T09:46:23.208538828Z"
+    created: "2024-09-11T09:46:44.502509559Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2201,7 +2201,7 @@ entries:
     version: 0.5.2-dev.0.main.7
   - apiVersion: v2
     appVersion: "0469e33"
-    created: "2024-09-11T09:46:23.206845062Z"
+    created: "2024-09-11T09:46:44.500813242Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2217,7 +2217,7 @@ entries:
     version: 0.5.2-dev.0.main.6
   - apiVersion: v2
     appVersion: "1448531"
-    created: "2024-09-11T09:46:23.205078729Z"
+    created: "2024-09-11T09:46:44.499069818Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2233,7 +2233,7 @@ entries:
     version: 0.5.2-dev.0.main.5
   - apiVersion: v2
     appVersion: bc162d4
-    created: "2024-09-11T09:46:23.20335713Z"
+    created: "2024-09-11T09:46:44.497336653Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2249,7 +2249,7 @@ entries:
     version: 0.5.2-dev.0.main.4
   - apiVersion: v2
     appVersion: 32323c0
-    created: "2024-09-11T09:46:23.200664898Z"
+    created: "2024-09-11T09:46:44.49459237Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2265,7 +2265,7 @@ entries:
     version: 0.5.2-dev.0.main.3
   - apiVersion: v2
     appVersion: 5ecae41
-    created: "2024-09-11T09:46:23.198975479Z"
+    created: "2024-09-11T09:46:44.492882328Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2281,7 +2281,7 @@ entries:
     version: 0.5.2-dev.0.main.2
   - apiVersion: v2
     appVersion: fe64492
-    created: "2024-09-11T09:46:23.197233492Z"
+    created: "2024-09-11T09:46:44.491167076Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2297,7 +2297,7 @@ entries:
     version: 0.5.2-dev.0.main.1
   - apiVersion: v2
     appVersion: c72883a
-    created: "2024-09-11T09:46:23.195486907Z"
+    created: "2024-09-11T09:46:44.489434291Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2313,7 +2313,7 @@ entries:
     version: 0.5.2-dev.0.dependabot-pip-pydantic-core-2-17-0.7
   - apiVersion: v2
     appVersion: 41f9ce1
-    created: "2024-09-11T09:46:23.193036902Z"
+    created: "2024-09-11T09:46:44.487703821Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2329,7 +2329,7 @@ entries:
     version: 0.5.2-dev.0.dependabot-pip-pydantic-2-6-4.4
   - apiVersion: v2
     appVersion: bf70ac0
-    created: "2024-09-11T09:46:23.19119896Z"
+    created: "2024-09-11T09:46:44.484941675Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2345,7 +2345,7 @@ entries:
     version: 0.5.2-dev.0.dependabot-pip-kube-custom-resource-0-3-0.7
   - apiVersion: v2
     appVersion: 4aa5049
-    created: "2024-09-11T09:46:23.189437516Z"
+    created: "2024-09-11T09:46:44.483195134Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2361,7 +2361,7 @@ entries:
     version: 0.5.1
   - apiVersion: v2
     appVersion: 44e9162
-    created: "2024-09-11T09:46:23.187734572Z"
+    created: "2024-09-11T09:46:44.48147875Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2377,7 +2377,7 @@ entries:
     version: 0.5.1-dev.0.update-dependency-kube-state-metrics.8
   - apiVersion: v2
     appVersion: 383de11
-    created: "2024-09-11T09:46:23.1846017Z"
+    created: "2024-09-11T09:46:44.479759581Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2393,7 +2393,7 @@ entries:
     version: 0.5.1-dev.0.update-dependency-kube-state-metrics.7
   - apiVersion: v2
     appVersion: ab3eff6
-    created: "2024-09-11T09:46:23.182668544Z"
+    created: "2024-09-11T09:46:44.477340375Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2409,7 +2409,7 @@ entries:
     version: 0.5.1-dev.0.update-dependency-kube-state-metrics.1
   - apiVersion: v2
     appVersion: fa40d5c
-    created: "2024-09-11T09:46:23.180939641Z"
+    created: "2024-09-11T09:46:44.474882197Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2425,7 +2425,7 @@ entries:
     version: 0.5.1-dev.0.update-dependency-helm.5
   - apiVersion: v2
     appVersion: 80124ca
-    created: "2024-09-11T09:46:23.179260251Z"
+    created: "2024-09-11T09:46:44.473143321Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2441,7 +2441,7 @@ entries:
     version: 0.5.1-dev.0.update-dependency-helm.1
   - apiVersion: v2
     appVersion: d354336
-    created: "2024-09-11T09:46:23.163631865Z"
+    created: "2024-09-11T09:46:44.449432951Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2457,7 +2457,7 @@ entries:
     version: 0.5.1-dev.0.main.10
   - apiVersion: v2
     appVersion: 3b56349
-    created: "2024-09-11T09:46:23.177528353Z"
+    created: "2024-09-11T09:46:44.47144984Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2473,7 +2473,7 @@ entries:
     version: 0.5.1-dev.0.main.8
   - apiVersion: v2
     appVersion: 53d0485
-    created: "2024-09-11T09:46:23.175792057Z"
+    created: "2024-09-11T09:46:44.469701436Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2489,7 +2489,7 @@ entries:
     version: 0.5.1-dev.0.main.7
   - apiVersion: v2
     appVersion: 3bbe47f
-    created: "2024-09-11T09:46:23.173042554Z"
+    created: "2024-09-11T09:46:44.467858787Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2505,7 +2505,7 @@ entries:
     version: 0.5.1-dev.0.main.6
   - apiVersion: v2
     appVersion: 2cba063
-    created: "2024-09-11T09:46:23.171356733Z"
+    created: "2024-09-11T09:46:44.463616357Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2521,7 +2521,7 @@ entries:
     version: 0.5.1-dev.0.main.5
   - apiVersion: v2
     appVersion: bee4394
-    created: "2024-09-11T09:46:23.169635996Z"
+    created: "2024-09-11T09:46:44.460292533Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2537,7 +2537,7 @@ entries:
     version: 0.5.1-dev.0.main.4
   - apiVersion: v2
     appVersion: 5b8d1ab
-    created: "2024-09-11T09:46:23.167936418Z"
+    created: "2024-09-11T09:46:44.457014875Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2553,7 +2553,7 @@ entries:
     version: 0.5.1-dev.0.main.3
   - apiVersion: v2
     appVersion: ea89f9e
-    created: "2024-09-11T09:46:23.165570883Z"
+    created: "2024-09-11T09:46:44.453599118Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2569,7 +2569,7 @@ entries:
     version: 0.5.1-dev.0.main.2
   - apiVersion: v2
     appVersion: "8604024"
-    created: "2024-09-11T09:46:23.161956774Z"
+    created: "2024-09-11T09:46:44.447753075Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2585,7 +2585,7 @@ entries:
     version: 0.5.1-dev.0.feature-cross-ns-realm-ref.1
   - apiVersion: v2
     appVersion: 5dc1da0
-    created: "2024-09-11T09:46:23.160251626Z"
+    created: "2024-09-11T09:46:44.446032353Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2601,7 +2601,7 @@ entries:
     version: 0.5.1-dev.0.dependabot-pip-typing-extensions-4-10-0.9
   - apiVersion: v2
     appVersion: 5b58302
-    created: "2024-09-11T09:46:23.154142548Z"
+    created: "2024-09-11T09:46:44.439690547Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2617,7 +2617,7 @@ entries:
     version: 0.5.1-dev.0.dependabot-pip-sniffio-1-3-1.11
   - apiVersion: v2
     appVersion: 45ae8a7
-    created: "2024-09-11T09:46:23.1585367Z"
+    created: "2024-09-11T09:46:44.444232573Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2633,7 +2633,7 @@ entries:
     version: 0.5.1-dev.0.dependabot-pip-sniffio-1-3-1.9
   - apiVersion: v2
     appVersion: 9fe41ec
-    created: "2024-09-11T09:46:23.155843458Z"
+    created: "2024-09-11T09:46:44.442409941Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2649,7 +2649,7 @@ entries:
     version: 0.5.1-dev.0.dependabot-pip-sniffio-1-3-1.6
   - apiVersion: v2
     appVersion: b8a7e08
-    created: "2024-09-11T09:46:23.152417011Z"
+    created: "2024-09-11T09:46:44.437973902Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2665,7 +2665,7 @@ entries:
     version: 0.5.1-dev.0.dependabot-pip-pydantic-core-2-16-3.1
   - apiVersion: v2
     appVersion: b606d09
-    created: "2024-09-11T09:46:23.150727293Z"
+    created: "2024-09-11T09:46:44.436289338Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2681,7 +2681,7 @@ entries:
     version: 0.5.1-dev.0.dependabot-pip-pydantic-2-6-3.9
   - apiVersion: v2
     appVersion: b3b0945
-    created: "2024-09-11T09:46:23.148954347Z"
+    created: "2024-09-11T09:46:44.43454416Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2697,7 +2697,7 @@ entries:
     version: 0.5.1-dev.0.dependabot-pip-pydantic-2-6-3.7
   - apiVersion: v2
     appVersion: 5c628e4
-    created: "2024-09-11T09:46:23.146302864Z"
+    created: "2024-09-11T09:46:44.432095259Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2713,7 +2713,7 @@ entries:
     version: 0.5.1-dev.0.dependabot-pip-pydantic-2-6-2.6
   - apiVersion: v2
     appVersion: 0ebe213
-    created: "2024-09-11T09:46:23.14454118Z"
+    created: "2024-09-11T09:46:44.430249692Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2729,7 +2729,7 @@ entries:
     version: 0.5.1-dev.0.dependabot-pip-httpx-0-27-0.1
   - apiVersion: v2
     appVersion: 9d776c1
-    created: "2024-09-11T09:46:23.142858975Z"
+    created: "2024-09-11T09:46:44.428570227Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2745,7 +2745,7 @@ entries:
     version: 0.5.1-dev.0.dependabot-pip-httpcore-1-0-4.3
   - apiVersion: v2
     appVersion: 6b72a26
-    created: "2024-09-11T09:46:23.141089787Z"
+    created: "2024-09-11T09:46:44.426833495Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2761,7 +2761,7 @@ entries:
     version: 0.5.1-dev.0.dependabot-pip-httpcore-1-0-4.1
   - apiVersion: v2
     appVersion: 5a5df2b
-    created: "2024-09-11T09:46:23.138452744Z"
+    created: "2024-09-11T09:46:44.425087386Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2777,7 +2777,7 @@ entries:
     version: 0.5.1-dev.0.dependabot-pip-anyio-4-3-0.7
   - apiVersion: v2
     appVersion: b1e0108
-    created: "2024-09-11T09:46:23.136723551Z"
+    created: "2024-09-11T09:46:44.422329129Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2793,7 +2793,7 @@ entries:
     version: 0.5.1-dev.0.dependabot-pip-anyio-4-3-0.1
   - apiVersion: v2
     appVersion: fe09eec
-    created: "2024-09-11T09:46:23.13501171Z"
+    created: "2024-09-11T09:46:44.420656006Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2809,7 +2809,7 @@ entries:
     version: 0.5.0
   - apiVersion: v2
     appVersion: "6538327"
-    created: "2024-09-11T09:46:23.133282928Z"
+    created: "2024-09-11T09:46:44.418950833Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2825,7 +2825,7 @@ entries:
     version: 0.4.1-dev.0.update-dependency-helm.9
   - apiVersion: v2
     appVersion: 5d99ffe
-    created: "2024-09-11T09:46:23.131610241Z"
+    created: "2024-09-11T09:46:44.417288921Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2841,7 +2841,7 @@ entries:
     version: 0.4.1-dev.0.sign-images.8
   - apiVersion: v2
     appVersion: cf24ffe
-    created: "2024-09-11T09:46:23.12910808Z"
+    created: "2024-09-11T09:46:44.415585361Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2857,7 +2857,7 @@ entries:
     version: 0.4.1-dev.0.sign-images.7
   - apiVersion: v2
     appVersion: 0beea1c
-    created: "2024-09-11T09:46:23.11346396Z"
+    created: "2024-09-11T09:46:44.400083321Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2873,7 +2873,7 @@ entries:
     version: 0.4.1-dev.0.main.10
   - apiVersion: v2
     appVersion: d264593
-    created: "2024-09-11T09:46:23.127169894Z"
+    created: "2024-09-11T09:46:44.412830553Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2889,7 +2889,7 @@ entries:
     version: 0.4.1-dev.0.main.9
   - apiVersion: v2
     appVersion: 59813c2
-    created: "2024-09-11T09:46:23.125451221Z"
+    created: "2024-09-11T09:46:44.411176295Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2905,7 +2905,7 @@ entries:
     version: 0.4.1-dev.0.main.8
   - apiVersion: v2
     appVersion: cf6a17f
-    created: "2024-09-11T09:46:23.12375516Z"
+    created: "2024-09-11T09:46:44.409490338Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2921,7 +2921,7 @@ entries:
     version: 0.4.1-dev.0.main.6
   - apiVersion: v2
     appVersion: b330d64
-    created: "2024-09-11T09:46:23.120954501Z"
+    created: "2024-09-11T09:46:44.407810212Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2937,7 +2937,7 @@ entries:
     version: 0.4.1-dev.0.main.5
   - apiVersion: v2
     appVersion: 4d9c31f
-    created: "2024-09-11T09:46:23.118668551Z"
+    created: "2024-09-11T09:46:44.405171309Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2953,7 +2953,7 @@ entries:
     version: 0.4.1-dev.0.main.4
   - apiVersion: v2
     appVersion: df8d4e3
-    created: "2024-09-11T09:46:23.116981126Z"
+    created: "2024-09-11T09:46:44.403426502Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2969,7 +2969,7 @@ entries:
     version: 0.4.1-dev.0.main.3
   - apiVersion: v2
     appVersion: 425320e
-    created: "2024-09-11T09:46:23.11523454Z"
+    created: "2024-09-11T09:46:44.40174297Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -2985,7 +2985,7 @@ entries:
     version: 0.4.1-dev.0.main.2
   - apiVersion: v2
     appVersion: "2283693"
-    created: "2024-09-11T09:46:23.111792215Z"
+    created: "2024-09-11T09:46:44.398359063Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3001,7 +3001,7 @@ entries:
     version: 0.4.1-dev.0.main.1
   - apiVersion: v2
     appVersion: "2670690"
-    created: "2024-09-11T09:46:23.10917561Z"
+    created: "2024-09-11T09:46:44.395692907Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3017,7 +3017,7 @@ entries:
     version: 0.4.1-dev.0.feature-kopf-tuning.13
   - apiVersion: v2
     appVersion: 9f8e930
-    created: "2024-09-11T09:46:23.10737354Z"
+    created: "2024-09-11T09:46:44.393983146Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3033,7 +3033,7 @@ entries:
     version: 0.4.1-dev.0.feature-kopf-tuning.12
   - apiVersion: v2
     appVersion: 562ce2d
-    created: "2024-09-11T09:46:23.105659154Z"
+    created: "2024-09-11T09:46:44.392259568Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3049,7 +3049,7 @@ entries:
     version: 0.4.1-dev.0.feature-kopf-tuning.11
   - apiVersion: v2
     appVersion: 045ce13
-    created: "2024-09-11T09:46:23.103932226Z"
+    created: "2024-09-11T09:46:44.390462724Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3065,7 +3065,7 @@ entries:
     version: 0.4.1-dev.0.dependabot-pip-pydantic-core-2-16-2.4
   - apiVersion: v2
     appVersion: a1d2c5a
-    created: "2024-09-11T09:46:23.101558345Z"
+    created: "2024-09-11T09:46:44.387690043Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3081,7 +3081,7 @@ entries:
     version: 0.4.1-dev.0.dependabot-pip-pydantic-core-2-16-2.3
   - apiVersion: v2
     appVersion: 336d61d
-    created: "2024-09-11T09:46:23.099745511Z"
+    created: "2024-09-11T09:46:44.385992925Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3097,7 +3097,7 @@ entries:
     version: 0.4.1-dev.0.dependabot-pip-pydantic-2-6-1.6
   - apiVersion: v2
     appVersion: 770ef27
-    created: "2024-09-11T09:46:23.098084316Z"
+    created: "2024-09-11T09:46:44.384332947Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3113,7 +3113,7 @@ entries:
     version: 0.4.1-dev.0.dependabot-pip-multidict-6-0-5.1
   - apiVersion: v2
     appVersion: 283da8b
-    created: "2024-09-11T09:46:23.096374429Z"
+    created: "2024-09-11T09:46:44.382598189Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3129,7 +3129,7 @@ entries:
     version: 0.4.1-dev.0.dependabot-pip-httpcore-1-0-3.10
   - apiVersion: v2
     appVersion: 0c44849
-    created: "2024-09-11T09:46:23.094629005Z"
+    created: "2024-09-11T09:46:44.380919215Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3145,7 +3145,7 @@ entries:
     version: 0.4.1-dev.0.dependabot-pip-certifi-2024-2-2.2
   - apiVersion: v2
     appVersion: e5afca4
-    created: "2024-09-11T09:46:23.091539057Z"
+    created: "2024-09-11T09:46:44.378254746Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3161,7 +3161,7 @@ entries:
     version: 0.4.1-dev.0.dependabot-pip-certifi-2024-2-2.1
   - apiVersion: v2
     appVersion: 6c1f357
-    created: "2024-09-11T09:46:23.089815305Z"
+    created: "2024-09-11T09:46:44.376588756Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3177,7 +3177,7 @@ entries:
     version: 0.4.1-dev.0.dependabot-github-actions-github-actions-894fc5cb1d.3
   - apiVersion: v2
     appVersion: 67f9c37
-    created: "2024-09-11T09:46:23.08811716Z"
+    created: "2024-09-11T09:46:44.374872272Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3193,7 +3193,7 @@ entries:
     version: 0.4.0
   - apiVersion: v2
     appVersion: 17e859a
-    created: "2024-09-11T09:46:23.086455013Z"
+    created: "2024-09-11T09:46:44.373137684Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3209,7 +3209,7 @@ entries:
     version: 0.3.2-dev.0.update-dependency-kube-state-metrics.3
   - apiVersion: v2
     appVersion: 4b5f486
-    created: "2024-09-11T09:46:23.084577711Z"
+    created: "2024-09-11T09:46:44.37028258Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3225,7 +3225,7 @@ entries:
     version: 0.3.2-dev.0.update-dependency-helm.7
   - apiVersion: v2
     appVersion: e1f075a
-    created: "2024-09-11T09:46:23.081902401Z"
+    created: "2024-09-11T09:46:44.368617742Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3241,7 +3241,7 @@ entries:
     version: 0.3.2-dev.0.update-dependency-helm.6
   - apiVersion: v2
     appVersion: f647b15
-    created: "2024-09-11T09:46:23.080223082Z"
+    created: "2024-09-11T09:46:44.366910034Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3257,7 +3257,7 @@ entries:
     version: 0.3.2-dev.0.update-dependency-helm.5
   - apiVersion: v2
     appVersion: 53f84cb
-    created: "2024-09-11T09:46:23.078569431Z"
+    created: "2024-09-11T09:46:44.365240788Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3273,7 +3273,7 @@ entries:
     version: 0.3.2-dev.0.update-dependency-dex.8
   - apiVersion: v2
     appVersion: 0151a45
-    created: "2024-09-11T09:46:23.061158347Z"
+    created: "2024-09-11T09:46:44.348271497Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3289,7 +3289,7 @@ entries:
     version: 0.3.2-dev.0.main.13
   - apiVersion: v2
     appVersion: 65ce177
-    created: "2024-09-11T09:46:23.059476193Z"
+    created: "2024-09-11T09:46:44.345810261Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3305,7 +3305,7 @@ entries:
     version: 0.3.2-dev.0.main.11
   - apiVersion: v2
     appVersion: 4e39f15
-    created: "2024-09-11T09:46:23.056699336Z"
+    created: "2024-09-11T09:46:44.344150783Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3321,7 +3321,7 @@ entries:
     version: 0.3.2-dev.0.main.10
   - apiVersion: v2
     appVersion: e33ec3a
-    created: "2024-09-11T09:46:23.076853823Z"
+    created: "2024-09-11T09:46:44.363503274Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3337,7 +3337,7 @@ entries:
     version: 0.3.2-dev.0.main.9
   - apiVersion: v2
     appVersion: 32ada27
-    created: "2024-09-11T09:46:23.074200948Z"
+    created: "2024-09-11T09:46:44.360823838Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3353,7 +3353,7 @@ entries:
     version: 0.3.2-dev.0.main.8
   - apiVersion: v2
     appVersion: 53f84cb
-    created: "2024-09-11T09:46:23.072517831Z"
+    created: "2024-09-11T09:46:44.359171764Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3369,7 +3369,7 @@ entries:
     version: 0.3.2-dev.0.main.7
   - apiVersion: v2
     appVersion: 4b5f486
-    created: "2024-09-11T09:46:23.070871914Z"
+    created: "2024-09-11T09:46:44.357494052Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3385,7 +3385,7 @@ entries:
     version: 0.3.2-dev.0.main.6
   - apiVersion: v2
     appVersion: e1f075a
-    created: "2024-09-11T09:46:23.06917411Z"
+    created: "2024-09-11T09:46:44.355827401Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3401,7 +3401,7 @@ entries:
     version: 0.3.2-dev.0.main.5
   - apiVersion: v2
     appVersion: f647b15
-    created: "2024-09-11T09:46:23.06746241Z"
+    created: "2024-09-11T09:46:44.353213452Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3417,7 +3417,7 @@ entries:
     version: 0.3.2-dev.0.main.4
   - apiVersion: v2
     appVersion: ba55909
-    created: "2024-09-11T09:46:23.064510253Z"
+    created: "2024-09-11T09:46:44.351575294Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3433,7 +3433,7 @@ entries:
     version: 0.3.2-dev.0.main.3
   - apiVersion: v2
     appVersion: 17e859a
-    created: "2024-09-11T09:46:23.062795878Z"
+    created: "2024-09-11T09:46:44.34989633Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3449,7 +3449,7 @@ entries:
     version: 0.3.2-dev.0.main.2
   - apiVersion: v2
     appVersion: bb2f1f6
-    created: "2024-09-11T09:46:23.055036669Z"
+    created: "2024-09-11T09:46:44.342444598Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3465,7 +3465,7 @@ entries:
     version: 0.3.2-dev.0.main.1
   - apiVersion: v2
     appVersion: bb2f1f6
-    created: "2024-09-11T09:46:23.053377157Z"
+    created: "2024-09-11T09:46:44.340842297Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3481,7 +3481,7 @@ entries:
     version: 0.3.2-dev.0.feature-buildarg-defaults.2
   - apiVersion: v2
     appVersion: fa149b7
-    created: "2024-09-11T09:46:23.049237631Z"
+    created: "2024-09-11T09:46:44.336630485Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3497,7 +3497,7 @@ entries:
     version: 0.3.2-dev.0.dependabot-pip-pydantic-core-2-16-1.13
   - apiVersion: v2
     appVersion: 07a206c
-    created: "2024-09-11T09:46:23.047586545Z"
+    created: "2024-09-11T09:46:44.3349616Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3513,7 +3513,7 @@ entries:
     version: 0.3.2-dev.0.dependabot-pip-pydantic-core-2-16-1.10
   - apiVersion: v2
     appVersion: e1f075a
-    created: "2024-09-11T09:46:23.051751418Z"
+    created: "2024-09-11T09:46:44.339131654Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3529,7 +3529,7 @@ entries:
     version: 0.3.2-dev.0.dependabot-pip-pydantic-core-2-16-1.6
   - apiVersion: v2
     appVersion: e1f075a
-    created: "2024-09-11T09:46:23.045933114Z"
+    created: "2024-09-11T09:46:44.333267367Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3545,7 +3545,7 @@ entries:
     version: 0.3.2-dev.0.dependabot-pip-pydantic-core-2-16-0.6
   - apiVersion: v2
     appVersion: f647b15
-    created: "2024-09-11T09:46:23.044196196Z"
+    created: "2024-09-11T09:46:44.331591439Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3561,7 +3561,7 @@ entries:
     version: 0.3.2-dev.0.dependabot-pip-pydantic-core-2-16-0.5
   - apiVersion: v2
     appVersion: 17e859a
-    created: "2024-09-11T09:46:23.042530052Z"
+    created: "2024-09-11T09:46:44.328819214Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3577,7 +3577,7 @@ entries:
     version: 0.3.2-dev.0.dependabot-pip-pydantic-core-2-15-0.3
   - apiVersion: v2
     appVersion: 572158b
-    created: "2024-09-11T09:46:23.039851236Z"
+    created: "2024-09-11T09:46:44.327008785Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3593,7 +3593,7 @@ entries:
     version: 0.3.2-dev.0.dependabot-pip-pydantic-2-6-0.12
   - apiVersion: v2
     appVersion: b27d136
-    created: "2024-09-11T09:46:23.038192756Z"
+    created: "2024-09-11T09:46:44.325263687Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3609,7 +3609,7 @@ entries:
     version: 0.3.2-dev.0.dependabot-pip-pydantic-2-6-0.11
   - apiVersion: v2
     appVersion: e1f075a
-    created: "2024-09-11T09:46:23.036500823Z"
+    created: "2024-09-11T09:46:44.323622904Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3625,7 +3625,7 @@ entries:
     version: 0.3.2-dev.0.dependabot-pip-kopf-1-37-1.6
   - apiVersion: v2
     appVersion: 9fb4402
-    created: "2024-09-11T09:46:23.034826242Z"
+    created: "2024-09-11T09:46:44.321934453Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3641,7 +3641,7 @@ entries:
     version: 0.3.2-dev.0.dependabot-pip-attrs-23-2-0.1
   - apiVersion: v2
     appVersion: 69a83be
-    created: "2024-09-11T09:46:23.032333199Z"
+    created: "2024-09-11T09:46:44.320228568Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3657,7 +3657,7 @@ entries:
     version: 0.3.2-dev.0.dependabot-pip-aiohttp-3-9-3.11
   - apiVersion: v2
     appVersion: 36ab8b7
-    created: "2024-09-11T09:46:23.02899563Z"
+    created: "2024-09-11T09:46:44.316078261Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3673,7 +3673,7 @@ entries:
     version: 0.3.2-dev.0.dependabot-pip-aiohttp-3-9-2.10
   - apiVersion: v2
     appVersion: 32ada27
-    created: "2024-09-11T09:46:23.030689006Z"
+    created: "2024-09-11T09:46:44.317719845Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3689,7 +3689,7 @@ entries:
     version: 0.3.2-dev.0.dependabot-pip-aiohttp-3-9-2.9
   - apiVersion: v2
     appVersion: 9fb4402
-    created: "2024-09-11T09:46:23.027306322Z"
+    created: "2024-09-11T09:46:44.314373398Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3705,7 +3705,7 @@ entries:
     version: 0.3.1
   - apiVersion: v2
     appVersion: 8d3d09e
-    created: "2024-09-11T09:46:23.024796268Z"
+    created: "2024-09-11T09:46:44.311621511Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3721,7 +3721,7 @@ entries:
     version: 0.3.1-dev.0.update-dependency-kube-state-metrics.1
   - apiVersion: v2
     appVersion: 8d3d09e
-    created: "2024-09-11T09:46:23.022839947Z"
+    created: "2024-09-11T09:46:44.309959789Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3737,7 +3737,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 7e8991c
-    created: "2024-09-11T09:46:23.021210311Z"
+    created: "2024-09-11T09:46:44.308360143Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3753,7 +3753,7 @@ entries:
     version: 0.2.1-dev.0.update-dependency-helm.4
   - apiVersion: v2
     appVersion: 8d3d09e
-    created: "2024-09-11T09:46:23.005962433Z"
+    created: "2024-09-11T09:46:44.290380681Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3769,7 +3769,7 @@ entries:
     version: 0.2.1-dev.0.main.10
   - apiVersion: v2
     appVersion: 3d4b3d6
-    created: "2024-09-11T09:46:23.019610021Z"
+    created: "2024-09-11T09:46:44.306703411Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3785,7 +3785,7 @@ entries:
     version: 0.2.1-dev.0.main.9
   - apiVersion: v2
     appVersion: 70a8f28
-    created: "2024-09-11T09:46:23.017901426Z"
+    created: "2024-09-11T09:46:44.303754646Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3801,7 +3801,7 @@ entries:
     version: 0.2.1-dev.0.main.8
   - apiVersion: v2
     appVersion: 87e6cc2
-    created: "2024-09-11T09:46:23.015284255Z"
+    created: "2024-09-11T09:46:44.299356727Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3817,7 +3817,7 @@ entries:
     version: 0.2.1-dev.0.main.6
   - apiVersion: v2
     appVersion: 2ef8850
-    created: "2024-09-11T09:46:23.013534533Z"
+    created: "2024-09-11T09:46:44.297709201Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3833,7 +3833,7 @@ entries:
     version: 0.2.1-dev.0.main.5
   - apiVersion: v2
     appVersion: ef350ff
-    created: "2024-09-11T09:46:23.011891773Z"
+    created: "2024-09-11T09:46:44.296108884Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3849,7 +3849,7 @@ entries:
     version: 0.2.1-dev.0.main.4
   - apiVersion: v2
     appVersion: 7e8991c
-    created: "2024-09-11T09:46:23.01028509Z"
+    created: "2024-09-11T09:46:44.294468772Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3865,7 +3865,7 @@ entries:
     version: 0.2.1-dev.0.main.3
   - apiVersion: v2
     appVersion: 0eb7ed4
-    created: "2024-09-11T09:46:23.008633443Z"
+    created: "2024-09-11T09:46:44.292821868Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3881,7 +3881,7 @@ entries:
     version: 0.2.1-dev.0.main.2
   - apiVersion: v2
     appVersion: 65b4f36
-    created: "2024-09-11T09:46:23.004338989Z"
+    created: "2024-09-11T09:46:44.288375789Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3897,7 +3897,7 @@ entries:
     version: 0.2.1-dev.0.main.1
   - apiVersion: v2
     appVersion: 7e8991c
-    created: "2024-09-11T09:46:23.002741133Z"
+    created: "2024-09-11T09:46:44.286719658Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3913,7 +3913,7 @@ entries:
     version: 0.2.1-dev.0.feature-tilt-component.4
   - apiVersion: v2
     appVersion: 65b4f36
-    created: "2024-09-11T09:46:23.00108128Z"
+    created: "2024-09-11T09:46:44.285097449Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3929,7 +3929,7 @@ entries:
     version: 0.2.1-dev.0.dependabot-pip-yarl-1-9-4.2
   - apiVersion: v2
     appVersion: 0eb7ed4
-    created: "2024-09-11T09:46:22.999151558Z"
+    created: "2024-09-11T09:46:44.283122332Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3945,7 +3945,7 @@ entries:
     version: 0.2.1-dev.0.dependabot-pip-typing-extensions-4-9-0.3
   - apiVersion: v2
     appVersion: 70a8f28
-    created: "2024-09-11T09:46:22.996934727Z"
+    created: "2024-09-11T09:46:44.278357209Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3961,7 +3961,7 @@ entries:
     version: 0.2.1-dev.0.dependabot-pip-pydantic-core-2-14-6.9
   - apiVersion: v2
     appVersion: 3d4b3d6
-    created: "2024-09-11T09:46:22.995335288Z"
+    created: "2024-09-11T09:46:44.276256478Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3977,7 +3977,7 @@ entries:
     version: 0.2.1-dev.0.dependabot-pip-pydantic-2-5-3.10
   - apiVersion: v2
     appVersion: 87e6cc2
-    created: "2024-09-11T09:46:22.993654526Z"
+    created: "2024-09-11T09:46:44.274567545Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -3993,7 +3993,7 @@ entries:
     version: 0.2.1-dev.0.dependabot-pip-httpx-0-26-0.7
   - apiVersion: v2
     appVersion: 2ef8850
-    created: "2024-09-11T09:46:22.991990887Z"
+    created: "2024-09-11T09:46:44.272879504Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4009,7 +4009,7 @@ entries:
     version: 0.2.1-dev.0.dependabot-pip-frozenlist-1-4-1.6
   - apiVersion: v2
     appVersion: 87e6cc2
-    created: "2024-09-11T09:46:22.989243002Z"
+    created: "2024-09-11T09:46:44.271232369Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4025,7 +4025,7 @@ entries:
     version: 0.2.1-dev.0.dependabot-pip-anyio-4-2-0.7
   - apiVersion: v2
     appVersion: "41880e5"
-    created: "2024-09-11T09:46:22.987650486Z"
+    created: "2024-09-11T09:46:44.268032254Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4041,7 +4041,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: "41880e5"
-    created: "2024-09-11T09:46:22.986049864Z"
+    created: "2024-09-11T09:46:44.265019781Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4057,7 +4057,7 @@ entries:
     version: 0.2.0-rc.1
   - apiVersion: v2
     appVersion: 9e108d9
-    created: "2024-09-11T09:46:22.98438375Z"
+    created: "2024-09-11T09:46:44.261955861Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4073,7 +4073,7 @@ entries:
     version: 0.1.1-dev.0.update-dependency-kube-state-metrics.9
   - apiVersion: v2
     appVersion: 9e108d9
-    created: "2024-09-11T09:46:22.981705599Z"
+    created: "2024-09-11T09:46:44.259681075Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4089,7 +4089,7 @@ entries:
     version: 0.1.1-dev.0.update-dependency-helm.9
   - apiVersion: v2
     appVersion: 9e108d9
-    created: "2024-09-11T09:46:22.980145093Z"
+    created: "2024-09-11T09:46:44.258043418Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4105,7 +4105,7 @@ entries:
     version: 0.1.1-dev.0.update-dependency-dex.9
   - apiVersion: v2
     appVersion: "41880e5"
-    created: "2024-09-11T09:46:22.971023425Z"
+    created: "2024-09-11T09:46:44.248789734Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4121,7 +4121,7 @@ entries:
     version: 0.1.1-dev.0.main.31
   - apiVersion: v2
     appVersion: 64614c1
-    created: "2024-09-11T09:46:22.969371077Z"
+    created: "2024-09-11T09:46:44.245258312Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4137,7 +4137,7 @@ entries:
     version: 0.1.1-dev.0.main.30
   - apiVersion: v2
     appVersion: 0b7a699
-    created: "2024-09-11T09:46:22.966197988Z"
+    created: "2024-09-11T09:46:44.242017784Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4153,7 +4153,7 @@ entries:
     version: 0.1.1-dev.0.main.29
   - apiVersion: v2
     appVersion: 1cbffd7
-    created: "2024-09-11T09:46:22.963680066Z"
+    created: "2024-09-11T09:46:44.240397209Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4169,7 +4169,7 @@ entries:
     version: 0.1.1-dev.0.main.28
   - apiVersion: v2
     appVersion: 6e941fc
-    created: "2024-09-11T09:46:22.962079524Z"
+    created: "2024-09-11T09:46:44.238701664Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4185,7 +4185,7 @@ entries:
     version: 0.1.1-dev.0.main.27
   - apiVersion: v2
     appVersion: b9b25e8
-    created: "2024-09-11T09:46:22.960447404Z"
+    created: "2024-09-11T09:46:44.236283366Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4201,7 +4201,7 @@ entries:
     version: 0.1.1-dev.0.main.26
   - apiVersion: v2
     appVersion: f15ee45
-    created: "2024-09-11T09:46:22.958825002Z"
+    created: "2024-09-11T09:46:44.234611655Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4217,7 +4217,7 @@ entries:
     version: 0.1.1-dev.0.main.25
   - apiVersion: v2
     appVersion: bb316af
-    created: "2024-09-11T09:46:22.95646832Z"
+    created: "2024-09-11T09:46:44.23298547Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4233,7 +4233,7 @@ entries:
     version: 0.1.1-dev.0.main.24
   - apiVersion: v2
     appVersion: 78f32cd
-    created: "2024-09-11T09:46:22.954010877Z"
+    created: "2024-09-11T09:46:44.231281549Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4249,7 +4249,7 @@ entries:
     version: 0.1.1-dev.0.main.23
   - apiVersion: v2
     appVersion: 3a002d6
-    created: "2024-09-11T09:46:22.952391801Z"
+    created: "2024-09-11T09:46:44.228653283Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4265,7 +4265,7 @@ entries:
     version: 0.1.1-dev.0.main.22
   - apiVersion: v2
     appVersion: f9af7fe
-    created: "2024-09-11T09:46:22.950797432Z"
+    created: "2024-09-11T09:46:44.226760975Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4281,7 +4281,7 @@ entries:
     version: 0.1.1-dev.0.main.21
   - apiVersion: v2
     appVersion: 48138ef
-    created: "2024-09-11T09:46:22.949161755Z"
+    created: "2024-09-11T09:46:44.225154176Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4297,7 +4297,7 @@ entries:
     version: 0.1.1-dev.0.main.20
   - apiVersion: v2
     appVersion: 2adac2f
-    created: "2024-09-11T09:46:22.944930787Z"
+    created: "2024-09-11T09:46:44.22192619Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4313,7 +4313,7 @@ entries:
     version: 0.1.1-dev.0.main.19
   - apiVersion: v2
     appVersion: "777e129"
-    created: "2024-09-11T09:46:22.943287716Z"
+    created: "2024-09-11T09:46:44.220277563Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4329,7 +4329,7 @@ entries:
     version: 0.1.1-dev.0.main.18
   - apiVersion: v2
     appVersion: a454b5b
-    created: "2024-09-11T09:46:22.941647822Z"
+    created: "2024-09-11T09:46:44.217561317Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4345,7 +4345,7 @@ entries:
     version: 0.1.1-dev.0.main.17
   - apiVersion: v2
     appVersion: ef20cb2
-    created: "2024-09-11T09:46:22.940011954Z"
+    created: "2024-09-11T09:46:44.215913511Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4361,7 +4361,7 @@ entries:
     version: 0.1.1-dev.0.main.16
   - apiVersion: v2
     appVersion: 7dd023c
-    created: "2024-09-11T09:46:22.937782893Z"
+    created: "2024-09-11T09:46:44.214240268Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4377,7 +4377,7 @@ entries:
     version: 0.1.1-dev.0.main.15
   - apiVersion: v2
     appVersion: 623e1c5
-    created: "2024-09-11T09:46:22.935959131Z"
+    created: "2024-09-11T09:46:44.212595748Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4393,7 +4393,7 @@ entries:
     version: 0.1.1-dev.0.main.14
   - apiVersion: v2
     appVersion: 68e9b1e
-    created: "2024-09-11T09:46:22.934353831Z"
+    created: "2024-09-11T09:46:44.210066752Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4409,7 +4409,7 @@ entries:
     version: 0.1.1-dev.0.main.12
   - apiVersion: v2
     appVersion: 71d8ab2
-    created: "2024-09-11T09:46:22.978578165Z"
+    created: "2024-09-11T09:46:44.255268047Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4425,7 +4425,7 @@ entries:
     version: 0.1.1-dev.0.main.9
   - apiVersion: v2
     appVersion: 9e108d9
-    created: "2024-09-11T09:46:22.97695947Z"
+    created: "2024-09-11T09:46:44.253672859Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4441,7 +4441,7 @@ entries:
     version: 0.1.1-dev.0.main.8
   - apiVersion: v2
     appVersion: 9200a66
-    created: "2024-09-11T09:46:22.975404565Z"
+    created: "2024-09-11T09:46:44.252084955Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4457,7 +4457,7 @@ entries:
     version: 0.1.1-dev.0.main.6
   - apiVersion: v2
     appVersion: bde2deb
-    created: "2024-09-11T09:46:22.973696441Z"
+    created: "2024-09-11T09:46:44.250475651Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4473,7 +4473,7 @@ entries:
     version: 0.1.1-dev.0.main.4
   - apiVersion: v2
     appVersion: 49d1763
-    created: "2024-09-11T09:46:22.967767129Z"
+    created: "2024-09-11T09:46:44.243646374Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4489,7 +4489,7 @@ entries:
     version: 0.1.1-dev.0.main.3
   - apiVersion: v2
     appVersion: af677f7
-    created: "2024-09-11T09:46:22.947534884Z"
+    created: "2024-09-11T09:46:44.223542638Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4505,7 +4505,7 @@ entries:
     version: 0.1.1-dev.0.main.2
   - apiVersion: v2
     appVersion: 4e526ad
-    created: "2024-09-11T09:46:22.932722101Z"
+    created: "2024-09-11T09:46:44.208450275Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4521,7 +4521,7 @@ entries:
     version: 0.1.1-dev.0.main.1
   - apiVersion: v2
     appVersion: 66b454c
-    created: "2024-09-11T09:46:22.931166706Z"
+    created: "2024-09-11T09:46:44.206843345Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4537,7 +4537,7 @@ entries:
     version: 0.1.1-dev.0.feature-update-dockerfile.4
   - apiVersion: v2
     appVersion: 14a6b7a
-    created: "2024-09-11T09:46:22.92945245Z"
+    created: "2024-09-11T09:46:44.205286148Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4553,7 +4553,7 @@ entries:
     version: 0.1.1-dev.0.feature-update-dockerfile.3
   - apiVersion: v2
     appVersion: 83d8d57
-    created: "2024-09-11T09:46:22.927066655Z"
+    created: "2024-09-11T09:46:44.203707452Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4569,7 +4569,7 @@ entries:
     version: 0.1.1-dev.0.feature-migrate-to-pydantic2.9
   - apiVersion: v2
     appVersion: 89aa79a
-    created: "2024-09-11T09:46:22.925499066Z"
+    created: "2024-09-11T09:46:44.201145608Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4585,7 +4585,7 @@ entries:
     version: 0.1.1-dev.0.feature-migrate-to-pydantic2.8
   - apiVersion: v2
     appVersion: af0d0c8
-    created: "2024-09-11T09:46:22.923949842Z"
+    created: "2024-09-11T09:46:44.199562764Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4601,7 +4601,7 @@ entries:
     version: 0.1.1-dev.0.feature-migrate-to-pydantic2.6
   - apiVersion: v2
     appVersion: 605f452
-    created: "2024-09-11T09:46:22.922318472Z"
+    created: "2024-09-11T09:46:44.197978997Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4617,7 +4617,7 @@ entries:
     version: 0.1.1-dev.0.feature-migrate-to-pydantic2.5
   - apiVersion: v2
     appVersion: 5b0b34c
-    created: "2024-09-11T09:46:22.919950695Z"
+    created: "2024-09-11T09:46:44.196417132Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4633,7 +4633,7 @@ entries:
     version: 0.1.1-dev.0.feature-migrate-to-pydantic2.4
   - apiVersion: v2
     appVersion: 6eb0c15
-    created: "2024-09-11T09:46:22.91840141Z"
+    created: "2024-09-11T09:46:44.194805032Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4649,7 +4649,7 @@ entries:
     version: 0.1.1-dev.0.feature-migrate-to-pydantic2.3
   - apiVersion: v2
     appVersion: 8d11cae
-    created: "2024-09-11T09:46:22.916828321Z"
+    created: "2024-09-11T09:46:44.192261194Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4665,7 +4665,7 @@ entries:
     version: 0.1.1-dev.0.feature-migrate-to-pydantic2.2
   - apiVersion: v2
     appVersion: f261d58
-    created: "2024-09-11T09:46:22.915275229Z"
+    created: "2024-09-11T09:46:44.190681244Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4681,7 +4681,7 @@ entries:
     version: 0.1.1-dev.0.feature-migrate-to-pydantic2.1
   - apiVersion: v2
     appVersion: dab7bbf
-    created: "2024-09-11T09:46:22.913654761Z"
+    created: "2024-09-11T09:46:44.189124869Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4697,7 +4697,7 @@ entries:
     version: 0.1.1-dev.0.feature-automatic-deps.4
   - apiVersion: v2
     appVersion: 48138ef
-    created: "2024-09-11T09:46:22.910974854Z"
+    created: "2024-09-11T09:46:44.187569215Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4713,7 +4713,7 @@ entries:
     version: 0.1.1-dev.0.dependabot-pip-yarl-1-9-3.21
   - apiVersion: v2
     appVersion: f9af7fe
-    created: "2024-09-11T09:46:22.909342893Z"
+    created: "2024-09-11T09:46:44.185899709Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4729,7 +4729,7 @@ entries:
     version: 0.1.1-dev.0.dependabot-pip-pydantic-core-2-14-5.22
   - apiVersion: v2
     appVersion: ef20cb2
-    created: "2024-09-11T09:46:22.907706715Z"
+    created: "2024-09-11T09:46:44.183382457Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4745,7 +4745,7 @@ entries:
     version: 0.1.1-dev.0.dependabot-pip-pydantic-core-2-14-4.17
   - apiVersion: v2
     appVersion: 359570e
-    created: "2024-09-11T09:46:22.906088571Z"
+    created: "2024-09-11T09:46:44.181711086Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4761,7 +4761,7 @@ entries:
     version: 0.1.1-dev.0.dependabot-pip-pydantic-core-2-14-3.13
   - apiVersion: v2
     appVersion: 9200a66
-    created: "2024-09-11T09:46:22.904416786Z"
+    created: "2024-09-11T09:46:44.180069993Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4777,7 +4777,7 @@ entries:
     version: 0.1.1-dev.0.dependabot-pip-pydantic-core-2-14-2.7
   - apiVersion: v2
     appVersion: 78f32cd
-    created: "2024-09-11T09:46:22.901867005Z"
+    created: "2024-09-11T09:46:44.178419001Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4793,7 +4793,7 @@ entries:
     version: 0.1.1-dev.0.dependabot-pip-pydantic-2-5-2.24
   - apiVersion: v2
     appVersion: 623e1c5
-    created: "2024-09-11T09:46:22.900237379Z"
+    created: "2024-09-11T09:46:44.176023433Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4809,7 +4809,7 @@ entries:
     version: 0.1.1-dev.0.dependabot-pip-pydantic-2-5-1.15
   - apiVersion: v2
     appVersion: 71d8ab2
-    created: "2024-09-11T09:46:22.898599106Z"
+    created: "2024-09-11T09:46:44.174390685Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4825,7 +4825,7 @@ entries:
     version: 0.1.1-dev.0.dependabot-pip-pydantic-2-5-0.10
   - apiVersion: v2
     appVersion: 1cbffd7
-    created: "2024-09-11T09:46:22.89700085Z"
+    created: "2024-09-11T09:46:44.172843136Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4841,7 +4841,7 @@ entries:
     version: 0.1.1-dev.0.dependabot-pip-idna-3-6.29
   - apiVersion: v2
     appVersion: b9b25e8
-    created: "2024-09-11T09:46:22.894554597Z"
+    created: "2024-09-11T09:46:44.171217071Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4857,7 +4857,7 @@ entries:
     version: 0.1.1-dev.0.dependabot-pip-httpx-0-25-2.27
   - apiVersion: v2
     appVersion: 2adac2f
-    created: "2024-09-11T09:46:22.892911617Z"
+    created: "2024-09-11T09:46:44.16956146Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4873,7 +4873,7 @@ entries:
     version: 0.1.1-dev.0.dependabot-pip-exceptiongroup-1-2-0.20
   - apiVersion: v2
     appVersion: 3a002d6
-    created: "2024-09-11T09:46:22.891315985Z"
+    created: "2024-09-11T09:46:44.166983798Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4889,7 +4889,7 @@ entries:
     version: 0.1.1-dev.0.dependabot-pip-certifi-2023-11-17.23
   - apiVersion: v2
     appVersion: f15ee45
-    created: "2024-09-11T09:46:22.889640793Z"
+    created: "2024-09-11T09:46:44.165359677Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4905,7 +4905,7 @@ entries:
     version: 0.1.1-dev.0.dependabot-pip-anyio-4-1-0.26
   - apiVersion: v2
     appVersion: 1cbffd7
-    created: "2024-09-11T09:46:22.888028841Z"
+    created: "2024-09-11T09:46:44.16374895Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4921,7 +4921,7 @@ entries:
     version: 0.1.1-dev.0.dependabot-pip-aiohttp-3-9-1.29
   - apiVersion: v2
     appVersion: 78f32cd
-    created: "2024-09-11T09:46:22.886196642Z"
+    created: "2024-09-11T09:46:44.162069375Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4937,7 +4937,7 @@ entries:
     version: 0.1.1-dev.0.dependabot-pip-aiohttp-3-9-0.24
   - apiVersion: v2
     appVersion: ef20cb2
-    created: "2024-09-11T09:46:22.883938594Z"
+    created: "2024-09-11T09:46:44.160439562Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4953,7 +4953,7 @@ entries:
     version: 0.1.1-dev.0.dependabot-github-actions-github-actions-b49075de9d.17
   - apiVersion: v2
     appVersion: 9200a66
-    created: "2024-09-11T09:46:22.88229402Z"
+    created: "2024-09-11T09:46:44.157704838Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4969,7 +4969,7 @@ entries:
     version: 0.1.1-dev.0.dependabot-github-actions-docker-login-action-3.7
   - apiVersion: v2
     appVersion: 9200a66
-    created: "2024-09-11T09:46:22.880726551Z"
+    created: "2024-09-11T09:46:44.156139696Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -4985,7 +4985,7 @@ entries:
     version: 0.1.1-dev.0.dependabot-github-actions-actions-checkout-4.7
   - apiVersion: v2
     appVersion: fcb64bf
-    created: "2024-09-11T09:46:22.879159443Z"
+    created: "2024-09-11T09:46:44.154517518Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5001,7 +5001,7 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: fcb64bf
-    created: "2024-09-11T09:46:22.874671281Z"
+    created: "2024-09-11T09:46:44.14903157Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5017,7 +5017,7 @@ entries:
     version: 0.1.0-dev.0.main.17
   - apiVersion: v2
     appVersion: d22d266
-    created: "2024-09-11T09:46:22.873052946Z"
+    created: "2024-09-11T09:46:44.14747273Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5033,7 +5033,7 @@ entries:
     version: 0.1.0-dev.0.main.16
   - apiVersion: v2
     appVersion: 17857d3
-    created: "2024-09-11T09:46:22.871493673Z"
+    created: "2024-09-11T09:46:44.145880227Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 07154c3f1e456b3d51aad15e2d0544cc42a30d522fc38fde51ed86b98a0d5be0
     name: azimuth-identity-operator
@@ -5043,7 +5043,7 @@ entries:
     version: 0.1.0-dev.0.main.15
   - apiVersion: v2
     appVersion: 6310b26
-    created: "2024-09-11T09:46:22.871213797Z"
+    created: "2024-09-11T09:46:44.145608059Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 1275cd8d73eb6e68cb803b79ae81bc5ea73c020c38754db82a976426a4842ecd
     name: azimuth-identity-operator
@@ -5053,7 +5053,7 @@ entries:
     version: 0.1.0-dev.0.main.14
   - apiVersion: v2
     appVersion: ffb64b1
-    created: "2024-09-11T09:46:22.870913953Z"
+    created: "2024-09-11T09:46:44.145333486Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 10fb67fbcdc44ec6d488013b8df5fdc692105101c373409bee7d431da673f2f7
     name: azimuth-identity-operator
@@ -5063,7 +5063,7 @@ entries:
     version: 0.1.0-dev.0.main.13
   - apiVersion: v2
     appVersion: dd26d9a
-    created: "2024-09-11T09:46:22.870622364Z"
+    created: "2024-09-11T09:46:44.145072058Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: d92bb2262ebad88f10b02103a81e99ef90f349c99fe494a487449f3a771c68b6
     name: azimuth-identity-operator
@@ -5073,7 +5073,7 @@ entries:
     version: 0.1.0-dev.0.main.11
   - apiVersion: v2
     appVersion: 9b1a97c
-    created: "2024-09-11T09:46:22.870006163Z"
+    created: "2024-09-11T09:46:44.144802946Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 30fce4f26dda71efab2cfaf87d4dfdd2c451f30d4af9f4791a4f3c7da05bd628
     name: azimuth-identity-operator
@@ -5083,7 +5083,7 @@ entries:
     version: 0.1.0-dev.0.main.10
   - apiVersion: v2
     appVersion: 06e388d
-    created: "2024-09-11T09:46:22.877186323Z"
+    created: "2024-09-11T09:46:44.152896603Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 3944137e850674dd70af885a0ce1996244bee4088f497638af28a5cd0d78b31d
     name: azimuth-identity-operator
@@ -5093,7 +5093,7 @@ entries:
     version: 0.1.0-dev.0.main.9
   - apiVersion: v2
     appVersion: c5f6eed
-    created: "2024-09-11T09:46:22.876468993Z"
+    created: "2024-09-11T09:46:44.152576225Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 8cfbbd0d9f90d349d76ef4a58fbce3a8b4cd9029fbb9bbe784b7fe0d96687d52
     name: azimuth-identity-operator
@@ -5103,7 +5103,7 @@ entries:
     version: 0.1.0-dev.0.main.8
   - apiVersion: v2
     appVersion: 568262b
-    created: "2024-09-11T09:46:22.876217871Z"
+    created: "2024-09-11T09:46:44.152247461Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: e835a637975ae0a66f06a3b74ae6729ef2a3e7acc9df242ee8731aa7ec03b68d
     name: azimuth-identity-operator
@@ -5113,7 +5113,7 @@ entries:
     version: 0.1.0-dev.0.main.7
   - apiVersion: v2
     appVersion: e942f6d
-    created: "2024-09-11T09:46:22.875958002Z"
+    created: "2024-09-11T09:46:44.151720649Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: f0e94a89f43c9e28e65b61c32413b71480d6a24312a5c0478170ac2b14599d87
     name: azimuth-identity-operator
@@ -5123,7 +5123,7 @@ entries:
     version: 0.1.0-dev.0.main.6
   - apiVersion: v2
     appVersion: ca0bb1c
-    created: "2024-09-11T09:46:22.875704565Z"
+    created: "2024-09-11T09:46:44.150238713Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: b79062e340998adeaaf2649d27ad229e2071a5a35e265a073765cef1d23763ca
     name: azimuth-identity-operator
@@ -5133,7 +5133,7 @@ entries:
     version: 0.1.0-dev.0.main.5
   - apiVersion: v2
     appVersion: ee2235d
-    created: "2024-09-11T09:46:22.875449385Z"
+    created: "2024-09-11T09:46:44.149922853Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 225dd23a238a510e275f91a00b2534e32c05bdf57a030bc65c6235c6a6fd25f5
     name: azimuth-identity-operator
@@ -5143,7 +5143,7 @@ entries:
     version: 0.1.0-dev.0.main.4
   - apiVersion: v2
     appVersion: 9165bb9
-    created: "2024-09-11T09:46:22.875196419Z"
+    created: "2024-09-11T09:46:44.149609068Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 6a926cc9a2d9b208bd11429914d8a4be0f4c867a06227bb5efcfcead4599c0aa
     name: azimuth-identity-operator
@@ -5153,7 +5153,7 @@ entries:
     version: 0.1.0-dev.0.main.3
   - apiVersion: v2
     appVersion: c17b420
-    created: "2024-09-11T09:46:22.874937632Z"
+    created: "2024-09-11T09:46:44.149301854Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 24fd1a221c33ef777eee6b9c01d605a84808662dcae8fa758c20eda2c4494c56
     name: azimuth-identity-operator
@@ -5163,7 +5163,7 @@ entries:
     version: 0.1.0-dev.0.main.2
   - apiVersion: v2
     appVersion: ae1c80b
-    created: "2024-09-11T09:46:22.869409089Z"
+    created: "2024-09-11T09:46:44.144528364Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 985ea98eeddb6bc873fbd367f5f805392f3f618f71739e22b317f67fcb5f356b
     name: azimuth-identity-operator
@@ -5173,7 +5173,7 @@ entries:
     version: 0.1.0-dev.0.main.1
   - apiVersion: v2
     appVersion: fe8690d
-    created: "2024-09-11T09:46:22.868826183Z"
+    created: "2024-09-11T09:46:44.144223234Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5189,7 +5189,7 @@ entries:
     version: 0.1.0-dev.0.fix-update-easykube.25
   - apiVersion: v2
     appVersion: b1fce97
-    created: "2024-09-11T09:46:22.867265948Z"
+    created: "2024-09-11T09:46:44.142515596Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5205,7 +5205,7 @@ entries:
     version: 0.1.0-dev.0.fix-update-easykube.24
   - apiVersion: v2
     appVersion: 685cff5
-    created: "2024-09-11T09:46:22.865689873Z"
+    created: "2024-09-11T09:46:44.13969211Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5221,7 +5221,7 @@ entries:
     version: 0.1.0-dev.0.fix-update-easykube.23
   - apiVersion: v2
     appVersion: 6ec977d
-    created: "2024-09-11T09:46:22.864132793Z"
+    created: "2024-09-11T09:46:44.138079711Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5237,7 +5237,7 @@ entries:
     version: 0.1.0-dev.0.fix-update-easykube.22
   - apiVersion: v2
     appVersion: "12191e1"
-    created: "2024-09-11T09:46:22.862362813Z"
+    created: "2024-09-11T09:46:44.136479363Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5253,7 +5253,7 @@ entries:
     version: 0.1.0-dev.0.fix-update-easykube.21
   - apiVersion: v2
     appVersion: bf0d9f5
-    created: "2024-09-11T09:46:22.860309242Z"
+    created: "2024-09-11T09:46:44.134844541Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5269,7 +5269,7 @@ entries:
     version: 0.1.0-dev.0.fix-update-easykube.20
   - apiVersion: v2
     appVersion: 2be4fa1
-    created: "2024-09-11T09:46:22.858398958Z"
+    created: "2024-09-11T09:46:44.132649047Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5285,7 +5285,7 @@ entries:
     version: 0.1.0-dev.0.fix-update-easykube.19
   - apiVersion: v2
     appVersion: e74b6dc
-    created: "2024-09-11T09:46:22.856818996Z"
+    created: "2024-09-11T09:46:44.130837482Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5301,7 +5301,7 @@ entries:
     version: 0.1.0-dev.0.fix-update-easykube.18
   - apiVersion: v2
     appVersion: d0d2155
-    created: "2024-09-11T09:46:22.855256737Z"
+    created: "2024-09-11T09:46:44.129251431Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5317,7 +5317,7 @@ entries:
     version: 0.1.0-dev.0.fix-update-easykube.17
   - apiVersion: v2
     appVersion: "89196e5"
-    created: "2024-09-11T09:46:22.853643973Z"
+    created: "2024-09-11T09:46:44.127671301Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5333,7 +5333,7 @@ entries:
     version: 0.1.0-dev.0.fix-pooltimeouts.29
   - apiVersion: v2
     appVersion: ca7e64c
-    created: "2024-09-11T09:46:22.851165655Z"
+    created: "2024-09-11T09:46:44.12604201Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5349,7 +5349,7 @@ entries:
     version: 0.1.0-dev.0.fix-pooltimeouts.28
   - apiVersion: v2
     appVersion: "0433219"
-    created: "2024-09-11T09:46:22.849553923Z"
+    created: "2024-09-11T09:46:44.12399805Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5365,7 +5365,7 @@ entries:
     version: 0.1.0-dev.0.fix-pooltimeouts.27
   - apiVersion: v2
     appVersion: c2abd2b
-    created: "2024-09-11T09:46:22.847966587Z"
+    created: "2024-09-11T09:46:44.121886728Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5381,7 +5381,7 @@ entries:
     version: 0.1.0-dev.0.fix-pooltimeouts.26
   - apiVersion: v2
     appVersion: 8947cbe
-    created: "2024-09-11T09:46:22.846354975Z"
+    created: "2024-09-11T09:46:44.120277765Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5397,7 +5397,7 @@ entries:
     version: 0.1.0-dev.0.fix-pooltimeouts.25
   - apiVersion: v2
     appVersion: a0bf1bb
-    created: "2024-09-11T09:46:22.844717344Z"
+    created: "2024-09-11T09:46:44.118637543Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5413,7 +5413,7 @@ entries:
     version: 0.1.0-dev.0.feature-monitoring.21
   - apiVersion: v2
     appVersion: "7000318"
-    created: "2024-09-11T09:46:22.84222564Z"
+    created: "2024-09-11T09:46:44.117058195Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5429,7 +5429,7 @@ entries:
     version: 0.1.0-dev.0.feature-monitoring.20
   - apiVersion: v2
     appVersion: ab7e379
-    created: "2024-09-11T09:46:22.840415544Z"
+    created: "2024-09-11T09:46:44.114541175Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5445,7 +5445,7 @@ entries:
     version: 0.1.0-dev.0.feature-monitoring.19
   - apiVersion: v2
     appVersion: cc16cce
-    created: "2024-09-11T09:46:22.838913709Z"
+    created: "2024-09-11T09:46:44.113051754Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5461,7 +5461,7 @@ entries:
     version: 0.1.0-dev.0.feature-monitoring.18
   - apiVersion: v2
     appVersion: 7dd52b2
-    created: "2024-09-11T09:46:22.837368391Z"
+    created: "2024-09-11T09:46:44.111546354Z"
     dependencies:
     - alias: metrics
       condition: metrics.enabled
@@ -5477,7 +5477,7 @@ entries:
     version: 0.1.0-dev.0.feature-monitoring.17
   - apiVersion: v2
     appVersion: 2fe2e2d
-    created: "2024-09-11T09:46:22.835904577Z"
+    created: "2024-09-11T09:46:44.110015356Z"
     description: Helm chart for deploying the Azimuth identity operator.
     digest: 493e628733b1263ea5ab412a87ce5cf64142aef2c42030496e38f140b9c7aba2
     name: azimuth-identity-operator
@@ -5485,4 +5485,4 @@ entries:
     urls:
     - azimuth-identity-operator-0.1.0-dev.0.feature-monitoring.16.tgz
     version: 0.1.0-dev.0.feature-monitoring.16
-generated: "2024-09-11T09:46:22.835449592Z"
+generated: "2024-09-11T09:46:44.109557442Z"
