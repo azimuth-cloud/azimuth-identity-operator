@@ -12,6 +12,9 @@ tls:
   # Only used if createCertificate = true
   issuerRef:
 
+# A bundle of trusted CAs to use instead of the defaults
+trustBundle:
+
 # Configuration for the operator
 # For all available options, see azimuth_identity/config.py
 config: {}
