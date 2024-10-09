@@ -36,6 +36,11 @@ spec:
             - name: etc-azimuth
               mountPath: /etc/azimuth
               readOnly: true
+            {{- if .Values.trustBundle }}
+            - name: trust-bundle
+              mountPath: /etc/ssl/certs
+              readOnly: true
+            {{- end }}
             - name: tmp
               mountPath: /tmp
       {{- with .Values.nodeSelector }}
@@ -51,5 +56,10 @@ spec:
         - name: etc-azimuth
           secret:
             secretName: {{ include "azimuth-identity-operator.fullname" . }}
+        {{- if .Values.trustBundle }}
+        - name: trust-bundle
+          configMap:
+            name: {{ include "azimuth-identity-operator.fullname" . }}-trust-bundle
+        {{- end }}
         - name: tmp
           emptyDir: {}
