@@ -20,7 +20,7 @@ kopf==1.37.4
 kube-custom-resource==0.6.1
 multidict==6.1.0
 propcache==0.2.1
-pydantic==2.10.3
+pydantic==2.10.6
 pydantic_core==2.27.2
 pyhelm3==0.4.0
 python-json-logger==3.2.1
