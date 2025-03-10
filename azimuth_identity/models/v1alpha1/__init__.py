@@ -1,3 +1,4 @@
+from .oidc_client import *
 from .platform import *
 from .realm import *
 

@@ -7,8 +7,8 @@ class RealmSpec(schema.BaseModel):
     """
     The spec for an Azimuth identity realm.
     """
-    tenancy_id: schema.constr(min_length = 1) = Field(
-        ...,
+    tenancy_id: schema.Optional[schema.constr(min_length = 1)] = Field(
+        None,
         description = "The ID of the Azimuth tenancy that the realm is for."
     )
 
@@ -70,5 +70,5 @@ class Realm(
     """
     An Azimuth identity realm.
     """
-    spec: RealmSpec
+    spec: RealmSpec = Field(default_factory = RealmSpec)
     status: RealmStatus = Field(default_factory = RealmStatus)
