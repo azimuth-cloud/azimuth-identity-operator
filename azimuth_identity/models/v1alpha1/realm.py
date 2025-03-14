@@ -40,6 +40,10 @@ class RealmStatus(schema.BaseModel, extra = "allow"):
         None,
         description = "The admin URL for the realm."
     )
+    platform_users_group: schema.Optional[schema.constr(min_length = 1)] = Field(
+        None,
+        description = "The name of the platform users group for the realm."
+    )
     failure_message: str = Field(
         "",
         description = "The reason that the realm entered the failed phase, if known."

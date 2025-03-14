@@ -173,6 +173,12 @@ async def reconcile_realm(instance: api.Realm, **kwargs):
     instance.status.phase = api.RealmPhase.READY
     instance.status.oidc_issuer_url = f"{settings.keycloak.base_url}/realms/{realm_name}"
     instance.status.admin_url = f"{settings.keycloak.base_url}/admin/{realm_name}/console"
+    # Keycloak group names are prefixed with a slash
+    instance.status.platform_users_group = (
+        f"/{settings.keycloak.platform_users_group_name}"
+        if instance.spec.tenancy_id
+        else None
+    )
     LOGGER.info("Realm reconciled successfully, saving status - %s", format_instance(instance))
     await save_instance_status(instance)
 
@@ -358,6 +364,16 @@ async def reconcile_platform(instance: api.Platform, param, **kwargs):
             format_instance(instance),
             service_name
         )
+        # Calculate the allowed groups
+        allowed_groups = [
+            # Allow the parent group for the platform
+            group["path"],
+            # Allow users to be added to a subgroup for the specific service
+            subgroup["path"],
+        ]
+        # Add the platform users group if the realm has one
+        if realm.status.platform_users_group:
+            allowed_groups.insert(0, realm.status.platform_users_group)
         await ekclient.apply_object(
             {
                 "apiVersion": "v1",
@@ -379,14 +395,7 @@ async def reconcile_platform(instance: api.Platform, param, **kwargs):
                     "issuer-url": realm.status.oidc_issuer_url,
                     "client-id": client["clientId"],
                     "client-secret": client["secret"],
-                    "allowed-groups": json.dumps([
-                        # We allow the platform users group
-                        f"/{settings.keycloak.platform_users_group_name}",
-                        # Allow the parent group for all services
-                        group["path"],
-                        # Allow users to be added to a subgroup for the specific service
-                        subgroup["path"],
-                    ]),
+                    "allowed-groups": json.dumps(allowed_groups),
                 },
             },
             force = True
