@@ -284,6 +284,7 @@ async def reconcile_oidc_client(instance: api.OIDCClient, param, **kwargs):
         await secrets.delete(secret_name, namespace = instance.metadata.namespace)
     # Update the status to say we are ready
     instance.status.phase = api.OIDCClientPhase.READY
+    instance.status.issuer_url = realm.status.oidc_issuer_url
     instance.status.client_id = client_id
     instance.status.credentials_secret_name = secret_name if client_secret else None
     await save_instance_status(instance)

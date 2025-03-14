@@ -69,6 +69,10 @@ class OIDCClientStatus(schema.BaseModel, extra = "allow"):
         OIDCClientPhase.UNKNOWN.value,
         description = "The phase of the OIDC client."
     )
+    issuer_url: schema.Optional[schema.constr(min_length = 1)] = Field(
+        None,
+        description = "The issuer URL for the OIDC client."
+    )
     client_id: schema.Optional[schema.constr(min_length = 1)] = Field(
         None,
         description = "The client ID of the OIDC client."
