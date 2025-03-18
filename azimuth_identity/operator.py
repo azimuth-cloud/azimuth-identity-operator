@@ -343,6 +343,8 @@ async def reconcile_platform(instance: api.Platform, param, **kwargs):
     # Because realms and platforms are both namespace-scoped, we know that the the
     # platform name will be unique within the realm
     group = await keycloak.platform.ensure_platform_group(realm_name, instance)
+    instance.status.root_group = group["path"]
+    instance.status.zenith_service_subgroups = {}
     # For each Zenith service, ensure that a client exists and update the discovery secret
     for service_name, service in instance.spec.zenith_services.items():
         # Create a subgroup
@@ -351,6 +353,7 @@ async def reconcile_platform(instance: api.Platform, param, **kwargs):
             group,
             service_name
         )
+        instance.status.zenith_service_subgroups[service_name] = subgroup["path"]
         # Create a client
         client = await keycloak.platform.ensure_platform_service_client(
             realm_name,
