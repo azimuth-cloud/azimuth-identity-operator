@@ -4,7 +4,7 @@ RUN apt-get update && \
     apt-get install -y curl && \
     rm -rf /var/lib/apt/lists/*
 
-ARG HELM_VERSION=v3.17.0
+ARG HELM_VERSION=v3.17.3
 RUN set -ex; \
     OS_ARCH="$(uname -m)"; \
     case "$OS_ARCH" in \
@@ -19,7 +19,7 @@ RUN set -ex; \
 # Pull and unpack the Dex chart
 ARG DEX_CHART_NAME=dex
 ARG DEX_CHART_REPO=https://charts.dexidp.io
-ARG DEX_CHART_VERSION=0.20.0
+ARG DEX_CHART_VERSION=0.23.0
 RUN helm pull ${DEX_CHART_NAME} \
       --repo ${DEX_CHART_REPO} \
       --version ${DEX_CHART_VERSION} \
@@ -37,10 +37,10 @@ RUN python3 -m venv /venv && \
     /venv/bin/pip install -U pip setuptools
 
 COPY requirements.txt /app/requirements.txt
-RUN  /venv/bin/pip install --no-deps --requirement /app/requirements.txt
+RUN  /venv/bin/pip install --requirement /app/requirements.txt
 
 COPY . /app
-RUN /venv/bin/pip install --no-deps /app
+RUN /venv/bin/pip install /app
 
 
 FROM ubuntu:jammy
