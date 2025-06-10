@@ -11,20 +11,15 @@ from kube_custom_resource import CustomResourceRegistry
 # Create an easykube client from the environment
 from pydantic.json import pydantic_encoder
 
-from . import dex, keycloak, models
-from .config import settings
-from .models import v1alpha1 as api
+from azimuth_identity import dex, keycloak, models
+from azimuth_identity.config import settings
+from azimuth_identity.models import v1alpha1 as api
 
 LOGGER = logging.getLogger(__name__)
 
-
-ekconfig = Configuration.from_environment(json_encoder=pydantic_encoder)
-ekclient = ekconfig.async_client(default_field_manager=settings.easykube_field_manager)
-
-
-# Create a registry of custom resources and populate it from the models module
-registry = CustomResourceRegistry(settings.api_group, settings.crd_categories)
-registry.discover_models(models)
+ekconfig = None
+ekclient = None
+registry = None
 
 
 @kopf.on.startup()
@@ -32,6 +27,19 @@ async def apply_settings(**kwargs):
     """
     Apply kopf settings.
     """
+    global ekconfig
+    ekconfig = Configuration.from_environment(json_encoder=pydantic_encoder)
+
+    global ekclient
+    ekclient = ekconfig.async_client(
+        default_field_manager=settings.easykube_field_manager
+    )
+
+    global registry
+    # Create a registry of custom resources and populate it from the models module
+    registry = CustomResourceRegistry(settings.api_group, settings.crd_categories)
+    registry.discover_models(models)
+
     kopf_settings = kwargs["settings"]
     kopf_settings.persistence.finalizer = f"{settings.api_group}/finalizer"
     kopf_settings.persistence.progress_storage = kopf.AnnotationsProgressStorage(
