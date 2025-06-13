@@ -8,8 +8,8 @@ class RealmSpec(schema.BaseModel):
     The spec for an Azimuth identity realm.
     """
 
-    tenancy_id: schema.constr(min_length=1) = Field(
-        ..., description="The ID of the Azimuth tenancy that the realm is for."
+    tenancy_id: schema.Optional[schema.constr(min_length=1)] = Field(
+        None, description="The ID of the Azimuth tenancy that the realm is for."
     )
 
 
@@ -38,6 +38,9 @@ class RealmStatus(schema.BaseModel, extra="allow"):
     )
     admin_url: schema.Optional[schema.AnyHttpUrl] = Field(
         None, description="The admin URL for the realm."
+    )
+    platform_users_group: schema.Optional[schema.constr(min_length=1)] = Field(
+        None, description="The name of the platform users group for the realm."
     )
     failure_message: str = Field(
         "", description="The reason that the realm entered the failed phase, if known."
@@ -69,5 +72,5 @@ class Realm(
     An Azimuth identity realm.
     """
 
-    spec: RealmSpec
+    spec: RealmSpec = Field(default_factory=RealmSpec)
     status: RealmStatus = Field(default_factory=RealmStatus)

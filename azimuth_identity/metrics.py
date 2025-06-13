@@ -1,5 +1,4 @@
 import asyncio
-import datetime
 import functools
 
 from aiohttp import web

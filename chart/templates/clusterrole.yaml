@@ -19,8 +19,9 @@ rules:
     resources:
       - customresourcedefinitions
     resourceNames:
-      - realms.identity.azimuth.stackhpc.com
+      - oidcclients.identity.azimuth.stackhpc.com
       - platforms.identity.azimuth.stackhpc.com
+      - realms.identity.azimuth.stackhpc.com
     verbs:
       - update
       - patch

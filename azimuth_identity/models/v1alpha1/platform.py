@@ -1,5 +1,3 @@
-import typing as t
-
 from pydantic import Field
 
 from kube_custom_resource import CustomResource, schema
@@ -54,6 +52,13 @@ class PlatformStatus(schema.BaseModel, extra="allow"):
 
     phase: PlatformPhase = Field(
         PlatformPhase.UNKNOWN.value, description="The phase of the platform."
+    )
+    root_group: schema.Optional[str] = Field(
+        None, description="The name of the root group for the platform."
+    )
+    zenith_service_subgroups: schema.Dict[str, str] = Field(
+        default_factory=dict,
+        description="Mapping of Zenith service names to the group for the service.",
     )
 
 
