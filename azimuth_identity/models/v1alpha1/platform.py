@@ -1,5 +1,3 @@
-import typing as t
-
 from pydantic import Field
 
 from kube_custom_resource import CustomResource, schema
