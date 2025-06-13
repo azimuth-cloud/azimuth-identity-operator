@@ -1,1 +1,1 @@
-from . import client, group, oidc_client, platform, realm  #noqa: F401
+from . import client, group, oidc_client, platform, realm  # noqa: F401

@@ -54,12 +54,11 @@ class PlatformStatus(schema.BaseModel, extra="allow"):
         PlatformPhase.UNKNOWN.value, description="The phase of the platform."
     )
     root_group: schema.Optional[str] = Field(
-        None,
-        description = "The name of the root group for the platform."
+        None, description="The name of the root group for the platform."
     )
     zenith_service_subgroups: schema.Dict[str, str] = Field(
-        default_factory = dict,
-        description = "Mapping of Zenith service names to the group for the service."
+        default_factory=dict,
+        description="Mapping of Zenith service names to the group for the service.",
     )
 
 
