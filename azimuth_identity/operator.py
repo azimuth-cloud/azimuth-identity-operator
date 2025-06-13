@@ -13,12 +13,10 @@ from . import dex, keycloak, models
 from .config import settings
 from .models import v1alpha1 as api
 
-
-LOGGER = logging.getLogger(__name__)
-
-
 # Create an easykube client from the environment
 from pydantic.json import pydantic_encoder
+
+LOGGER = logging.getLogger(__name__)
 
 ekconfig = Configuration.from_environment(json_encoder=pydantic_encoder)
 ekclient = ekconfig.async_client(default_field_manager=settings.easykube_field_manager)

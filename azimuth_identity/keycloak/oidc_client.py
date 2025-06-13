@@ -1,8 +1,5 @@
 import logging
 
-import httpx
-
-from ..config import settings
 from ..models import v1alpha1 as api
 
 from . import client as kc_client
