@@ -17,43 +17,41 @@ class RealmPhase(str, schema.Enum):
     """
     The possible phases for a realm.
     """
-    UNKNOWN  = "Unknown"
-    PENDING  = "Pending"
-    READY    = "Ready"
+
+    UNKNOWN = "Unknown"
+    PENDING = "Pending"
+    READY = "Ready"
     DELETING = "Deleting"
-    FAILED   = "Failed"
+    FAILED = "Failed"
 
 
-class RealmStatus(schema.BaseModel, extra = "allow"):
+class RealmStatus(schema.BaseModel, extra="allow"):
     """
     The status of an Azimuth identity realm.
     """
+
     phase: RealmPhase = Field(
-        RealmPhase.UNKNOWN.value,
-        description = "The phase of the realm."
+        RealmPhase.UNKNOWN.value, description="The phase of the realm."
     )
     oidc_issuer_url: schema.Optional[schema.AnyHttpUrl] = Field(
-        None,
-        description = "The OIDC issuer URL for the realm."
+        None, description="The OIDC issuer URL for the realm."
     )
     admin_url: schema.Optional[schema.AnyHttpUrl] = Field(
-        None,
-        description = "The admin URL for the realm."
+        None, description="The admin URL for the realm."
     )
     platform_users_group: schema.Optional[schema.constr(min_length = 1)] = Field(
         None,
         description = "The name of the platform users group for the realm."
     )
     failure_message: str = Field(
-        "",
-        description = "The reason that the realm entered the failed phase, if known."
+        "", description="The reason that the realm entered the failed phase, if known."
     )
 
 
 class Realm(
     CustomResource,
-    subresources = {"status": {}},
-    printer_columns = [
+    subresources={"status": {}},
+    printer_columns=[
         {
             "name": "Phase",
             "type": "string",
@@ -69,7 +67,7 @@ class Realm(
             "type": "string",
             "jsonPath": ".status.oidcIssuerUrl",
         },
-    ]
+    ],
 ):
     """
     An Azimuth identity realm.
