@@ -1,7 +1,7 @@
 import unittest
 from unittest import mock
 
-from azimuth_identity.operator import operator
+from azimuth_identity import operator
 
 
 class TestOperator(unittest.IsolatedAsyncioTestCase):
