@@ -6,11 +6,12 @@ import typing as t
 
 import httpx
 
-from . import dex
-from .config import settings
+from . import config, dex
 from .models import v1alpha1 as api
 
 LOGGER = logging.getLogger(__name__)
+# initialize later to avoid unit test issues
+settings: config.Configuration
 
 
 class Auth(httpx.Auth):
@@ -66,6 +67,9 @@ kc_client = None
 
 
 async def init_client():
+    global settings
+    settings = config.Configuration()
+
     global kc_client
     kc_client = httpx.AsyncClient(base_url=f"{settings.keycloak.base_url}/admin/realms")
     kc_client.auth = Auth(

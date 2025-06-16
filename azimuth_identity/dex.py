@@ -8,10 +8,20 @@ import kopf
 import pyhelm3
 import yaml
 
-from .config import settings
+from . import config
 from .models import v1alpha1 as api
 
 LOGGER = logging.getLogger(__name__)
+settings: config.Configuration
+
+
+def init_settings():
+    """
+    Initializes the global settings variable with the configuration.
+    """
+    global settings
+    # late bind config to avoid unit test issues
+    settings = config.Configuration()
 
 
 def format_realm(realm: api.Realm):

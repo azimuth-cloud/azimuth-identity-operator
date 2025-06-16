@@ -4,22 +4,20 @@ import json
 import logging
 import sys
 
+import easykube
 import kopf
-from easykube import ApiError, Configuration
 from kube_custom_resource import CustomResourceRegistry
-
-# Create an easykube client from the environment
 from pydantic.json import pydantic_encoder
 
-from azimuth_identity import dex, keycloak, models
-from azimuth_identity.config import settings
+from azimuth_identity import config, dex, keycloak, models
 from azimuth_identity.models import v1alpha1 as api
 
 LOGGER = logging.getLogger(__name__)
 
-ekconfig = None
-ekclient = None
-registry = None
+ekconfig: easykube.Configuration
+ekclient: easykube.AsyncClient
+registry: CustomResourceRegistry
+settings: config.Configuration
 
 
 @kopf.on.startup()
@@ -27,14 +25,12 @@ async def apply_settings(**kwargs):
     """
     Apply kopf settings.
     """
-    if settings.dex is None or settings.keycloak is None:
-        LOGGER.error(
-            "Dex and Keycloak configuration must be provided in the operator settings"
-        )
-        sys.exit(1)
+    global settings
+    settings = config.Configuration()
+    dex.init_settings()
 
     global ekconfig
-    ekconfig = Configuration.from_environment(json_encoder=pydantic_encoder)
+    ekconfig = easykube.Configuration.from_environment(json_encoder=pydantic_encoder)
 
     global ekclient
     ekclient = ekconfig.async_client(
@@ -148,7 +144,7 @@ def model_handler(model, register_fn, **kwargs):
                 )
             try:
                 return await func(**handler_kwargs)
-            except ApiError as exc:
+            except easykube.ApiError as exc:
                 if exc.status_code == 409:
                     # When a handler fails with a 409, we want to retry quickly
                     raise kopf.TemporaryError(str(exc), delay=5)
@@ -243,7 +239,7 @@ async def reconcile_platform(instance: api.Platform, param, **kwargs):
         realm = await ekrealms.fetch(
             instance.spec.realm_name, namespace=instance.metadata.namespace
         )
-    except ApiError as exc:
+    except easykube.ApiError as exc:
         if exc.status_code == 404:
             raise kopf.TemporaryError(
                 f"Realm '{instance.spec.realm_name}' does not exist", delay=10
@@ -376,7 +372,7 @@ async def delete_platform(instance: api.Platform, **kwargs):
         realm = await ekrealms.fetch(
             instance.spec.realm_name, namespace=instance.metadata.namespace
         )
-    except ApiError as exc:
+    except easykube.ApiError as exc:
         if exc.status_code == 404:
             # If the realm does not exist, assume all the Keycloak resources are gone
             return
@@ -385,7 +381,7 @@ async def delete_platform(instance: api.Platform, **kwargs):
     realm: api.Realm = api.Realm.model_validate(realm)
     realm_name = keycloak.realm_name(realm)
     # Remove the clients for all the services
-    await keycloak.prune_platform_service_clients(realm_name, instance, all=True)
+    await keycloak.prune_platform_service_clients(realm_name, instance, prune_all=True)
     # Remove the platform group
     await keycloak.remove_platform_group(realm_name, instance)
 

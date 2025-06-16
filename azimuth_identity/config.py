@@ -175,10 +175,10 @@ class Configuration(
     watch_timeout: conint(gt=0) = 600
 
     #: Configuration for Dex instances
-    dex: DexConfig | None = None
+    dex: DexConfig
 
     #: Configuration for Keycloak
-    keycloak: KeycloakConfig | None = None
+    keycloak: KeycloakConfig
 
     #: The Helm client configuration
     helm_client: HelmClientConfiguration = Field(
@@ -186,4 +186,4 @@ class Configuration(
     )
 
 
-settings = Configuration()
+# settings = Configuration()
