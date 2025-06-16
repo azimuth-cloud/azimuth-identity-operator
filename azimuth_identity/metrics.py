@@ -14,7 +14,7 @@ class Metric:
     prefix = None
     # The suffix for the metric
     suffix = None
-    # The type of the metric - info or gauge
+    # The type of the metric - info or guage
     type = "info"
     # The description of the metric
     description = None
@@ -111,11 +111,9 @@ def escape(content):
 def format_value(value):
     """Formats a value for output, e.g. using Go formatting."""
     formatted = repr(value)
-    dot = formatted.find(".")
+    dot = formatted.find('.')
     if value > 0 and dot > 6:
-        mantissa = f"{formatted[0]}.{formatted[1:dot]}{formatted[dot + 1 :]}".rstrip(
-            "0."
-        )
+        mantissa = f"{formatted[0]}.{formatted[1:dot]}{formatted[dot + 1:]}".rstrip("0.")
         return f"{mantissa}e+0{dot - 1}"
     else:
         return formatted
@@ -166,7 +164,7 @@ async def metrics_handler(ekclient, request):
         for resource, metric_classes in resources.items():
             ekresource = await ekapi.resource(resource)
             resource_metrics = [klass() for klass in metric_classes]
-            async for obj in ekresource.list(all_namespaces=True):
+            async for obj in ekresource.list(all_namespaces = True):
                 for metric in resource_metrics:
                     metric.add_obj(obj)
             metrics.extend(resource_metrics)
@@ -182,10 +180,10 @@ async def metrics_server():
     app = web.Application()
     app.add_routes([web.get("/metrics", functools.partial(metrics_handler, ekclient))])
 
-    runner = web.AppRunner(app, handle_signals=False)
+    runner = web.AppRunner(app, handle_signals = False)
     await runner.setup()
 
-    site = web.TCPSite(runner, "0.0.0.0", "8080", shutdown_timeout=1.0)
+    site = web.TCPSite(runner, "0.0.0.0", "8080", shutdown_timeout = 1.0)
     await site.start()
 
     # Sleep until we need to clean up
