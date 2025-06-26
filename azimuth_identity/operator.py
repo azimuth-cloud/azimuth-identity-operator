@@ -27,12 +27,6 @@ async def apply_settings(**kwargs):
     """
     Apply kopf settings.
     """
-    if settings.dex is None or settings.keycloak is None:
-        LOGGER.error(
-            "Dex and Keycloak configuration must be provided in the operator settings"
-        )
-        sys.exit(1)
-
     global ekconfig
     ekconfig = Configuration.from_environment(json_encoder=pydantic_encoder)
 
