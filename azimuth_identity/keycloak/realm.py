@@ -4,9 +4,9 @@ import logging
 
 import httpx
 
-from .. import dex
-from ..config import settings
-from ..models import v1alpha1 as api
+from azimuth_identity import dex
+from azimuth_identity.config import settings
+from azimuth_identity.models import v1alpha1 as api
 
 from . import client as kc_client
 from .group import ensure_group
@@ -69,71 +69,81 @@ async def ensure_groups_scope(realm: api.Realm, realm_name: str):
     """
     # Get the existing groups scope, if it exists
     response = await kc_client.get(f"/{realm_name}/client-scopes")
-    existing_scope = next((scope for scope in response.json() if scope["name"] == "groups"), {})
+    existing_scope = next(
+        (scope for scope in response.json() if scope["name"] == "groups"), {}
+    )
     # Update the scope as required
     scope = copy.deepcopy(existing_scope)
-    scope.update({
-        "name": "groups",
-        "description": "Group memberships",
-        "protocol": "openid-connect",
-    })
+    scope.update(
+        {
+            "name": "groups",
+            "description": "Group memberships",
+            "protocol": "openid-connect",
+        }
+    )
     # Create or update the scope in Keycloak
     if not existing_scope:
         LOGGER.info("Creating groups scope for OIDC clients - %s", realm_name)
-        response = await kc_client.post(f"/{realm_name}/client-scopes", json = scope)
+        response = await kc_client.post(f"/{realm_name}/client-scopes", json=scope)
         response = await kc_client.get(response.headers["location"])
         scope = response.json()
     elif scope != existing_scope:
         LOGGER.info("Updating groups scope for OIDC clients - %s", realm_name)
-        await kc_client.put(
-            f"/{realm_name}/client-scopes/{scope['id']}",
-            json = scope
-        )
+        await kc_client.put(f"/{realm_name}/client-scopes/{scope['id']}", json=scope)
     # Ensure that the scope is in the realm default scopes
     # To do this properly, we must first make sure it is not optional
     response = await kc_client.get(f"/{realm_name}/default-optional-client-scopes")
     if any(s["id"] == scope["id"] for s in response.json()):
-        LOGGER.info("Removing groups scope from optional client scopes - %s", realm_name)
-        await kc_client.delete(f"/{realm_name}/default-optional-client-scopes/{scope['id']}")
+        LOGGER.info(
+            "Removing groups scope from optional client scopes - %s", realm_name
+        )
+        await kc_client.delete(
+            f"/{realm_name}/default-optional-client-scopes/{scope['id']}"
+        )
     # This fails with a conflict if the scope is already a default or optional scope,
-    # but we know from above that the scope is not optional, so the 409 is OK
+    # but we know from above that the scope is not optional, so the 409 is OK
     LOGGER.info("Adding groups scope to default client scopes - %s", realm_name)
     try:
-        await kc_client.put(f"/{realm_name}/default-default-client-scopes/{scope['id']}")
+        await kc_client.put(
+            f"/{realm_name}/default-default-client-scopes/{scope['id']}"
+        )
     except httpx.HTTPStatusError as exc:
         if exc.response.status_code != 409:
             raise
     # Make sure that the scope has the protocol mapper for mapping groups
     try:
         existing_mapper = next(
-            pm
-            for pm in scope.get("protocolMappers", [])
-            if pm["name"] == "groups"
+            pm for pm in scope.get("protocolMappers", []) if pm["name"] == "groups"
         )
     except StopIteration:
         existing_mapper = {}
     protocol_mapper = copy.deepcopy(existing_mapper)
-    protocol_mapper.update({
-        "name": "groups",
-        "protocol": "openid-connect",
-        "protocolMapper": "oidc-group-membership-mapper",
-    })
-    protocol_mapper.setdefault("config", {}).update({
-        "claim.name": "groups",
-        "full.path": "true",
-        "id.token.claim": "true",
-        "access.token.claim": "true",
-        "userinfo.token.claim": "true"
-    })
-    protocol_mappers_base = f"/{realm_name}/client-scopes/{scope['id']}/protocol-mappers/models"
+    protocol_mapper.update(
+        {
+            "name": "groups",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-group-membership-mapper",
+        }
+    )
+    protocol_mapper.setdefault("config", {}).update(
+        {
+            "claim.name": "groups",
+            "full.path": "true",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "userinfo.token.claim": "true",
+        }
+    )
+    protocol_mappers_base = (
+        f"/{realm_name}/client-scopes/{scope['id']}/protocol-mappers/models"
+    )
     if not existing_mapper:
         LOGGER.info("Create protocol mapper for groups scope - %s", realm_name)
-        await kc_client.post(protocol_mappers_base, json = protocol_mapper)
+        await kc_client.post(protocol_mappers_base, json=protocol_mapper)
     elif protocol_mapper != existing_mapper:
         LOGGER.info("Updating protocol mapper for groups scope - %s", realm_name)
         await kc_client.put(
-            f"{protocol_mappers_base}/{protocol_mapper['id']}",
-            json = protocol_mapper
+            f"{protocol_mappers_base}/{protocol_mapper['id']}", json=protocol_mapper
         )
 
 

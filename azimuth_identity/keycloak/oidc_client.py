@@ -1,12 +1,8 @@
 import logging
 
-import httpx
-
-from ..config import settings
-from ..models import v1alpha1 as api
+from azimuth_identity.models import v1alpha1 as api
 
 from . import client as kc_client
-
 
 LOGGER = logging.getLogger(__name__)
 
@@ -17,11 +13,7 @@ def merge(dict1: dict, dict2: dict) -> dict:
     """
     merged = dict1.copy()
     for key, value in dict2.items():
-        if (
-            key in dict1 and
-            isinstance(dict1[key], dict) and
-            isinstance(value, dict)
-        ):
+        if key in dict1 and isinstance(dict1[key], dict) and isinstance(value, dict):
             merged[key] = merge(dict1[key], value)
         else:
             merged[key] = value
@@ -32,7 +24,9 @@ async def get_oidc_client(realm_name: str, client_id: str):
     """
     Returns a client by client ID.
     """
-    response = await kc_client.get(f"/{realm_name}/clients", params = { "clientId": client_id })
+    response = await kc_client.get(
+        f"/{realm_name}/clients", params={"clientId": client_id}
+    )
     return next(iter(response.json()), None)
 
 
@@ -57,17 +51,20 @@ async def ensure_oidc_client(realm_name: str, oidc_client: api.OIDCClient):
             # Enable the required grant types if present in the list
             #   authorization code
             "standardFlowEnabled": (
-                api.OIDCClientGrantType.AUTHORIZATION_CODE in oidc_client.spec.grant_types
+                api.OIDCClientGrantType.AUTHORIZATION_CODE
+                in oidc_client.spec.grant_types
             ),
             #   client credentials
             "serviceAccountsEnabled": (
-                api.OIDCClientGrantType.CLIENT_CREDENTIALS in oidc_client.spec.grant_types
+                api.OIDCClientGrantType.CLIENT_CREDENTIALS
+                in oidc_client.spec.grant_types
             ),
             #   device code + refresh tokens
             "attributes": {
                 "oauth2.device.authorization.grant.enabled": (
                     "true"
-                    if api.OIDCClientGrantType.DEVICE_CODE in oidc_client.spec.grant_types
+                    if api.OIDCClientGrantType.DEVICE_CODE
+                    in oidc_client.spec.grant_types
                     else "false"
                 ),
                 "use.refresh.tokens": "true",
@@ -77,19 +74,19 @@ async def ensure_oidc_client(realm_name: str, oidc_client: api.OIDCClient):
             "implicitFlowEnabled": False,
             #   password
             "directAccessGrantsEnabled": False,
-        }
+        },
     )
     if not existing_client:
         LOGGER.info("Creating OIDC client '%s' in realm - %s", client_id, realm_name)
-        response = await kc_client.post(f"/{realm_name}/clients", json = next_client)
+        response = await kc_client.post(f"/{realm_name}/clients", json=next_client)
         # The Keycloak API does not return a representation in the create response,
-        # but it does return the URL to get one in the location header
+        # but it does return the URL to get one in the location header
         response = await kc_client.get(response.headers["location"])
         next_client = response.json()
     elif next_client != existing_client:
         LOGGER.info("Updating OIDC client '%s' in realm - %s", client_id, realm_name)
         kc_id = next_client.pop("id")
-        await kc_client.put(f"/{realm_name}/clients/{kc_id}", json = next_client)
+        await kc_client.put(f"/{realm_name}/clients/{kc_id}", json=next_client)
         # Update the representation of the client after the changes
         response = await kc_client.get(f"/{realm_name}/clients/{kc_id}")
         next_client = response.json()
