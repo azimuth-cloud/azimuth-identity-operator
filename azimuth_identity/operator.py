@@ -67,7 +67,7 @@ async def apply_settings(**kwargs):
                 crd.api_group
             )
             sys.exit(1)
-    await keycloak.init_client()
+    await keycloak.client.init()
 
 
 @kopf.on.cleanup()
@@ -77,7 +77,7 @@ async def on_cleanup(**kwargs):
     """
     LOGGER.info("Closing Kubernetes and Keycloak clients")
     await ekclient.aclose()
-    await keycloak.close_client()
+    await keycloak.client.close()
 
 
 def format_instance(instance):
@@ -153,24 +153,32 @@ async def reconcile_realm(instance: api.Realm, **kwargs):
         LOGGER.info("Updating realm status to PENDING - %s", format_instance(instance))
         await save_instance_status(instance)
     # Derive the realm name from the realm instance
-    realm_name = keycloak.realm_name(instance)
-    # Ensure that the Dex instance for the realm exists
-    dex_client = await dex.ensure_realm_instance(ekclient, instance, realm_name)
+    realm_name = keycloak.realm.realm_name(instance)
     # Create the realm
-    await keycloak.ensure_realm(realm_name)
-    # Make sure that the profile requirements for the realm are set up correctly
-    await keycloak.ensure_user_profile_config(realm_name)
-    # Create and wire up the admins and platform users group
-    await keycloak.ensure_admins_group(realm_name)
-    await keycloak.ensure_platform_users_group(realm_name)
-    # Create and wire up the identity provider for Dex
-    await keycloak.ensure_identity_provider(instance, realm_name, dex_client)
+    await keycloak.realm.ensure_realm(realm_name)
     # Create the groups scope
-    await keycloak.ensure_groups_scope(instance, realm_name)
+    await keycloak.realm.ensure_groups_scope(instance, realm_name)
+    # If required, configure the realm as a tenancy realm
+    # If not, just leave it as a vanilla realm
+    if instance.spec.tenancy_id:
+        # Ensure that the Dex instance for the realm exists
+        dex_client = await dex.ensure_realm_instance(ekclient, instance, realm_name)
+        # Make sure that the profile requirements for the realm are set up correctly
+        await keycloak.realm.ensure_user_profile_config(realm_name)
+        # Create and wire up the admins and platform users group
+        await keycloak.realm.ensure_admins_group(realm_name)
+        await keycloak.realm.ensure_platform_users_group(realm_name)
+        # Create and wire up the identity provider for Dex
+        await keycloak.realm.ensure_identity_provider(instance, realm_name, dex_client)
     instance.status.phase = api.RealmPhase.READY
-    issuer_url = f"{settings.keycloak.base_url}/realms/{realm_name}"
-    instance.status.oidc_issuer_url = issuer_url
+    instance.status.oidc_issuer_url = f"{settings.keycloak.base_url}/realms/{realm_name}"
     instance.status.admin_url = f"{settings.keycloak.base_url}/admin/{realm_name}/console"
+    # Keycloak group names are prefixed with a slash
+    instance.status.platform_users_group = (
+        f"/{settings.keycloak.platform_users_group_name}"
+        if instance.spec.tenancy_id
+        else None
+    )
     LOGGER.info("Realm reconciled successfully, saving status - %s", format_instance(instance))
     await save_instance_status(instance)
 
@@ -187,9 +195,127 @@ async def delete_realm(instance: api.Realm, **kwargs):
     # Delete the Dex instance
     await dex.delete_realm_instance(instance)
     # Remove the realm from Keycloak
-    realm_name = keycloak.realm_name(instance)
-    await keycloak.remove_realm(realm_name)
+    realm_name = keycloak.realm.realm_name(instance)
+    await keycloak.realm.remove_realm(realm_name)
     LOGGER.info("Realm deleted successfully - %s", format_instance(instance))
+
+
+async def get_realm(name: str, namespace: str) -> api.Realm:
+    """
+    Fetch the specified realm, or None if it doesn't exist.
+    """
+    ekrealms = await ekresource_for_model(api.Realm)
+    try:
+        realm = await ekrealms.fetch(name, namespace = namespace)
+    except ApiError as exc:
+        if exc.status_code == 404:
+            return
+        else:
+            raise
+    else:
+        return api.Realm.model_validate(realm)
+
+
+async def wait_for_realm(name: str, namespace: str) -> api.Realm:
+    """
+    Fetch the specified realm and wait for it to become ready.
+    """
+    realm = await get_realm(name, namespace)
+    if not realm:
+        raise kopf.TemporaryError(f"Realm '{namespace}/{name}' does not exist", delay = 10)
+    if realm.status.phase != api.RealmPhase.READY:
+        raise kopf.TemporaryError(f"Realm '{namespace}/{name}' is not ready", delay = 10)
+    return realm
+
+
+@model_handler(api.OIDCClient, kopf.on.create, param = "CREATE")
+@model_handler(api.OIDCClient, kopf.on.update, field = "spec", param = "UPDATE")
+@model_handler(api.OIDCClient, kopf.on.resume, param = "RESUME")
+async def reconcile_oidc_client(instance: api.OIDCClient, param, **kwargs):
+    """
+    Handles the reconciliation of an OIDC client.
+    """
+    # Acknowledge the client at the earliest opportunity
+    if instance.status.phase == api.OIDCClientPhase.UNKNOWN:
+        instance.status.phase = api.OIDCClientPhase.PENDING
+        LOGGER.info("Updating OIDC client status to PENDING - %s", format_instance(instance))
+        await save_instance_status(instance)
+    # If the spec has changed, put the client into the updating phase
+    if param == "UPDATE" and instance.status.phase != api.OIDCClientPhase.UPDATING:
+        instance.status.phase = api.OIDCClientPhase.UPDATING
+        LOGGER.info("Updating OIDC client status to UPDATING - %s", format_instance(instance))
+        await save_instance_status(instance)
+    # Get the realm for the client and wait for it to become ready
+    LOGGER.info("Fetching realm for OIDC client - %s", format_instance(instance))
+    realm = await wait_for_realm(instance.spec.realm_name, instance.metadata.namespace)
+    realm_name = keycloak.realm.realm_name(realm)
+    client_id, client_secret = await keycloak.oidc_client.ensure_oidc_client(realm_name, instance)
+    # If the client has a secret, write the client ID and secret to a Kubernetes secret
+    # If the client does NOT have a secret, delete the Kubernetes secret
+    # The OIDC client owns the secret so it gets deleted when the client does
+    secrets = await ekclient.api("v1").resource("secrets")
+    secret_name = (
+        instance.spec.credentials_secret_name or
+        f"{instance.metadata.name}-oidc-credentials"
+    )
+    if client_secret:
+        await secrets.server_side_apply(
+            secret_name,
+            {
+                "metadata": {
+                    "labels": {
+                        "app.kubernetes.io/managed-by": "azimuth-identity-operator",
+                    },
+                    "ownerReferences": [
+                        {
+                            "apiVersion": instance.api_version,
+                            "kind": instance.kind,
+                            "name": instance.metadata.name,
+                            "uid": instance.metadata.uid,
+                            "controller": True,
+                            "blockOwnerDeletion": True,
+                        },
+                    ],
+                },
+                "stringData": {
+                    "issuer-url": realm.status.oidc_issuer_url,
+                    "client-id": client_id,
+                    "client-secret": client_secret,
+                },
+            },
+            namespace = instance.metadata.namespace,
+            force = True
+        )
+    else:
+        await secrets.delete(secret_name, namespace = instance.metadata.namespace)
+    # Update the status to say we are ready
+    instance.status.phase = api.OIDCClientPhase.READY
+    instance.status.issuer_url = realm.status.oidc_issuer_url
+    instance.status.client_id = client_id
+    instance.status.credentials_secret_name = secret_name if client_secret else None
+    await save_instance_status(instance)
+
+
+@model_handler(api.OIDCClient, kopf.on.delete)
+async def delete_oidc_client(instance: api.OIDCClient, **kwargs):
+    """
+    Handles the deletion of an OIDC client.
+    """
+    if instance.status.phase != api.OIDCClientPhase.DELETING:
+        instance.status.phase = api.OIDCClientPhase.DELETING
+        LOGGER.info("Updating OIDC client status to DELETING - %s", format_instance(instance))
+        await save_instance_status(instance)
+    # Get the realm for the client
+    LOGGER.info("Fetching realm for OIDC client - %s", format_instance(instance))
+    realm = await get_realm(instance.spec.realm_name, instance.metadata.namespace)
+    # If the realm doesn't exist, we assume that the OIDC client is gone
+    if not realm:
+        LOGGER.warning("Realm does not exist for OIDC client - %s", format_instance(instance))
+        return
+    # Remove the OIDC client from Keycloak
+    realm_name = keycloak.realm.realm_name(realm)
+    await keycloak.oidc_client.remove_oidc_client(realm_name, instance)
+    LOGGER.info("OIDC client deleted successfully - %s", format_instance(instance))
 
 
 @model_handler(api.Platform, kopf.on.create, param = "CREATE")
@@ -211,41 +337,25 @@ async def reconcile_platform(instance: api.Platform, param, **kwargs):
         await save_instance_status(instance)
     # First, get the realm for the platform and wait for it to become ready
     LOGGER.info("Fetching realm for platform - %s", format_instance(instance))
-    ekrealms = await ekresource_for_model(api.Realm)
-    try:
-        realm = await ekrealms.fetch(
-            instance.spec.realm_name,
-            namespace = instance.metadata.namespace
-        )
-    except ApiError as exc:
-        if exc.status_code == 404:
-            raise kopf.TemporaryError(
-                f"Realm '{instance.spec.realm_name}' does not exist",
-                delay = 10
-            )
-        else:
-            raise
-    realm: api.Realm = api.Realm.model_validate(realm)
-    if realm.status.phase != api.RealmPhase.READY:
-        raise kopf.TemporaryError(
-            f"Realm '{instance.spec.realm_name}' is not yet ready",
-            delay = 10
-        )
-    realm_name = keycloak.realm_name(realm)
+    realm = await wait_for_realm(instance.spec.realm_name, instance.metadata.namespace)
+    realm_name = keycloak.realm.realm_name(realm)
     # Create a group for the platform
     # Because realms and platforms are both namespace-scoped, we know that the the
     # platform name will be unique within the realm
-    group = await keycloak.ensure_platform_group(realm_name, instance)
+    group = await keycloak.platform.ensure_platform_group(realm_name, instance)
+    instance.status.root_group = group["path"]
+    instance.status.zenith_service_subgroups = {}
     # For each Zenith service, ensure that a client exists and update the discovery secret
     for service_name, service in instance.spec.zenith_services.items():
         # Create a subgroup
-        subgroup = await keycloak.ensure_platform_service_subgroup(
+        subgroup = await keycloak.platform.ensure_platform_service_subgroup(
             realm_name,
             group,
             service_name
         )
+        instance.status.zenith_service_subgroups[service_name] = subgroup["path"]
         # Create a client
-        client = await keycloak.ensure_platform_service_client(
+        client = await keycloak.platform.ensure_platform_service_client(
             realm_name,
             instance,
             service_name,
@@ -257,6 +367,16 @@ async def reconcile_platform(instance: api.Platform, param, **kwargs):
             format_instance(instance),
             service_name
         )
+        # Calculate the allowed groups
+        allowed_groups = [
+            # Allow the parent group for the platform
+            group["path"],
+            # Allow users to be added to a subgroup for the specific service
+            subgroup["path"],
+        ]
+        # Add the platform users group if the realm has one
+        if realm.status.platform_users_group:
+            allowed_groups.insert(0, realm.status.platform_users_group)
         await ekclient.apply_object(
             {
                 "apiVersion": "v1",
@@ -278,14 +398,7 @@ async def reconcile_platform(instance: api.Platform, param, **kwargs):
                     "issuer-url": realm.status.oidc_issuer_url,
                     "client-id": client["clientId"],
                     "client-secret": client["secret"],
-                    "allowed-groups": json.dumps([
-                        # We allow the platform users group
-                        f"/{settings.keycloak.platform_users_group_name}",
-                        # Allow the parent group for all services
-                        group["path"],
-                        # Allow users to be added to a subgroup for the specific service
-                        subgroup["path"],
-                    ]),
+                    "allowed-groups": json.dumps(allowed_groups),
                 },
             },
             force = True
@@ -314,9 +427,9 @@ async def reconcile_platform(instance: api.Platform, param, **kwargs):
                 namespace = secret.metadata.namespace
             )
     # Delete all the clients belonging to services that we no longer recognise
-    await keycloak.prune_platform_service_clients(realm_name, instance)
+    await keycloak.platform.prune_platform_service_clients(realm_name, instance)
     # Delete all the subgroups belonging to services that we no longer recognise
-    await keycloak.prune_platform_service_subgroups(realm_name, instance, group)
+    await keycloak.platform.prune_platform_service_subgroups(realm_name, instance, group)
     instance.status.phase = api.PlatformPhase.READY
     LOGGER.info("Platform reconciled successfully, saving status - %s", format_instance(instance))
     await save_instance_status(instance)
@@ -343,24 +456,17 @@ async def delete_platform(instance: api.Platform, **kwargs):
         namespace = settings.keycloak.zenith_discovery_namespace
     )
     # Get the realm for the platform
-    ekrealms = await ekresource_for_model(api.Realm)
-    try:
-        realm = await ekrealms.fetch(
-            instance.spec.realm_name,
-            namespace = instance.metadata.namespace
-        )
-    except ApiError as exc:
-        if exc.status_code == 404:
-            # If the realm does not exist, assume all the Keycloak resources are gone
-            return
-        else:
-            raise
-    realm: api.Realm = api.Realm.model_validate(realm)
-    realm_name = keycloak.realm_name(realm)
+    LOGGER.info("Fetching realm for platform - %s", format_instance(instance))
+    realm = await get_realm(instance.spec.realm_name, instance.metadata.namespace)
+    # If the realm doesn't exist, we assume that the Keycloak resources are gone
+    if not realm:
+        LOGGER.warning("Realm does not exist for platform - %s", format_instance(instance))
+        return
+    realm_name = keycloak.realm.realm_name(realm)
     # Remove the clients for all the services
-    await keycloak.prune_platform_service_clients(realm_name, instance, all = True)
+    await keycloak.platform.prune_platform_service_clients(realm_name, instance, all = True)
     # Remove the platform group
-    await keycloak.remove_platform_group(realm_name, instance)
+    await keycloak.platform.remove_platform_group(realm_name, instance)
 
 
 @kopf.daemon(
