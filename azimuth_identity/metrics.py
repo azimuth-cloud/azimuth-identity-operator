@@ -4,18 +4,18 @@ import functools
 import easykube
 from aiohttp import web
 
-from . import config
+from .config import settings
 
 
 class Metric:
     # The prefix for the metric
-    prefix: str | None = None
+    prefix = None
     # The suffix for the metric
-    suffix: str | None = None
+    suffix = None
     # The type of the metric - info or gauge
     type = "info"
     # The description of the metric
-    description: str | None = None
+    description = None
 
     def __init__(self):
         self._objs = []
@@ -143,10 +143,23 @@ def render_openmetrics(*metrics):
     )
 
 
-async def metrics_handler(ekclient, metrics, request):
+METRICS = {
+    settings.api_group: {
+        "realms": [
+            RealmPhase,
+        ],
+        "platforms": [
+            PlatformPhase,
+            PlatformService,
+        ],
+    },
+}
+
+
+async def metrics_handler(ekclient, request):
     """Produce metrics for the operator."""
     metrics = []
-    for api_group, resources in metrics.items():
+    for api_group, resources in METRICS.items():
         ekapi = await ekclient.api_preferred_version(api_group)
         for resource, metric_classes in resources.items():
             ekresource = await ekapi.resource(resource)
@@ -164,28 +177,13 @@ async def metrics_server():
     """Launch a lightweight HTTP server to serve the metrics endpoint."""
     ekclient = easykube.Configuration.from_environment().async_client()
 
-    settings = config.Configuration()
-    metrics = {
-        settings.api_group: {
-            "realms": [
-                RealmPhase,
-            ],
-            "platforms": [
-                PlatformPhase,
-                PlatformService,
-            ],
-        },
-    }
-
     app = web.Application()
-    app.add_routes(
-        [web.get("/metrics", functools.partial(metrics_handler, ekclient, metrics))]
-    )
+    app.add_routes([web.get("/metrics", functools.partial(metrics_handler, ekclient))])
 
     runner = web.AppRunner(app, handle_signals=False)
     await runner.setup()
 
-    site = web.TCPSite(runner, "0.0.0.0", 8080, shutdown_timeout=1.0)
+    site = web.TCPSite(runner, "0.0.0.0", "8080", shutdown_timeout=1.0)
     await site.start()
 
     # Sleep until we need to clean up
