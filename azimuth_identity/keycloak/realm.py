@@ -4,10 +4,9 @@ import logging
 
 import httpx
 
-from azimuth_identity import dex
-from azimuth_identity.config import settings
-from azimuth_identity.models import v1alpha1 as api
-
+from .. import dex  # noqa: TID252
+from ..config import settings  # noqa: TID252
+from ..models import v1alpha1 as api  # noqa: TID252
 from . import client as kc_client
 from .group import ensure_group
 

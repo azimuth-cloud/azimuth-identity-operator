@@ -3,7 +3,7 @@ import logging
 
 import httpx
 
-from azimuth_identity.config import settings
+from ..config import settings  # noqa: TID252
 
 LOGGER = logging.getLogger(__name__)
 

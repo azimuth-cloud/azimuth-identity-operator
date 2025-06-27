@@ -2,9 +2,8 @@ import copy
 import logging
 import typing as t
 
-from azimuth_identity.config import settings
-from azimuth_identity.models import v1alpha1 as api
-
+from ..config import settings  # noqa: TID252
+from ..models import v1alpha1 as api  # noqa: TID252
 from . import client as kc_client
 
 LOGGER = logging.getLogger(__name__)

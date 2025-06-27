@@ -1,7 +1,6 @@
 import logging
 
-from azimuth_identity.models import v1alpha1 as api
-
+from ..models import v1alpha1 as api  # noqa: TID252
 from . import client as kc_client
 
 LOGGER = logging.getLogger(__name__)
