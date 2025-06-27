@@ -3,8 +3,7 @@ import logging
 
 import httpx
 
-from ..config import settings
-
+from ..config import settings  # noqa: TID252
 
 LOGGER = logging.getLogger(__name__)
 
@@ -13,6 +12,7 @@ class Auth(httpx.Auth):
     """
     Authenticator for Keycloak requests.
     """
+
     requires_response_body = True
 
     def __init__(self, client, token_url):
@@ -26,19 +26,19 @@ class Auth(httpx.Auth):
         token = self._token
         async with self._lock:
             # If someone else changed the token in the time it took us
-            # to acquire the lock, there is nothing for us to do
+            # to acquire the lock, there is nothing for us to do
             # Otherwise, fetch a new token
             if self._token == token:
                 LOGGER.info("Refreshing Keycloak admin token")
                 response = await self._client.post(
                     self._token_url,
-                    data = {
+                    data={
                         "grant_type": "password",
                         "client_id": settings.keycloak.client_id,
                         "username": settings.keycloak.username,
                         "password": settings.keycloak.password,
                     },
-                    auth = None
+                    auth=None,
                 )
                 response.raise_for_status()
                 self._token = response.json()["access_token"]
@@ -56,19 +56,20 @@ class Auth(httpx.Auth):
             break
 
 
-# The client must be initialised inside the event loop for the auth lock to work correctly
+# The client must be initialised inside the event loop for the auth lock to work
+# correctly
 kc_client = None
 
 
 async def init():
     global kc_client
-    kc_client = httpx.AsyncClient(base_url = f"{settings.keycloak.base_url}/admin/realms")
+    kc_client = httpx.AsyncClient(base_url=f"{settings.keycloak.base_url}/admin/realms")
     kc_client.auth = Auth(
         kc_client,
         (
             f"{settings.keycloak.base_url}/realms/{settings.keycloak.client_realm}"
             "/protocol/openid-connect/token"
-        )
+        ),
     )
 
 
