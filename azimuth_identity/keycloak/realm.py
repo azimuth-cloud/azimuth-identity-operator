@@ -308,8 +308,9 @@ async def _ensure_idp_first_login_flow(realm: api.Realm, realm_name: str):
     execution is disabled.
     """
     # First, try to find the review profile execution for the flow
-    executions_url = "/{}/authentication/flows/{}/executions".format(
-        realm_name, settings.keycloak.target_first_login_flow_alias
+    executions_url = (
+        f"/{realm_name}/authentication/flows/"
+        f"{settings.keycloak.target_first_login_flow_alias}/executions"
     )
     try:
         response = await kc_client.get(executions_url)
@@ -324,9 +325,7 @@ async def _ensure_idp_first_login_flow(realm: api.Realm, realm_name: str):
             realm_name,
         )
         await kc_client.post(
-            "/{}/authentication/flows/{}/copy".format(
-                realm_name, settings.keycloak.source_first_login_flow_alias
-            ),
+            f"/{realm_name}/authentication/flows/{settings.keycloak.source_first_login_flow_alias}/copy",
             json={"newName": settings.keycloak.target_first_login_flow_alias},
         )
         return await _ensure_idp_first_login_flow(realm, realm_name)

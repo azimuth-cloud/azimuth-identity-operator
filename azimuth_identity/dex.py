@@ -96,11 +96,7 @@ async def ensure_config_secret(
     client = {
         "name": "Keycloak",
         "redirectURIs": [
-            "{base_url}/realms/{realm}/broker/{alias}/endpoint".format(
-                base_url=settings.keycloak.base_url,
-                realm=keycloak_realm_name,
-                alias=settings.dex.keycloak_client_alias,
-            ),
+            f"{settings.keycloak.base_url}/realms/{keycloak_realm_name}/broker/{settings.dex.keycloak_client_alias}/endpoint",
         ],
         "id": "keycloak-oidc",
         "secret": client_secret,
@@ -248,7 +244,7 @@ async def ensure_ingresses(
     if settings.dex.ingress_auth_signin_url:
         auth_annotations.update(
             {
-                "nginx.ingress.kubernetes.io/auth-signin": settings.dex.ingress_auth_signin_url, # noqa: E501
+                "nginx.ingress.kubernetes.io/auth-signin": settings.dex.ingress_auth_signin_url,  # noqa: E501
                 "nginx.ingress.kubernetes.io/auth-signin-redirect-param": (
                     settings.dex.ingress_auth_signin_redirect_param
                 ),
@@ -286,7 +282,7 @@ async def ensure_ingresses(
                     "http": {
                         "paths": [
                             {
-                                "path": f"{path_prefix(realm, keycloak_realm_name)}/callback/azimuth", # noqa: E501
+                                "path": f"{path_prefix(realm, keycloak_realm_name)}/callback/azimuth",  # noqa: E501
                                 "pathType": "Prefix",
                                 "backend": {
                                     "service": {

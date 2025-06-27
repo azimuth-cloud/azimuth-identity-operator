@@ -405,13 +405,13 @@ async def reconcile_platform(instance: api.Platform, param, **kwargs):
                 "apiVersion": "v1",
                 "kind": "Secret",
                 "metadata": {
-                    "name": settings.keycloak.zenith_discovery_secret_name_template.format( # noqa: E501
+                    "name": settings.keycloak.zenith_discovery_secret_name_template.format(  # noqa: E501
                         subdomain=service.subdomain
                     ),
                     "namespace": settings.keycloak.zenith_discovery_namespace,
                     "labels": {
                         "app.kubernetes.io/managed-by": "azimuth-identity-operator",
-                        f"{settings.api_group}/platform-namespace": instance.metadata.namespace, # noqa: E501
+                        f"{settings.api_group}/platform-namespace": instance.metadata.namespace,  # noqa: E501
                         f"{settings.api_group}/platform-name": instance.metadata.name,
                         f"{settings.api_group}/service-name": service_name,
                         f"{settings.api_group}/subdomain": service.subdomain,
