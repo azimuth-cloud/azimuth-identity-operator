@@ -10,6 +10,7 @@ async def main():
     Run the operator and the metrics server together.
     """
     # This import is required to pick up the operator handlers
+    from . import operator  # noqa
 
     kopf.configure(log_prefix=True)
     tasks = await kopf.spawn_tasks(
