@@ -132,7 +132,10 @@ async def ensure_platform_service_client(
     existing_client.pop("access", None)
     # Update with what we think the client should look like
     next_client = copy.deepcopy(existing_client)
-    base_url = f"{settings.keycloak.zenith_redirect_uri_scheme}://{service.fqdn}"
+    base_url = "{scheme}://{fqdn}".format(
+        scheme = settings.keycloak.zenith_redirect_uri_scheme,
+        fqdn = service.fqdn,
+    )
     next_client.update(
         {
             "clientId": client_id,
