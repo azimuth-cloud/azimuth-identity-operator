@@ -1,7 +1,7 @@
-FROM ubuntu:jammy as helm
+FROM ubuntu:24.04 as helm
 
 RUN apt-get update && \
-    apt-get install -y curl && \
+    apt-get install -y wget && \
     rm -rf /var/lib/apt/lists/*
 
 ARG HELM_VERSION=v3.18.4
@@ -12,7 +12,7 @@ RUN set -ex; \
         aarch64) helm_arch=arm64 ;; \
         *) false ;; \
     esac; \
-    curl -fsSL https://get.helm.sh/helm-${HELM_VERSION}-linux-${helm_arch}.tar.gz | \
+    wget -q -O - https://get.helm.sh/helm-${HELM_VERSION}-linux-${helm_arch}.tar.gz | \
       tar -xz --strip-components 1 -C /usr/bin linux-${helm_arch}/helm; \
     helm version
 
@@ -27,7 +27,7 @@ RUN helm pull ${DEX_CHART_NAME} \
       --untardir /charts
 
 
-FROM ubuntu:jammy AS python-builder
+FROM ubuntu:24.04 AS python-builder
 
 RUN apt-get update && \
     apt-get install -y python3 python3-venv && \
@@ -43,7 +43,7 @@ COPY . /app
 RUN /venv/bin/pip install /app
 
 
-FROM ubuntu:jammy
+FROM ubuntu:24.04
 
 # Create the user that will be used to run the app
 ENV APP_UID 1001
@@ -60,7 +60,7 @@ RUN groupadd --gid $APP_GID $APP_GROUP && \
       $APP_USER
 
 RUN apt-get update && \
-    apt-get install -y ca-certificates python3 tini && \
+    apt-get install -y ca-certificates python3 && \
     rm -rf /var/lib/apt/lists/*
 
 # Don't buffer stdout and stderr as it breaks realtime logging
@@ -80,5 +80,4 @@ COPY --from=helm /charts/dex /charts/dex
 COPY --from=python-builder /venv /venv
 
 USER $APP_UID
-ENTRYPOINT ["tini", "-g", "--"]
 CMD ["/venv/bin/python", "-m", "azimuth_identity"]
