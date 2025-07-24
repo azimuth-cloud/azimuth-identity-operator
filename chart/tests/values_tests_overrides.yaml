@@ -1,0 +1,7 @@
+config:
+  dex:
+    host: "foo.example.com"
+tls:
+  issuerRef:
+    name: some-issuer-name
+    kind: ClusterIssuer  # or Issuer
