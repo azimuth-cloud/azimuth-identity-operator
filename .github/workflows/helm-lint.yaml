@@ -38,7 +38,7 @@ jobs:
         run: |-
           helm template foo chart \
             -f chart/tests/values_tests_overrides.yaml |
-            sudo docker run --rm -i \
+           docker run --rm -i \
             ghcr.io/yannh/kubeconform:latest \
             --strict --summary \
             --schema-location default \
