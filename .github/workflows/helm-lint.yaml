@@ -37,8 +37,14 @@ jobs:
       - name: Run template validation
         run: |-
           helm template foo chart \
-            | docker run -i --rm ghcr.io/yannh/kubeconform:latest \
-            --strict --summary
+            -f chart/tests/values_tests_overrides.yaml |
+            sudo docker run --rm -i \
+            ghcr.io/yannh/kubeconform:latest \
+            --strict --summary \
+            --schema-location default \
+            --schema-location \
+            "https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/{{.Group}}/{{.ResourceKind}}_{{.ResourceAPIVersion}}.json"
+
 
       - name: Run manifest snapshot test
         run: docker run -i --rm -v $(pwd):/apps helmunittest/helm-unittest chart
