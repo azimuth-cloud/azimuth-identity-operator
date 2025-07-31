@@ -392,14 +392,16 @@ async def reconcile_platform(instance: api.Platform, param, **kwargs):
         )
         # Calculate the allowed groups
         allowed_groups = [
+            # Add the platform users group if the realm has one
+            realm.status.get(
+                "platform_users_group",
+                f"/{settings.keycloak.platform_users_group_name}",
+            ),
             # Allow the parent group for the platform
             group["path"],
             # Allow users to be added to a subgroup for the specific service
             subgroup["path"],
         ]
-        # Add the platform users group if the realm has one
-        if realm.status.platform_users_group:
-            allowed_groups.insert(0, realm.status.platform_users_group)
         await ekclient.apply_object(
             {
                 "apiVersion": "v1",
