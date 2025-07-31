@@ -80,6 +80,14 @@ async def on_cleanup(**kwargs):
     await keycloak.client.close()
 
 
+def is_cloud_tenancy_realm(instance: api.Realm) -> bool:
+    """
+    Returns true if the provided realm is for a cloud
+    tenancy and false if the realm is for OIDC mode.
+    """
+    return instance.spec.tenancy_id is not None
+
+
 def format_instance(instance):
     """
     Formats an instance for logging.
@@ -165,7 +173,7 @@ async def reconcile_realm(instance: api.Realm, **kwargs):
     await keycloak.realm.ensure_groups_scope(instance, realm_name)
     # If required, configure the realm as a tenancy realm
     # If not, just leave it as a vanilla realm
-    if instance.spec.tenancy_id:
+    if is_cloud_tenancy_realm(instance):
         # Ensure that the Dex instance for the realm exists
         dex_client = await dex.ensure_realm_instance(ekclient, instance, realm_name)
         # Make sure that the profile requirements for the realm are set up correctly
@@ -185,7 +193,7 @@ async def reconcile_realm(instance: api.Realm, **kwargs):
     # Keycloak group names are prefixed with a slash
     instance.status.platform_users_group = (
         f"/{settings.keycloak.platform_users_group_name}"
-        if instance.spec.tenancy_id
+        if is_cloud_tenancy_realm(instance)
         else None
     )
     LOGGER.info(
@@ -398,8 +406,8 @@ async def reconcile_platform(instance: api.Platform, param, **kwargs):
             subgroup["path"],
         ]
         # Add the platform users group if the realm has one
-        if realm.status.platform_users_group:
-            allowed_groups.insert(0, realm.status.platform_users_group)
+        if is_cloud_tenancy_realm(realm):
+            allowed_groups.insert(0, f"/{settings.keycloak.platform_users_group_name}")
         await ekclient.apply_object(
             {
                 "apiVersion": "v1",
