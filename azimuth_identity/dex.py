@@ -164,9 +164,13 @@ async def ensure_ingresses(
     Ensures that the ingress resources exist for Dex for the given realm.
     """
     if settings.dex.ingress_routing_type == "ingressroute":
-        await _ensure_ingressroutes(ekclient, realm, keycloak_realm_name, tls_secret_name)
+        await _ensure_ingressroutes(
+            ekclient, realm, keycloak_realm_name, tls_secret_name
+        )
     else:
-        await _ensure_nginx_ingresses(ekclient, realm, keycloak_realm_name, tls_secret_name)
+        await _ensure_nginx_ingresses(
+            ekclient, realm, keycloak_realm_name, tls_secret_name
+        )
 
 
 async def _ensure_nginx_ingresses(
@@ -418,7 +422,9 @@ async def _ensure_ingressroutes(
         },
     )
 
-    LOGGER.info("Creating Traefik Middleware resources for Dex - %s", format_realm(realm))
+    LOGGER.info(
+        "Creating Traefik Middleware resources for Dex - %s", format_realm(realm)
+    )
     for obj in (mw_strip, mw_tenancy, mw_auth):
         await ekclient.apply_object(obj, force=True)
 
@@ -437,7 +443,9 @@ async def _ensure_ingressroutes(
         f"{realm_name}-dex",
     )
 
-    LOGGER.info("Creating Traefik IngressRoute resources for Dex - %s", format_realm(realm))
+    LOGGER.info(
+        "Creating Traefik IngressRoute resources for Dex - %s", format_realm(realm)
+    )
     for obj in (ir_main, ir_auth):
         await ekclient.apply_object(obj, force=True)
 
