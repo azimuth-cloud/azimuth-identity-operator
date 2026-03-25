@@ -163,10 +163,23 @@ async def ensure_ingresses(
     """
     Ensures that the ingress resources exist for Dex for the given realm.
     """
-    # Calculate the prefix that we will use for Dex instances
-    # We need two ingresses for each Dex instance
-    # One is unauthenticated and is used for the catchall path
-    # The other is authenticated and is used for the authproxy callback path
+    if settings.dex.ingress_routing_type == "ingressroute":
+        await _ensure_ingressroutes(ekclient, realm, keycloak_realm_name, tls_secret_name)
+    else:
+        await _ensure_nginx_ingresses(ekclient, realm, keycloak_realm_name, tls_secret_name)
+
+
+async def _ensure_nginx_ingresses(
+    ekclient,
+    realm: api.Realm,
+    keycloak_realm_name: str,
+    tls_secret_name: str | None = None,
+):
+    """
+    Ensures Kubernetes Ingress resources for Dex using nginx-ingress-controller.
+    """
+    # We need two ingresses for each Dex instance:
+    # One unauthenticated for the catchall path, one authenticated for the callback
     ingress_data = {
         "apiVersion": "networking.k8s.io/v1",
         "kind": "Ingress",
@@ -304,6 +317,129 @@ async def ensure_ingresses(
         "Creating authenticated ingress for Dex callback - %s", format_realm(realm)
     )
     _ = await ekclient.apply_object(ingress_data, force=True)
+
+
+async def _ensure_ingressroutes(
+    ekclient,
+    realm: api.Realm,
+    keycloak_realm_name: str,
+    tls_secret_name: str | None = None,
+):
+    """
+    Ensures Traefik IngressRoute + Middleware resources for Dex.
+
+    Replaces the two nginx Ingress resources with:
+      - {realm}-dex-strip-remote-user  Middleware: strips X-Remote-User header
+      - {realm}-dex-inject-tenancy     Middleware: injects X-Auth-Tenancy-Id header
+      - {realm}-dex-forward-auth       Middleware: ForwardAuth to auth URL
+      - {realm}-dex                    IngressRoute: catchall Dex path
+      - {realm}-dex-auth               IngressRoute: authenticated callback path
+    """
+    prefix = path_prefix(realm, keycloak_realm_name)
+    entry_point = "websecure" if tls_secret_name else "web"
+    tls_spec = {"secretName": tls_secret_name} if tls_secret_name else None
+    namespace = realm.metadata.namespace
+    labels = {"app.kubernetes.io/managed-by": "azimuth-identity-operator"}
+
+    def middleware(name, spec):
+        obj = {
+            "apiVersion": "traefik.io/v1alpha1",
+            "kind": "Middleware",
+            "metadata": {
+                "name": name,
+                "namespace": namespace,
+                "labels": labels,
+            },
+            "spec": spec,
+        }
+        kopf.adopt(obj, realm.model_dump())
+        return obj
+
+    def ingressroute(name, match, middlewares, service_name):
+        obj = {
+            "apiVersion": "traefik.io/v1alpha1",
+            "kind": "IngressRoute",
+            "metadata": {
+                "name": name,
+                "namespace": namespace,
+                "labels": labels,
+            },
+            "spec": {
+                "entryPoints": [entry_point],
+                "routes": [
+                    {
+                        "match": match,
+                        "kind": "Rule",
+                        "middlewares": [
+                            {"name": mw, "namespace": namespace}
+                            for mw in middlewares
+                        ],
+                        "services": [
+                            {"name": service_name, "port": "http"},
+                        ],
+                    }
+                ],
+                **({"tls": tls_spec} if tls_spec else {}),
+            },
+        }
+        kopf.adopt(obj, realm.model_dump())
+        return obj
+
+    realm_name = realm.metadata.name
+    host = settings.dex.host
+
+    # Middleware: strip X-Remote-User to prevent header injection
+    mw_strip = middleware(
+        f"{realm_name}-dex-strip-remote-user",
+        {"headers": {"customRequestHeaders": {"X-Remote-User": ""}}},
+    )
+    # Middleware: inject tenancy ID into the auth subrequest
+    mw_tenancy = middleware(
+        f"{realm_name}-dex-inject-tenancy",
+        {
+            "headers": {
+                "customRequestHeaders": {"X-Auth-Tenancy-Id": realm.spec.tenancy_id}
+            }
+        },
+    )
+    # Middleware: ForwardAuth to the Azimuth session verify endpoint
+    mw_auth = middleware(
+        f"{realm_name}-dex-forward-auth",
+        {
+            "forwardAuth": {
+                "address": str(settings.dex.ingress_auth_url),
+                "authResponseHeaders": [
+                    "X-Remote-User-Id",
+                    "X-Remote-User",
+                    "X-Remote-User-Email",
+                    "X-Remote-Group",
+                ],
+            }
+        },
+    )
+
+    LOGGER.info("Creating Traefik Middleware resources for Dex - %s", format_realm(realm))
+    for obj in (mw_strip, mw_tenancy, mw_auth):
+        await ekclient.apply_object(obj, force=True)
+
+    # IngressRoute: unauthenticated catchall for the Dex OIDC flow
+    ir_main = ingressroute(
+        f"{realm_name}-dex",
+        f"Host(`{host}`) && PathPrefix(`{prefix}`)",
+        [f"{realm_name}-dex-strip-remote-user"],
+        f"{realm_name}-dex",
+    )
+    # IngressRoute: authenticated callback — forward-auth verifies the session
+    ir_auth = ingressroute(
+        f"{realm_name}-dex-auth",
+        f"Host(`{host}`) && PathPrefix(`{prefix}/callback/azimuth`)",
+        [f"{realm_name}-dex-inject-tenancy", f"{realm_name}-dex-forward-auth"],
+        f"{realm_name}-dex",
+    )
+
+    LOGGER.info("Creating Traefik IngressRoute resources for Dex - %s", format_realm(realm))
+    for obj in (ir_main, ir_auth):
+        await ekclient.apply_object(obj, force=True)
 
 
 async def ensure_realm_instance(ekclient, realm: api.Realm, keycloak_realm_name: str):
