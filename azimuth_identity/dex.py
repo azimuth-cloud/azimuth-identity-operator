@@ -375,8 +375,7 @@ async def _ensure_ingressroutes(
                         "match": match,
                         "kind": "Rule",
                         "middlewares": [
-                            {"name": mw, "namespace": namespace}
-                            for mw in middlewares
+                            {"name": mw, "namespace": namespace} for mw in middlewares
                         ],
                         "services": [
                             {"name": service_name, "port": "http"},
