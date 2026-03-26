@@ -52,7 +52,7 @@ class DexConfig(Section):
     #: The routing type to use for ingress resources.
     #: Use 'ingress' for standard Kubernetes Ingress (nginx-ingress-controller)
     #: or 'ingressroute' for Traefik IngressRoute CRD (kubernetesCRD provider).
-    ingress_routing_type: str = "ingress"
+    ingress_routing_type: t.Literal["ingress", "ingressroute"] = "ingress"
     #: The ingress class to use for ingress resources.
     #: Only used when ingress_routing_type is 'ingress'.
     ingress_class_name: constr(min_length=1) = "nginx"
