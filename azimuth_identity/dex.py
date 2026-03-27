@@ -173,7 +173,8 @@ async def _delete_nginx_ingresses(ekclient, realm: api.Realm):
 
 async def _delete_ingressroutes(ekclient, realm: api.Realm):
     """
-    Deletes any Traefik IngressRoute and Middleware resources for Dex for the given realm.
+    Deletes any Traefik IngressRoute and Middleware resources for Dex
+    for the given realm.
     Used when cleaning up after switching to ingress routing type.
     """
     namespace = realm.metadata.namespace
