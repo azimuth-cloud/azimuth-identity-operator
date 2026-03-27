@@ -154,6 +154,56 @@ async def ensure_config_secret(
     return secret_name, config_hash.hexdigest(), client
 
 
+async def _delete_nginx_ingresses(ekclient, realm: api.Realm):
+    """
+    Deletes any nginx Ingress resources for Dex for the given realm.
+    Used when cleaning up after switching to ingressroute routing type.
+    """
+    namespace = realm.metadata.namespace
+    realm_name = realm.metadata.name
+    ekingresses = await ekclient.api("networking.k8s.io/v1").resource("ingresses")
+    for name in (f"{realm_name}-dex", f"{realm_name}-dex-auth"):
+        try:
+            await ekingresses.delete(name, namespace=namespace)
+            LOGGER.info("Deleted nginx Ingress %s - %s", name, format_realm(realm))
+        except easykube.ApiError as exc:
+            if exc.status_code != 404:
+                raise
+
+
+async def _delete_ingressroutes(ekclient, realm: api.Realm):
+    """
+    Deletes any Traefik IngressRoute and Middleware resources for Dex for the given realm.
+    Used when cleaning up after switching to ingress routing type.
+    """
+    namespace = realm.metadata.namespace
+    realm_name = realm.metadata.name
+    ekingressroutes = await ekclient.api("traefik.io/v1alpha1").resource("ingressroutes")
+    for name in (f"{realm_name}-dex", f"{realm_name}-dex-auth"):
+        try:
+            await ekingressroutes.delete(name, namespace=namespace)
+            LOGGER.info(
+                "Deleted Traefik IngressRoute %s - %s", name, format_realm(realm)
+            )
+        except easykube.ApiError as exc:
+            if exc.status_code != 404:
+                raise
+    ekmiddlewares = await ekclient.api("traefik.io/v1alpha1").resource("middlewares")
+    for name in (
+        f"{realm_name}-dex-strip-remote-user",
+        f"{realm_name}-dex-inject-tenancy",
+        f"{realm_name}-dex-forward-auth",
+    ):
+        try:
+            await ekmiddlewares.delete(name, namespace=namespace)
+            LOGGER.info(
+                "Deleted Traefik Middleware %s - %s", name, format_realm(realm)
+            )
+        except easykube.ApiError as exc:
+            if exc.status_code != 404:
+                raise
+
+
 async def ensure_ingresses(
     ekclient,
     realm: api.Realm,
@@ -162,15 +212,18 @@ async def ensure_ingresses(
 ):
     """
     Ensures that the ingress resources exist for Dex for the given realm.
+    Also cleans up resources from the other routing type if present.
     """
     if settings.dex.ingress_routing_type == "ingressroute":
         await _ensure_ingressroutes(
             ekclient, realm, keycloak_realm_name, tls_secret_name
         )
+        await _delete_nginx_ingresses(ekclient, realm)
     else:
         await _ensure_nginx_ingresses(
             ekclient, realm, keycloak_realm_name, tls_secret_name
         )
+        await _delete_ingressroutes(ekclient, realm)
 
 
 async def _ensure_nginx_ingresses(
