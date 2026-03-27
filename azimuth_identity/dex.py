@@ -178,7 +178,9 @@ async def _delete_ingressroutes(ekclient, realm: api.Realm):
     """
     namespace = realm.metadata.namespace
     realm_name = realm.metadata.name
-    ekingressroutes = await ekclient.api("traefik.io/v1alpha1").resource("ingressroutes")
+    ekingressroutes = await ekclient.api("traefik.io/v1alpha1").resource(
+        "ingressroutes"
+    )
     for name in (f"{realm_name}-dex", f"{realm_name}-dex-auth"):
         try:
             await ekingressroutes.delete(name, namespace=namespace)
@@ -196,9 +198,7 @@ async def _delete_ingressroutes(ekclient, realm: api.Realm):
     ):
         try:
             await ekmiddlewares.delete(name, namespace=namespace)
-            LOGGER.info(
-                "Deleted Traefik Middleware %s - %s", name, format_realm(realm)
-            )
+            LOGGER.info("Deleted Traefik Middleware %s - %s", name, format_realm(realm))
         except easykube.ApiError as exc:
             if exc.status_code != 404:
                 raise
