@@ -49,8 +49,12 @@ class DexConfig(Section):
     #: If it is given, Dex instances will have TLS enabled
     tls_secret: SecretRef | None = None
 
-    #: The ingress class to use for ingress resources
-    #: Note that only the NGINX ingress controller is currently supported
+    #: The routing type to use for ingress resources.
+    #: Use 'ingress' for standard Kubernetes Ingress (nginx-ingress-controller)
+    #: or 'ingressroute' for Traefik IngressRoute CRD (kubernetesCRD provider).
+    ingress_routing_type: t.Literal["ingress", "ingressroute"] = "ingress"
+    #: The ingress class to use for ingress resources.
+    #: Only used when ingress_routing_type is 'ingress'.
     ingress_class_name: constr(min_length=1) = "nginx"
     #: The default annotations for the ingress resources
     ingress_default_annotations: dict[str, str] = Field(default_factory=dict)
