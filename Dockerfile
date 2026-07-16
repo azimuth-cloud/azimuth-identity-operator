@@ -62,7 +62,9 @@ RUN groupadd --gid $APP_GID $APP_GROUP && \
       --uid $APP_UID \
       $APP_USER
 
-RUN apt-get update && \
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    apt-get update && \
     apt-get install --no-install-recommends --no-install-suggests -y ca-certificates python3 && \
     rm -rf /var/lib/apt/lists/*
 
