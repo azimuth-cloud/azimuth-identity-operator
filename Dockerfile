@@ -1,6 +1,8 @@
 FROM ubuntu:24.04 AS helm
 
-RUN apt-get update && \
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    apt-get update && \
     apt-get install --no-install-recommends --no-install-suggests -y ca-certificates wget && \
     rm -rf /var/lib/apt/lists/*
 
