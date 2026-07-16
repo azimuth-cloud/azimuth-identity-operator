@@ -34,7 +34,6 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt-get update && \
     apt-get install --no-install-recommends --no-install-suggests -y python3 python3-venv && \
-    rm -rf /var/lib/apt/lists/*
 
 RUN python3 -m venv /venv && \
     /venv/bin/pip install -U pip setuptools
