@@ -30,7 +30,9 @@ RUN helm pull ${DEX_CHART_NAME} \
 
 FROM ubuntu:24.04 AS python-builder
 
-RUN apt-get update && \
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    apt-get update && \
     apt-get install --no-install-recommends --no-install-suggests -y python3 python3-venv && \
     rm -rf /var/lib/apt/lists/*
 
