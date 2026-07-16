@@ -4,7 +4,6 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt-get update && \
     apt-get install --no-install-recommends --no-install-suggests -y ca-certificates wget && \
-    rm -rf /var/lib/apt/lists/*
 
 ARG HELM_VERSION=v4.2.3
 RUN set -ex; \
