@@ -1,8 +1,9 @@
 FROM ubuntu:24.04 AS helm
 
-RUN apt-get update && \
-    apt-get install -y wget && \
-    rm -rf /var/lib/apt/lists/*
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    apt-get update && \
+    apt-get install --no-install-recommends --no-install-suggests -y ca-certificates wget && \
 
 ARG HELM_VERSION=v4.2.3
 RUN set -ex; \
@@ -29,9 +30,10 @@ RUN helm pull ${DEX_CHART_NAME} \
 
 FROM ubuntu:24.04 AS python-builder
 
-RUN apt-get update && \
-    apt-get install -y python3 python3-venv && \
-    rm -rf /var/lib/apt/lists/*
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    apt-get update && \
+    apt-get install --no-install-recommends --no-install-suggests -y python3 python3-venv && \
 
 RUN python3 -m venv /venv && \
     /venv/bin/pip install -U pip setuptools
@@ -59,9 +61,10 @@ RUN groupadd --gid $APP_GID $APP_GROUP && \
       --uid $APP_UID \
       $APP_USER
 
-RUN apt-get update && \
-    apt-get install -y ca-certificates python3 && \
-    rm -rf /var/lib/apt/lists/*
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    apt-get update && \
+    apt-get install --no-install-recommends --no-install-suggests -y ca-certificates python3 && \
 
 # Don't buffer stdout and stderr as it breaks realtime logging
 ENV PYTHONUNBUFFERED=1
