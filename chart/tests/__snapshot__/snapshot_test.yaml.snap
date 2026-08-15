@@ -74,7 +74,13 @@ templated manifests should match snapshot:
         resources:
           - secrets
         verbs:
-          - '*'
+          - get
+          - list
+          - watch
+          - create
+          - update
+          - patch
+          - delete
       - apiGroups:
           - networking.k8s.io
         resources:
@@ -108,7 +114,13 @@ templated manifests should match snapshot:
           - clusterroles
           - clusterrolebindings
         verbs:
-          - '*'
+          - get
+          - list
+          - watch
+          - create
+          - update
+          - patch
+          - delete
       - apiGroups:
           - ""
         resources:
