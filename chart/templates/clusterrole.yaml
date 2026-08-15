@@ -64,6 +64,13 @@ rules:
     verbs:
       - "*"
   - apiGroups:
+      - traefik.io
+    resources:
+      - ingressroutes
+      - middlewares
+    verbs:
+      - "*"
+  - apiGroups:
       - apps
     resources:
       - deployments
