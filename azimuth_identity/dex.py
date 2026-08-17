@@ -154,6 +154,99 @@ async def ensure_config_secret(
     return secret_name, config_hash.hexdigest(), client
 
 
+async def ensure_traefik_middlewares(
+    ekclient,
+    realm: api.Realm,
+    keycloak_realm_name: str,
+):
+    """
+    Ensures that a Traefik Middlware for header manipulation exists for the
+    given realm
+    """
+    middleware_data = {
+        "apiVersion": "traefik.io/v1alpha1",
+        "kind": "Middleware",
+        "metadata": {
+            "name": f"{realm.metadata.name}-dex-headers",
+            "namespace": realm.metadata.namespace,
+            "labels": {
+                "app.kubernetes.io/managed-by": "azimuth-identity-operator",
+            },
+        },
+        "spec": {"headers": {"customRequestHeaders": {"X-Remote-User": ""}}},
+    }
+    kopf.adopt(middleware_data, realm.model_dump())
+    LOGGER.info(
+        "Creating Traefik Middleware for main Dex Ingress - %s", format_realm(realm)
+    )
+    _ = await ekclient.apply_object(middleware_data, force=True)
+
+    middleware_data = {
+        "apiVersion": "traefik.io/v1alpha1",
+        "kind": "Middleware",
+        "metadata": {
+            "name": f"{realm.metadata.name}-auth-dex-headers",
+            "namespace": realm.metadata.namespace,
+            "labels": {
+                "app.kubernetes.io/managed-by": "azimuth-identity-operator",
+            },
+        },
+        "spec": {
+            "headers": {
+                "headers": {
+                    "customRequestHeaders": {
+                        # Include the tenancy ID as a header for the auth request
+                        # This means that only users that belong to the tenancy will be considered
+                        # authenticated
+                        "X-Auth-Tenancy-Id": f"{realm.spec.tenancy_id}"
+                    }
+                }
+            }
+        },
+    }
+    kopf.adopt(middleware_data, realm.model_dump())
+    LOGGER.info(
+        "Creating Traefik Headers Middleware for authenticated Dex Ingress - %s",
+        format_realm(realm),
+    )
+    _ = await ekclient.apply_object(middleware_data, force=True)
+
+    middleware_data = {
+        "apiVersion": "traefik.io/v1alpha1",
+        "kind": "Middleware",
+        "metadata": {
+            "name": f"{realm.metadata.name}-auth-dex-fwdauth",
+            "namespace": realm.metadata.namespace,
+            "labels": {
+                "app.kubernetes.io/managed-by": "azimuth-identity-operator",
+            },
+        },
+        "spec": {
+            "headers": {
+                "forwardAuth": {
+                    "address": settings.dex.ingress_auth_url,
+                    "authSigninURL": settings.dex.ingress_auth_signin_url,
+                    "trustForwardHeader": true,
+                    # Forward the X-Remote-{User-Id,User,User-Email,Group} headers from the auth
+                    # response to the upstream
+                    "authResponseHeaders": [
+                        "X-Remote-User-Id",
+                        "X-Remote-User",
+                        "X-Remote-User-Email",
+                        "X-Remote-Group",
+                    ],
+                },
+            }
+        },
+    }
+    kopf.adopt(middleware_data, realm.model_dump())
+    LOGGER.info(
+        "Creating Traefik ForwardAuth Middleware for authenticated Dex Ingress - %s",
+        format_realm(realm),
+    )
+    _ = await ekclient.apply_object(middleware_data, force=True)
+
+
 async def ensure_ingresses(
     ekclient,
     realm: api.Realm,
@@ -178,9 +271,9 @@ async def ensure_ingresses(
             },
             "annotations": {
                 **settings.dex.ingress_default_annotations,
-                # Explicitly remove the x-remote-user from the request
-                "nginx.ingress.kubernetes.io/configuration-snippet": (
-                    'proxy_set_header X-Remote-User "";'
+                # Attach the dex-headers middleware
+                "traefik.ingress.kubernetes.io/router.middlewares": (
+                    f"{realm.metadata.namespace}-{realm.metadata.name}-dex-headers@kubernetescrd"
                 ),
             },
         },
@@ -222,34 +315,17 @@ async def ensure_ingresses(
     kopf.adopt(ingress_data, realm.model_dump())
     LOGGER.info("Creating main ingress for Dex - %s", format_realm(realm))
     _ = await ekclient.apply_object(ingress_data, force=True)
-    auth_annotations = {
-        "nginx.ingress.kubernetes.io/auth-url": settings.dex.ingress_auth_url,
-        # Include the tenancy ID as a header for the auth request
-        # This means that only users that belong to the tenancy will be considered
-        # authenticated
-        "nginx.ingress.kubernetes.io/auth-snippet": (
-            f'proxy_set_header X-Auth-Tenancy-Id "{realm.spec.tenancy_id}";'
-        ),
-        # Forward the X-Remote-{User-Id,User,User-Email,Group} headers from the auth
-        # response to the upstream
-        "nginx.ingress.kubernetes.io/auth-response-headers": ",".join(
-            [
-                "X-Remote-User-Id",
-                "X-Remote-User",
-                "X-Remote-User-Email",
-                "X-Remote-Group",
-            ]
+    middleware_annotations = {
+        # Attach the dex-headers and middleware
+        "traefik.ingress.kubernetes.io/router.middlewares": (
+            ",".join(
+                [
+                    f"{realm.metadata.namespace}-{realm.metadata.name}-dex-headers@kubernetescrd",
+                    f"{realm.metadata.namespace}-{realm.metadata.name}-auth-dex-fwdauth@kubernetescrd",
+                ]
+            )
         ),
     }
-    if settings.dex.ingress_auth_signin_url:
-        auth_annotations.update(
-            {
-                "nginx.ingress.kubernetes.io/auth-signin": settings.dex.ingress_auth_signin_url,  # noqa: E501
-                "nginx.ingress.kubernetes.io/auth-signin-redirect-param": (
-                    settings.dex.ingress_auth_signin_redirect_param
-                ),
-            }
-        )
     ingress_data = {
         "apiVersion": "networking.k8s.io/v1",
         "kind": "Ingress",
@@ -261,7 +337,7 @@ async def ensure_ingresses(
             },
             "annotations": {
                 **settings.dex.ingress_default_annotations,
-                **auth_annotations,
+                **middleware_annotations,
             },
         },
         "spec": {
@@ -348,6 +424,10 @@ async def ensure_realm_instance(ekclient, realm: api.Realm, keycloak_realm_name:
         namespace=realm.metadata.namespace,
         # The target namespace already exists, because the realm is in it
         create_namespace=False,
+    )
+    # Generate the Traefik middlewares for Dex
+    await ensure_traefik_middlewares(
+        ekclient, realm, keycloak_realm_name, tls_secret_name
     )
     # Generate the ingresses for Dex
     await ensure_ingresses(ekclient, realm, keycloak_realm_name, tls_secret_name)
