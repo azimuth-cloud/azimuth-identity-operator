@@ -5,6 +5,11 @@ Please check for relevant issues and PRs before opening a new one of your own.
 
 ## Making a contribution
 
+PRs raised from outside the organisation will not trigger the test-pr workflow
+with the necessary secrets to run the tests. Outside contributors should raise 
+a PR against a feature branch and once reviewed a maintainer will merge into an
+internal branch and then raise a PR to merge that into the default branch.
+
 ### Helm template snapshots
 
 The CI in this repository uses the Helm
