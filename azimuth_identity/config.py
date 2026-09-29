@@ -50,16 +50,16 @@ class DexConfig(Section):
     tls_secret: SecretRef | None = None
 
     #: The ingress class to use for ingress resources
-    #: Note that only the NGINX ingress controller is currently supported
-    ingress_class_name: constr(min_length=1) = "nginx"
+    #: Note that only Traefik is currently supported
+    ingress_class_name: constr(min_length=1) = "traefik"
     #: The default annotations for the ingress resources
     ingress_default_annotations: dict[str, str] = Field(default_factory=dict)
     #: The auth URL to use for the ingress auth subrequest
     ingress_auth_url: AnyHttpUrl
     #: The URL that unauthenticated users should be redirected to to sign in
-    ingress_auth_signin_url: AnyHttpUrl | None = None
+    ingress_auth_signin_url: AnyHttpUrl
     #: The HTTP parameter to put the next URL in when redirecting to sign in
-    ingress_auth_signin_redirect_param: str = "next"
+    ingress_auth_signin_redirect_param: str = "rd"
 
     #: The alias to use for the Keycloak client
     keycloak_client_alias: constr(min_length=1) = "azimuth"
