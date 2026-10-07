@@ -2,6 +2,7 @@ import base64
 import hashlib
 import logging
 import secrets
+import urllib.parse
 
 import easykube
 import kopf
@@ -30,6 +31,26 @@ def path_prefix(realm: api.Realm, keycloak_realm_name: str):
     """
     return settings.dex.prefix_template.format(
         realm_name=keycloak_realm_name, tenancy_id=realm.spec.tenancy_id
+    )
+
+
+def auth_signin_url() -> str:
+    """
+    Returns the URL that unauthenticated users are redirected to for sign in.
+    """
+
+    signin_url: str = settings.dex.ingress_auth_signin_url
+    redirect_param: str = settings.dex.ingress_auth_signin_redirect_param
+    query: str | None = urllib.parse.urlsplit(signin_url).query
+
+    # If the URL already specifies the redirect parameter, leave it alone
+    if redirect_param in urllib.parse.parse_qs(query, keep_blank_values=True):
+        return signin_url
+
+    separator = "&" if query else "?"
+
+    return (
+        f"{signin_url}{separator}{redirect_param}=$scheme://$host$escaped_request_uri"
     )
 
 
@@ -242,14 +263,7 @@ async def ensure_ingresses(
         ),
     }
     if settings.dex.ingress_auth_signin_url:
-        auth_annotations.update(
-            {
-                "nginx.ingress.kubernetes.io/auth-signin": settings.dex.ingress_auth_signin_url,  # noqa: E501
-                "nginx.ingress.kubernetes.io/auth-signin-redirect-param": (
-                    settings.dex.ingress_auth_signin_redirect_param
-                ),
-            }
-        )
+        auth_annotations["nginx.ingress.kubernetes.io/auth-signin"] = auth_signin_url()
     ingress_data = {
         "apiVersion": "networking.k8s.io/v1",
         "kind": "Ingress",

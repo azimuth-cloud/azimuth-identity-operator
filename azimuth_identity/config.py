@@ -59,6 +59,7 @@ class DexConfig(Section):
     #: The URL that unauthenticated users should be redirected to to sign in
     ingress_auth_signin_url: AnyHttpUrl | None = None
     #: The HTTP parameter to put the next URL in when redirecting to sign in
+    #: This is embedded in the sign in URL, unless the URL already contains it
     ingress_auth_signin_redirect_param: str = "next"
 
     #: The alias to use for the Keycloak client
