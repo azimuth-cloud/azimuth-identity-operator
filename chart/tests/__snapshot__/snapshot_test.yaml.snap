@@ -83,6 +83,13 @@ templated manifests should match snapshot:
         verbs:
           - '*'
       - apiGroups:
+          - traefik.io
+        resources:
+          - ingressroutes
+          - middlewares
+        verbs:
+          - '*'
+      - apiGroups:
           - apps
         resources:
           - deployments
