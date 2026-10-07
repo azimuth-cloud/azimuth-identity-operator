@@ -33,6 +33,11 @@ ignore = [
     "UP017", # remove and fix once 3.10 no longer tested in CI
 ]
 
+[tool.pytest]
+testpaths = ["azimuth_identity/tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
 [tool.mypy]
 follow_imports = "silent"
 warn_redundant_casts = true

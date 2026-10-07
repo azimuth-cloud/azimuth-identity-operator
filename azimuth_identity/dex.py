@@ -49,9 +49,7 @@ def auth_signin_url() -> str:
 
     separator = "&" if query else "?"
 
-    return (
-        f"{signin_url}{separator}{redirect_param}=$scheme://$host$escaped_request_uri"
-    )
+    return f"{signin_url}{separator}{redirect_param}=$scheme://$best_http_host$escaped_request_uri"
 
 
 async def ensure_tls_secret(ekclient, realm: api.Realm):
