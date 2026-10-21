@@ -163,13 +163,16 @@ templated manifests should match snapshot:
       template:
         metadata:
           annotations:
-            azimuth.stackhpc.com/config-hash: 01bee925bdf72223ddf527cfd68297701a65cbb1e37a04f17e798a6cb97f633a
+            azimuth.stackhpc.com/config-hash: c848424a76e8922aabc4a4fc5bbdfddf872f01ad23b3b3d36eace6be99c4b1b7
           labels:
             app.kubernetes.io/instance: RELEASE-NAME
             app.kubernetes.io/name: azimuth-identity-operator
         spec:
           containers:
-            - image: ghcr.io/azimuth-cloud/azimuth-identity-operator:main
+            - env:
+                - name: LOG_LEVEL
+                  value: info
+              image: ghcr.io/azimuth-cloud/azimuth-identity-operator:main
               imagePullPolicy: IfNotPresent
               name: operator
               ports:
@@ -221,6 +224,7 @@ templated manifests should match snapshot:
       user-config.yaml: |
         dex:
           host: foo.example.com
+        loggingLevel: info
   6: |
     apiVersion: v1
     kind: Service
