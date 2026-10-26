@@ -5,7 +5,7 @@ annotated-types==0.8.0
 anyio==4.15.1
 async-timeout==5.0.1
 attrs==26.1.0
-certifi==2026.10.19
+certifi==2026.10.23
 click==8.5.0
 configomatic==0.4.0
 easykube==0.6.0
@@ -16,7 +16,7 @@ httpcore==1.0.9
 httpx==0.28.1
 idna==3.20
 iso8601==2.1.0
-kopf==1.45.1
+kopf==1.45.2
 kube-custom-resource==0.7.2
 multidict==7.1.0
 propcache==0.5.4
