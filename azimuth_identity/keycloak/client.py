@@ -50,6 +50,11 @@ class Auth(httpx.Auth):
             request.headers["Authorization"] = f"Bearer {self._token}"
             response = yield request
             if response.status_code == 401:
+                # Read the response so that the connection is released back to the
+                # pool before we try to refresh the token, otherwise concurrent
+                # requests can exhaust the connection pool and the token refresh
+                # can never proceed
+                await response.aread()
                 await self.refresh_token()
                 continue
             response.raise_for_status()
