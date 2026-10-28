@@ -9,7 +9,7 @@ Dockerfile
 .dockerignore
 .github
 .gitignore
-.python-version
 chart
 CODEOWNERS
+CONTRIBUTING.md
 tilt-component.yaml

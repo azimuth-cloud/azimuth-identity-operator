@@ -27,20 +27,57 @@ RUN helm pull ${DEX_CHART_NAME} \
       --untardir /charts
 
 
-FROM ubuntu:24.04 AS python-builder
+## INSTALL AND BUILD APP ###
+############################
+FROM ghcr.io/astral-sh/uv:trixie AS build
+# Note: distro should match final image stage to ensure build compat. trixie=debian13
+# Non-slim version required for git.
 
-RUN apt-get update && \
-    apt-get install -y python3 python3-venv && \
-    rm -rf /var/lib/apt/lists/*
+# These env vars setup UV for a docker installation as opposed to
+# the defaults which are optimised for local development.
+# https://docs.astral.sh/uv/guides/integration/docker/#optimizations
+# https://docs.astral.sh/uv/reference/environment/
+ENV UV_NO_DEV=1 \
+    UV_NO_EDITABLE=1 \
+    UV_COMPILE_BYTECODE=1 \
+    UV_LINK_MODE=copy \
+    UV_FROZEN=1 \
+    UV_CACHE_DIR=/uv-cache/ \
+    UV_PYTHON_INSTALL_DIR=/python \
+    UV_PYTHON_INSTALL_BIN=0 \
+    UV_PYTHON_PREFERENCE=only-managed
 
-RUN python3 -m venv /venv && \
-    /venv/bin/pip install -U pip setuptools
+WORKDIR /app-source
 
-COPY requirements.txt /app/requirements.txt
-RUN  /venv/bin/pip install --requirement /app/requirements.txt
+### INSTALL PINNED PYTHON ###
+# https://docs.astral.sh/uv/guides/install-python/
+COPY .python-version /app-source
+RUN uv python install \
+    && chmod -R ugo=rX /python
 
-COPY . /app
-RUN /venv/bin/pip install /app
+### INSTALL PROJECT INTO VENV ###
+# uv sync --active makes uv (re)create the currently
+# active venv and install into it.
+ENV VIRTUAL_ENV=/app
+
+### INSTALL PINNED DEPENDENCIES ###
+# --frozen makes uv install the versions which are pinned in uv.lock
+# Installing the dependencies first optimizes caching so if the app
+# changes but not the deps there is no need to rebuild this.
+COPY uv.lock pyproject.toml /app-source
+RUN --mount=type=cache,target=/uv-cache/ \
+    uv sync --active \
+            --frozen \
+            --no-install-project \
+    && chmod -R ugo=rX /app
+
+### INSTALL THE PROJECT ###
+# Then install the app.
+COPY . /app-source
+RUN --mount=type=cache,target=/uv-cache/ \
+    uv sync --active \
+            --frozen \
+    && chmod -R ugo=rX /app
 
 
 FROM ubuntu:24.04
@@ -77,7 +114,8 @@ ENV HELM_DATA_HOME=/tmp/helm/data
 
 COPY --from=helm /usr/bin/helm /usr/bin/helm
 COPY --from=helm /charts/dex /charts/dex
-COPY --from=python-builder /venv /venv
+COPY --from=build /python /python
+COPY --from=build /app /app
 
 USER $APP_UID
-CMD ["/venv/bin/python", "-m", "azimuth_identity"]
+CMD ["/app/bin/python", "-m", "azimuth_identity"]
