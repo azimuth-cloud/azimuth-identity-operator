@@ -26,11 +26,11 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "black>=26.10.1",
     "codespell>=2.4.3",
     "coverage>=7.16.2",
     "diff-cover>=11.0.0",
     "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.1",
     "pytest-cov>=7.1.0",
     "ruff>=0.17.1",
     "tox>=4.64.6",
@@ -82,6 +82,8 @@ ignore = [
 
 [tool.pytest]
 testpaths = ["azimuth_identity/tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
 
 [tool.mypy]
 follow_imports = "silent"

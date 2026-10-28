@@ -5,4 +5,5 @@ chart/Chart.lock
 #Ignore unit test files
 .tox/*
 .coverage/*
+coverage.xml
 diff-cover.md
