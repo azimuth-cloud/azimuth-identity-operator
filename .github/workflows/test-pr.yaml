@@ -11,6 +11,14 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  helm_lint:
+    uses: ./.github/workflows/helm-lint.yaml
+    with:
+       ref: ${{ github.event.pull_request.head.sha }}
+  python-check:
+    uses: ./.github/workflows/tox.yaml
+    with:
+       ref: ${{ github.event.pull_request.head.sha }}
   publish_artifacts:
     uses: ./.github/workflows/build-push-artifacts.yaml
     with:

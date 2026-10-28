@@ -27,7 +27,7 @@ updates:
     directory: "/"
     schedule:
       # Check for new versions daily
-      interval: daily
+      interval: weekly
     groups:
       pip-updates:
         patterns: ["*"]
