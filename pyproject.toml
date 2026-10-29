@@ -77,10 +77,7 @@ select = [
     # pep8 naming
     "N",
 ]
-ignore = [
-    "UP038", # deprecated
-    "UP017", # remove and fix once 3.10 no longer tested in CI
-]
+ignore = []
 
 [tool.pytest]
 testpaths = ["azimuth_identity/tests"]
