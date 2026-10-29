@@ -1278,7 +1278,6 @@ wheels = [
 ]
 
 [[package]]
-<<<<<<< HEAD
 name = "pytest-httpserver"
 version = "1.2.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1302,7 +1301,8 @@ sdist = { url = "https://files.pythonhosted.org/packages/4e/42/f53c58570e80d503a
 wheels = [
     { url = "https://files.pythonhosted.org/packages/1e/55/1fa65f8e4fceb19dd6daa867c162ad845d547f6058cd92b4b02384a44777/pytest_httpx-0.36.2-py3-none-any.whl", hash = "sha256:d42ebd5679442dc7bfb0c48e0767b6562e9bc4534d805127b0084171886a5e22", size = 20315, upload-time = "2026-04-09T13:57:18.587Z" },
 ]
-=======
+
+[[package]]
 name = "pytest-asyncio"
 version = "1.4.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1316,7 +1316,6 @@ wheels = [
 ]
 
 [[package]]
->>>>>>> 286bf87 (Fix tox pytest command, edit dependencies)
 name = "pytest-cov"
 version = "7.1.0"
 source = { registry = "https://pypi.org/simple" }
