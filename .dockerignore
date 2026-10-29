@@ -9,6 +9,7 @@ Dockerfile
 .dockerignore
 .github
 .gitignore
+.venv/*
 chart
 CODEOWNERS
 CONTRIBUTING.md
