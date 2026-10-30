@@ -19,14 +19,13 @@ updates:
     allow:
       - dependency-name: "actions/*"
       - dependency-name: "github-actions/*"
-    cooldown:
-      default-days: 7
 
   # Automatically propose PRs for Python dependencies
-  - package-ecosystem: uv
+  - package-ecosystem: pip
     directory: "/"
     schedule:
-      interval: weekly
+      # Check for new versions daily
+      interval: daily
     groups:
       pip-updates:
         patterns: ["*"]
