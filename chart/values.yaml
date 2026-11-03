@@ -17,7 +17,8 @@ trustBundle:
 
 # Configuration for the operator
 # For all available options, see azimuth_identity/config.py
-config: {}
+config:
+  loggingLevel: "info"
 
 # The image to use for the operator
 image:
