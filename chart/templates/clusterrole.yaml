@@ -54,7 +54,13 @@ rules:
     resources:
       - secrets
     verbs:
-      - "*"
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
   # We need to be able to manipulate the resources created for Dex instances
   - apiGroups:
       - networking.k8s.io
@@ -89,7 +95,13 @@ rules:
       - clusterroles
       - clusterrolebindings
     verbs:
-      - "*"
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
   - apiGroups:
       - ""
     resources:
