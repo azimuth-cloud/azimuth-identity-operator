@@ -77,8 +77,8 @@ jobs:
     outputs:
       chart-version: ${{ steps.semver.outputs.version }}
     permissions:
-      contents: write
-      id-token: none
+      contents: read
+      id-token: write
       packages: none
       security-events: none
     steps:
@@ -95,8 +95,21 @@ jobs:
         uses: azimuth-cloud/github-actions/semver@master
 
       - name: Publish Helm charts
-        uses: azimuth-cloud/github-actions/helm-publish@master
+        uses: azimuth-cloud/github-actions/helm-publish-oci@master
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          directory: chart
+          username: ${{ secrets.QUAY_IO_USER }}
+          token: ${{ secrets.QUAY_IO_TOKEN }}
+          registry: quay.io
+          repository: azimuth/azimuth-identity-operator-charts
           version: ${{ steps.semver.outputs.version }}
           app-version: ${{ steps.semver.outputs.short-sha }}
+
+      - name: Publish artifact metadata
+        uses: azimuth-cloud/github-actions/artifacthub-metadata@master
+        with:
+          directory: chart
+          registry: quay.io
+          repository: azimuth/azimuth-identity-operator-charts
+          username: ${{ secrets.QUAY_IO_USER }}
+          token: ${{ secrets.QUAY_IO_TOKEN }}
