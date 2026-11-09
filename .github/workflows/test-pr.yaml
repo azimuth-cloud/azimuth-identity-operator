@@ -38,7 +38,7 @@ jobs:
           # We also don't need all the tests
           # The workstation is sufficient to test that the OIDC discovery is working
           extra-vars: |
-            azimuth_identity_operator_chart_repo: https://azimuth-cloud.github.io/azimuth-identity-operator
+            azimuth_identity_operator_chart_ref: oci://quay.io/azimuth/azimuth-identity-operator-charts/azimuth-identity-operator
             azimuth_identity_operator_chart_version: ${{ needs.publish_artifacts.outputs.chart-version }}
             generate_tests_caas_test_case_slurm_enabled: false
             generate_tests_caas_test_case_repo2docker_enabled: false
